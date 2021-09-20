@@ -3,4 +3,16 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="2021-09-17 Add rental table" author="Signe Unt">
+        <createTable tableName="rental">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="car" type="text"/>
+            <column name="client_first_name" type="text"/>
+            <column name="client_last_name" type="text"/>
+            <column name="from" type="text"/>
+            <column name="to" type="text"/>
+        </createTable>
+    </changeSet>
     </databaseChangeLog>
