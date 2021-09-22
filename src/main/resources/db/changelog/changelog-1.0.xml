@@ -382,4 +382,9 @@
             <column name="pilt" type="bytea"/>
             </createTable>
     </changeSet>
+    <changeSet id="blabla" author="Ellen">
+        <createTable tableName="test">
+            <column name="lisainfo" type="text"/>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>
