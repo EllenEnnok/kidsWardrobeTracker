@@ -7,6 +7,9 @@
     <button>+</button>
     <label> Sisesta kappi uus jalanõu</label>
     <h1>Vali kategooria</h1>
+    <button>Näita kogu kapi sisu</button>
+    <br>
+    <br>
     <button>Lühikese varrukaga särgid</button>
     <button>Pika varrukaga särgid</button>
     <button>Lühikesed püksid</button>
