@@ -7,9 +7,7 @@
         <label>Salasõna</label>
         <input type="password" v-model="password"/>
         <br>
-        <button v-on:click="register()">Logi sisse</button>
-        <h1>Pole kontot?</h1>
-        <button>Loo uus konto</button>
+        <button v-on:click="register()">Salvesta</button>
 
   </div>
 </template>

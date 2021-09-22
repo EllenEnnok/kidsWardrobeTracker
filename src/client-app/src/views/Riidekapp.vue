@@ -1,5 +1,5 @@
 <template>
-  <div class="kategooriad">
+  <div class="riidekapp">
     <h1>BANK</h1>
   </div>
 </template>
