@@ -3,6 +3,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
     <changeSet id="bla" author="Signe Unt">
         <createTable tableName="rental2table">
             <column name="id" type="int" autoIncrement="true">
@@ -15,4 +16,370 @@
             <column name="to" type="text"/>
         </createTable>
     </changeSet>
-    </databaseChangeLog>
+
+
+    <changeSet id="2021-09-21 create database for kidswardrobe" author="Ellen Ennok">
+        <createTable tableName="tüüp">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="nimetus" type="text"/>
+
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2021-09-21 add values to table tüüp" author="Ellen Ennok">
+        <sql>
+            INSERT INTO tüüp(nimetus)
+            VALUES ('õueriided');
+            INSERT INTO tüüp(nimetus)
+            VALUES ('riided');
+            INSERT INTO tüüp(nimetus)
+            VALUES ('aksessuaarid');
+            INSERT INTO tüüp(nimetus)
+            VALUES ('jalanõud');
+            INSERT INTO tüüp(nimetus)
+            VALUES ('spordiriided');
+
+        </sql>
+    </changeSet>
+    <changeSet
+            id="2021-09-21 create tables kategooria, hooaeg, suurus_riided, suurus_jalanoud, värv, sugu, materjal, asukoht"
+            author="Ellen Ennok">
+        <createTable tableName="kategooria">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="kategooria" type="text"/>
+        </createTable>
+
+        <createTable tableName="hooaeg">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="hooaeg" type="text"/>
+        </createTable>
+
+        <createTable tableName="suurus_riided">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="suuruse_vahemik" type="text"/>
+        </createTable>
+
+        <createTable tableName="suurus_jalatsid">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="suurus" type="int"/>
+        </createTable>
+
+        <createTable tableName="värv">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="värv" type="text"/>
+        </createTable>
+
+        <createTable tableName="sugu">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="sugu" type="text"/>
+        </createTable>
+
+        <createTable tableName="materjal">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="materjal" type="text"/>
+        </createTable>
+
+        <createTable tableName="asukoht">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="asukoht" type="text"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2021-09-21 add values to table hooaeg" author="Ellen Ennok">
+        <sql>
+            INSERT INTO hooaeg(hooaeg)
+            VALUES ('suvi');
+            INSERT INTO hooaeg(hooaeg)
+            VALUES ('kevad_sügis');
+            INSERT INTO hooaeg(hooaeg)
+            VALUES ('talv');
+            INSERT INTO hooaeg(hooaeg)
+            VALUES ('aastaringne');
+
+            INSERT INTO kategooria(kategooria)
+            VALUES ('lühikese_varrukaga_särgid');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('pika_varrukaga_särgid');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('lühikesed_püksid');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('pikad_püksid');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('aluspesu');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('sokid');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('sukapüksid');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('kindad');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('mütsid');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('sallid');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('joped');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('kombekad');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('õuepüksid');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('seelikud');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('kleidid');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('romperid');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('tuduriided');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('bodyd');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('sipukad');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('ujumisriided');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('pusad');
+            INSERT INTO kategooria(kategooria)
+            VALUES ('muu');
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="2021-09-21 add values to table sugu" author="Ellen Ennok">
+        <sql>
+            INSERT INTO sugu(sugu)
+            VALUES ('poiss');
+            INSERT INTO sugu(sugu)
+            VALUES ('tüdruk');
+            INSERT INTO sugu(sugu)
+            VALUES ('unisex');
+        </sql>
+    </changeSet>
+
+    <changeSet id="2021-09-21 add values to table materjal, värv" author="Ellen Ennok">
+        <sql>
+            INSERT INTO materjal(materjal)
+            VALUES ('puuvill');
+            INSERT INTO materjal(materjal)
+            VALUES ('vill');
+            INSERT INTO materjal(materjal)
+            VALUES ('polüester');
+            INSERT INTO materjal(materjal)
+            VALUES ('viskoos');
+            INSERT INTO materjal(materjal)
+            VALUES ('linane');
+            INSERT INTO materjal(materjal)
+            VALUES ('siid');
+            INSERT INTO materjal(materjal)
+            VALUES ('teksa');
+            INSERT INTO materjal(materjal)
+            VALUES ('elastaan');
+            INSERT INTO materjal(materjal)
+            VALUES ('meriinovill');
+
+            INSERT INTO värv(värv)
+            VALUES ('kollane');
+            INSERT INTO värv(värv)
+            VALUES ('oranz');
+            INSERT INTO värv(värv)
+            VALUES ('punane');
+            INSERT INTO värv(värv)
+            VALUES ('lilla');
+            INSERT INTO värv(värv)
+            VALUES ('sinine');
+            INSERT INTO värv(värv)
+            VALUES ('roheline');
+            INSERT INTO värv(värv)
+            VALUES ('must');
+            INSERT INTO värv(värv)
+            VALUES ('valge');
+            INSERT INTO värv(värv)
+            VALUES ('hall');
+            INSERT INTO värv(värv)
+            VALUES ('beez');
+            INSERT INTO värv(värv)
+            VALUES ('mitmevärviline');
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="2021-09-22 add values to table suurus_riided" author="Ellen Ennok">
+        <sql>
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('56-62');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('62-68');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('68-74');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('74-80');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('80-86');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('86-92');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('92-98');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('98-104');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('104-110');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('110-116');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('116-122');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('122-128');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('128-134');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('134-140');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('140-146');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('146-152');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('152-158');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('158-164');
+            INSERT INTO suurus_riided(suuruse_vahemik)
+            VALUES ('164-170');
+        </sql>
+
+    </changeSet>
+
+<changeSet id="2021-09-22 add values to table suurus_jalatsid" author="Ellen Ennok">
+    <sql>
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('16');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('17');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('18');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('19');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('20');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('21');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('22');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('23');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('24');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('25');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('26');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('27');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('28');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('29');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('30');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('31');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('32');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('33');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('34');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('35');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('36');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('37');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('38');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('39');
+        INSERT INTO suurus_jalatsid(suurus)
+        VALUES ('40');
+    </sql>
+</changeSet>
+
+    <changeSet id="2021-09-22 create table riideese" author="Ellen Ennok">
+        <createTable tableName="riideese">
+            <column name="id" type="int">
+                    <constraints primaryKey="true"/>
+            </column>
+            <column name="tüüp_id" type="int">
+                <constraints foreignKeyName="fk_riideese_tüüp" references="tüüp(id)"/>
+            </column>
+            <column name="hooaeg_id" type="int">
+                <constraints foreignKeyName="fk_riideese_hooaeg" references="hooaeg(id)"/>
+            </column>
+            <column name="suurus_riided_id" type="int">
+                <constraints foreignKeyName="fk_riideese_suurus_riided" references="suurus_riided(id)"/>
+            </column>
+            <column name="suurus_jalatsid_id" type="int">
+                <constraints foreignKeyName="fk_riideese_suurus_jalatsid" references="suurus_jalatsid(id)"/>
+            </column>
+            <column name="värv_id" type="int">
+                <constraints foreignKeyName="fk_riideese_värv" references="värv(id)"/>
+            </column>
+            <column name="sugu_id" type="int">
+                <constraints foreignKeyName="fk_riideese_sugu" references="sugu(id)"/>
+            </column>
+            <column name="materjal_id" type="int">
+                <constraints foreignKeyName="fk_riideese_materjal" references="materjal(id)"/>
+            </column>
+            <column name="asukoht_id" type="int">
+                <constraints foreignKeyName="fk_riideese_asukoht" references="asukoht(id)"/>
+            </column>
+            <column name="kategooria_id" type="int">
+                <constraints foreignKeyName="fk_riideese_kategooria" references="kategooria(id)"/>
+            </column>
+            <column name="lisainfo" type="text"/>
+            <column name="tootja" type="text"/>
+            <column name="pilt" type="bytea"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2021-09-22 create table jalatsid" author="Ellen Ennok">
+        <createTable tableName="jalatsid">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="suurus_jalatsid_id" type="int">
+                <constraints foreignKeyName="fk_jalatsid_suurus_jalatsid" references="suurus_jalatsid(id)"/>
+            </column>
+            <column name="hooaeg_id" type="int">
+                <constraints foreignKeyName="fk_jalatsid_hooaeg" references="hooaeg(id)"/>
+            </column>
+            <column name="kategooria_id" type="int">
+                <constraints foreignKeyName="fk_jalatsid_kategooria" references="kategooria(id)"/>
+            </column>
+            <column name="sugu_id" type="int">
+                <constraints foreignKeyName="fk_jalatsid_sugu" references="sugu(id)"/>
+            </column>
+            <column name="värv_id" type="int">
+                <constraints foreignKeyName="fk_jalatsid_värv" references="värv(id)"/>
+            </column>
+            <column name="lisainfo" type="text"/>
+            <column name="tootja" type="text"/>
+            <column name="pilt" type="bytea"/>
+            </createTable>
+    </changeSet>
+</databaseChangeLog>
