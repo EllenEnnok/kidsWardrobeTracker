@@ -1,5 +1,5 @@
 <template>
-  <div class="luhikesed puksid">
+  <div class="luhikesedpuksid">
 <!--    kuvab listi kõikidest lühikestest pükstest-->
   </div>
 </template>
