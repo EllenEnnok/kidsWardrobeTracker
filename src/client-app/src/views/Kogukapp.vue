@@ -1,5 +1,5 @@
 <template>
-  <div class="riidekapp">
+  <div class="kogukapp">
     <button>+</button>
     <label> Sisesta kappi uus riideese</label>
     <br>

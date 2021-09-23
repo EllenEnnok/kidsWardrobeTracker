@@ -4,6 +4,8 @@ import Riidekapp from '../views/Riidekapp.vue'
 import Avaleht from '../views/Avaleht.vue'
 import Uuskonto from '../views/Uuskonto.vue'
 import Kogukapp from '../views/Kogukapp.vue'
+import Oueriided from '../views/Oueriided.vue'
+import Aksessuaarid from '../views/Aksessuaarid.vue'
 
 
 Vue.use(VueRouter)
@@ -29,6 +31,16 @@ const routes = [
         path: '/kogukapp',
         name: 'Kogukapp',
         component: Kogukapp
+    },
+    {
+        path: '/oueriided',
+        name: 'Oueriided',
+        component: Oueriided
+    },
+    {
+        path: '/aksessuaarid',
+        name: 'Aksessuaarid',
+        component: Aksessuaarid
     }
 
 ]
