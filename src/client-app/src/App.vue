@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Avaleht</router-link> |
-      <router-link to="/riidekapp">Riidekapp</router-link>
+      <router-link to="/riidekapp">Riidekapp</router-link> |
+      <router-link to="/filtreeri">Filtreeri</router-link>
     </div>
     <router-view/>
   </div>
