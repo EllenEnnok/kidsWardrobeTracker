@@ -1,5 +1,5 @@
 <template>
-  <div class="jalanõud">
+  <div class="jalanoud">
     <button>+</button>
     <label> Sisesta kappi uus jalanõu</label>
     <br>
