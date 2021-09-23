@@ -6,6 +6,7 @@ import Uuskonto from '../views/Uuskonto.vue'
 import Kogukapp from '../views/Kogukapp.vue'
 import Oueriided from '../views/Oueriided.vue'
 import Aksessuaarid from '../views/Aksessuaarid.vue'
+import Jalanoud from '../views/Jalanoud.vue'
 
 
 Vue.use(VueRouter)
@@ -41,6 +42,11 @@ const routes = [
         path: '/aksessuaarid',
         name: 'Aksessuaarid',
         component: Aksessuaarid
+    },
+    {
+        path: '/jalanoud',
+        name: 'Jalanoud',
+        component: Jalanoud
     }
 
 ]
