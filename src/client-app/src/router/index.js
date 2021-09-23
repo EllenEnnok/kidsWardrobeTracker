@@ -8,6 +8,7 @@ import Oueriided from '../views/Oueriided.vue'
 import Aksessuaarid from '../views/Aksessuaarid.vue'
 import Jalanoud from '../views/Jalanoud.vue'
 import Riided from '../views/Riided.vue'
+import Spordiriided from '../views/Spordiriided.vue'
 
 
 Vue.use(VueRouter)
@@ -53,6 +54,11 @@ const routes = [
         path: '/riided',
         name: 'Riided',
         component: Riided
+    },
+    {
+        path: '/spordiriided',
+        name: 'Spordiriided',
+        component: Spordiriided
     }
 
 ]
