@@ -10,6 +10,7 @@ import Jalanoud from '../views/Jalanoud.vue'
 import Riided from '../views/Riided.vue'
 import Spordiriided from '../views/Spordiriided.vue'
 import Filtreeri from '../views/Filtreeri.vue'
+import Filtreerimistulemus from '../views/Filtreerimistulemus.vue'
 
 
 Vue.use(VueRouter)
@@ -65,6 +66,11 @@ const routes = [
         path: '/filtreeri',
         name: 'Filtreeri',
         component: Filtreeri
+    },
+    {
+        path: '/filtreerimistulemus',
+        name: 'Filtreerimistulemus',
+        component: Filtreerimistulemus
     }
 
 ]
