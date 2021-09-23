@@ -13,6 +13,7 @@ import Filtreeri from '../views/Filtreeri.vue'
 import Filtreerimistulemus from '../views/Filtreerimistulemus.vue'
 import Luhikesevarrukagasargid from '../views/Luhikesevarrukagasargid.vue'
 import Pikavarrukagasargid from '../views/Pikavarrukagasargid.vue'
+import Luhikesedpuksid from '../views/Luhikesedpuksid.vue'
 
 
 Vue.use(VueRouter)
@@ -83,6 +84,11 @@ const routes = [
         path: '/pikavarrukagasargid',
         name: 'Pikavarrukagasargid',
         component: Pikavarrukagasargid
+    },
+    {
+        path: '/luhikesedpuksid',
+        name: 'Luhikesedpuksid',
+        component: Luhikesedpuksid
     }
 
 ]
