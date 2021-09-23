@@ -17,8 +17,22 @@ import Luhikesedpuksid from '../views/Luhikesedpuksid.vue'
 import Pikadpuksid from '../views/Pikadpuksid.vue'
 import Aluspesu from '../views/Aluspesu.vue'
 import Sokid from '../views/Sokid.vue'
-
-
+import Bodyd from '../views/Bodyd.vue'
+import Joped from '../views/Joped.vue'
+import Kindad from '../views/Kindad.vue'
+import Kleidid from '../views/Kleidid.vue'
+import Kombekad from '../views/Kombekad.vue'
+import Mutsid from '../views/Mutsid.vue'
+import Muu from '../views/Muu.vue'
+import Ouepuksid from '../views/Ouepuksid.vue'
+import Pusad from '../views/Pusad.vue'
+import Romperid from '../views/Romperid.vue'
+import Sallid from '../views/Sallid.vue'
+import Seelikud from '../views/Seelikud.vue'
+import Sipukad from '../views/Sipukad.vue'
+import Sukapuksid from '../views/Sukapuksid.vue'
+import Tuduriided from '../views/Tuduriided.vue'
+import Ujumisriided from '../views/Ujumisriided.vue'
 
 
 Vue.use(VueRouter)
@@ -109,6 +123,86 @@ const routes = [
         path: '/sokid',
         name: 'Sokid',
         component: Sokid
+    },
+    {
+        path: '/bodyd',
+        name: 'Bodyd',
+        component: Bodyd
+    },
+    {
+        path: '/joped',
+        name: 'Joped',
+        component: Joped
+    },
+    {
+        path: '/kindad',
+        name: 'Kindad',
+        component: Kindad
+    },
+    {
+        path: '/kleidid',
+        name: 'Kleidid',
+        component: Kleidid
+    },
+    {
+        path: '/kombekad',
+        name: 'Kombekad',
+        component: Kombekad
+    },
+    {
+        path: '/mutsid',
+        name: 'Mutsid',
+        component: Mutsid
+    },
+    {
+        path: '/muu',
+        name: 'Muu',
+        component: Muu
+    },
+    {
+        path: '/ouepuksid',
+        name: 'Ouepuksid',
+        component: Ouepuksid
+    },
+    {
+        path: '/pusad',
+        name: 'Pusad',
+        component: Pusad
+    },
+    {
+        path: '/romperid',
+        name: 'Romperid',
+        component: Romperid
+    },
+    {
+        path: '/sallid',
+        name: 'Sallid',
+        component: Sallid
+    },
+    {
+        path: '/seelikud',
+        name: 'Seelikud',
+        component: Seelikud
+    },
+    {
+        path: '/sipukad',
+        name: 'Sipukad',
+        component: Sipukad
+    },
+    {
+        path: '/sukapukaid',
+        name: 'Sukapuksid',
+        component: Sukapuksid
+    },
+    {
+        path: '/tududriided',
+        name: 'Tududriided',
+        component: Tuduriided
+    },
+    {
+        path: '/ujumisriided',
+        name: 'Ujumisriided',
+        component: Ujumisriided
     }
 
 ]
