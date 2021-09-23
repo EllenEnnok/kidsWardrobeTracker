@@ -16,6 +16,7 @@ import Pikavarrukagasargid from '../views/Pikavarrukagasargid.vue'
 import Luhikesedpuksid from '../views/Luhikesedpuksid.vue'
 import Pikadpuksid from '../views/Pikadpuksid.vue'
 import Aluspesu from '../views/Aluspesu.vue'
+import Sokid from '../views/Sokid.vue'
 
 
 
@@ -103,6 +104,11 @@ const routes = [
         path: '/aluspesu',
         name: 'Aluspesu',
         component: Aluspesu
+    },
+    {
+        path: '/sokid',
+        name: 'Sokid',
+        component: Sokid
     }
 
 ]
