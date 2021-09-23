@@ -11,6 +11,7 @@ import Riided from '../views/Riided.vue'
 import Spordiriided from '../views/Spordiriided.vue'
 import Filtreeri from '../views/Filtreeri.vue'
 import Filtreerimistulemus from '../views/Filtreerimistulemus.vue'
+import Luhikesevarrukagasargid from '../views/Luhikesevarrukagasargid.vue'
 
 
 Vue.use(VueRouter)
@@ -71,6 +72,11 @@ const routes = [
         path: '/filtreerimistulemus',
         name: 'Filtreerimistulemus',
         component: Filtreerimistulemus
+    },
+    {
+    path: '/luhikesevarrukagasargid',
+    name: 'Luhikesevarrukagasargid',
+    component: Luhikesevarrukagasargid
     }
 
 ]
