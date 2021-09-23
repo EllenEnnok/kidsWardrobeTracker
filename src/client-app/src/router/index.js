@@ -15,6 +15,8 @@ import Luhikesevarrukagasargid from '../views/Luhikesevarrukagasargid.vue'
 import Pikavarrukagasargid from '../views/Pikavarrukagasargid.vue'
 import Luhikesedpuksid from '../views/Luhikesedpuksid.vue'
 import Pikadpuksid from '../views/Pikadpuksid.vue'
+import Aluspesu from '../views/Aluspesu.vue'
+
 
 
 
@@ -78,9 +80,9 @@ const routes = [
         component: Filtreerimistulemus
     },
     {
-    path: '/luhikesevarrukagasargid',
-    name: 'Luhikesevarrukagasargid',
-    component: Luhikesevarrukagasargid
+        path: '/luhikesevarrukagasargid',
+        name: 'Luhikesevarrukagasargid',
+        component: Luhikesevarrukagasargid
     },
     {
         path: '/pikavarrukagasargid',
@@ -96,6 +98,11 @@ const routes = [
         path: '/pikadpuksid',
         name: 'Pikadpuksid',
         component: Pikadpuksid
+    },
+    {
+        path: '/aluspesu',
+        name: 'Aluspesu',
+        component: Aluspesu
     }
 
 ]
