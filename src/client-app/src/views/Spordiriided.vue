@@ -4,7 +4,8 @@
     <label> Sisesta kappi uus riideese</label>
     <br>
     <br>
-    <button>Lühikese varrukaga särgid</button>
+    <goTo>Lühikese varrukaga särgid</goTo>
+<!--    <button>Lühikese varrukaga särgid</button>-->
     <button>Pika varrukaga särgid</button>
     <button>Lühikesed püksid</button>
     <br>
