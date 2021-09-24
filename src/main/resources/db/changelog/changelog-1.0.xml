@@ -265,65 +265,65 @@
 
     </changeSet>
 
-<changeSet id="2021-09-22 add values to table suurus_jalatsid" author="Ellen Ennok">
-    <sql>
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('16');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('17');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('18');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('19');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('20');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('21');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('22');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('23');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('24');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('25');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('26');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('27');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('28');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('29');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('30');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('31');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('32');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('33');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('34');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('35');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('36');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('37');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('38');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('39');
-        INSERT INTO suurus_jalatsid(suurus)
-        VALUES ('40');
-    </sql>
-</changeSet>
+    <changeSet id="2021-09-22 add values to table suurus_jalatsid" author="Ellen Ennok">
+        <sql>
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('16');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('17');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('18');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('19');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('20');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('21');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('22');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('23');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('24');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('25');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('26');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('27');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('28');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('29');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('30');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('31');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('32');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('33');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('34');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('35');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('36');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('37');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('38');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('39');
+            INSERT INTO suurus_jalatsid(suurus)
+            VALUES ('40');
+        </sql>
+    </changeSet>
 
     <changeSet id="2021-09-22 create table riideese" author="Ellen Ennok">
         <createTable tableName="riideese">
             <column name="id" type="int">
-                    <constraints primaryKey="true"/>
+                <constraints primaryKey="true"/>
             </column>
             <column name="tüüp_id" type="int">
                 <constraints foreignKeyName="fk_riideese_tüüp" references="tüüp(id)"/>
@@ -380,11 +380,53 @@
             <column name="lisainfo" type="text"/>
             <column name="tootja" type="text"/>
             <column name="pilt" type="bytea"/>
-            </createTable>
+        </createTable>
     </changeSet>
     <changeSet id="blabla" author="Ellen">
         <createTable tableName="test">
             <column name="lisainfo" type="text"/>
         </createTable>
     </changeSet>
+    <changeSet id="add autoincrement to id in riideese" author="Ellen Ennok">
+        <addAutoIncrement tableName="riideese" columnName="id"/>
+    </changeSet>
+
+    <changeSet id="2021-09-23 add row jalatsid in kategooria" author="Ellen Ennok">
+        <sql>
+            INSERT INTO kategooria(kategooria)
+            VALUES ('jalatsid');
+        </sql>
+    </changeSet>
+    <changeSet id="remove jalatsid from kategooria" author="Ellen Ennok">
+        <sql>
+            DELETE
+            FROM kategooria
+            WHERE id = 23;
+        </sql>
+
+    </changeSet>
+    <changeSet id="add autoincrement to id in jalatsid" author="Ellen Ennok">
+        <addAutoIncrement tableName="jalatsid" columnName="id"/>
+    </changeSet>
+    <changeSet id="2021-09-23 add row jalatsid in kategooria vol2" author="Ellen Ennok">
+        <sql>
+            INSERT INTO kategooria(kategooria)
+            VALUES ('jalatsid');
+        </sql>
+    </changeSet>
+    <changeSet id="2021-09-24 create table kasutaja" author="Ellen Ennok">
+        <createTable tableName="kasutaja">
+            <column name="kasutajanimi" type="text" >
+                <constraints primaryKey="true" unique="true" nullable="false"/>
+            </column>
+            <column name="parool" type="text">
+            <constraints unique="true" nullable="false"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+
+<changeSet id="2021-09-24 drop table test" author="Ellen Ennok">
+    <dropTable tableName="test"/>
+</changeSet>
 </databaseChangeLog>
