@@ -34,6 +34,8 @@ import Sukapuksid from '../views/Sukapuksid.vue'
 import Tuduriided from '../views/Tuduriided.vue'
 import Ujumisriided from '../views/Ujumisriided.vue'
 import Kapisisulist from '../views/Kapisisulist.vue'
+import Uusriideese from '../views/Uusriideese.vue'
+import Uusjalanou from '../views/Uusjalanou.vue'
 
 
 Vue.use(VueRouter)
@@ -209,6 +211,16 @@ const routes = [
         path: '/kapisisulist',
         name: 'Kapisisulist',
         component: Kapisisulist
+    },
+    {
+        path: '/uusriideese',
+        name: 'Uusriideese',
+        component: Uusriideese
+    },
+    {
+        path: '/uusjalanou',
+        name: 'Uusjalanou',
+        component: Uusjalanou
     }
 
 ]
