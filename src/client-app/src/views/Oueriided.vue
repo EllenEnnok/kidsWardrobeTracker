@@ -1,6 +1,6 @@
 <template>
   <div class="oueriided">
-    <button>+</button>
+    <GoTo title="+" link="/uusriideese"></GoTo>
     <label> Sisesta kappi uus riideese</label>
     <br>
     <br>

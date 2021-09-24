@@ -1,10 +1,10 @@
 <template>
   <div class="kogukapp">
-    <button>+</button>
+    <GoTo title="+" link="/uusriideese"></GoTo>
     <label> Sisesta kappi uus riideese</label>
     <br>
     <br>
-    <button>+</button>
+    <GoTo title="+" link="/uusjalanou"></GoTo>
     <label> Sisesta kappi uus jalanõu</label>
     <h1>Vali kategooria</h1>
     <button>Näita kogu kapi sisu</button>

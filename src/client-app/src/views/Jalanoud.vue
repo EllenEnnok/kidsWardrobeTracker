@@ -1,6 +1,6 @@
 <template>
   <div class="jalanoud">
-    <button>+</button>
+    <GoTo title="+" link="/uusjalanou"></GoTo>
     <label> Sisesta kappi uus jalanõu</label>
     <br>
     <br>
