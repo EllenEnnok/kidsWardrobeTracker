@@ -5,3 +5,13 @@
 <!--    kuvab listi kõikidest lühikestest pükstest-->
   </div>
 </template>
+
+<script>
+import GoTo from '../components/GoTo.vue'
+
+export default {
+  components: {
+    GoTo
+  }
+}
+</script>

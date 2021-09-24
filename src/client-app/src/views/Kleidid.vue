@@ -5,3 +5,13 @@
 <!--    kuvab listi kleitidest-->
   </div>
 </template>
+
+<script>
+import GoTo from '../components/GoTo.vue'
+
+export default {
+  components: {
+    GoTo
+  }
+}
+</script>
