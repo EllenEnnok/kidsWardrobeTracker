@@ -10,7 +10,6 @@
 
     <h1>Pole kontot?</h1>
     <GoTo title="Loo uus konto" link="/uuskonto"></GoTo>
-    <!--        <button @click="goTo">Loo uus konto</button>-->
   </div>
 </template>
 
@@ -37,16 +36,3 @@ export default {
 </script>
 
 
-<!--<script>-->
-<!--export default {-->
-<!--  methods: {-->
-<!--    goTo() {-->
-<!--      return this.$router.push('/uuskonto');-->
-<!--    },-->
-
-<!--    logIn() {-->
-
-<!--    }-->
-<!--  }-->
-<!--}-->
-<!--</script>-->

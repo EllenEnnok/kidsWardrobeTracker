@@ -4,8 +4,18 @@
     <label> Sisesta kappi uus riideese</label>
     <br>
     <br>
-    <button>Kindad</button>
-    <button>Mütsid</button>
-    <button>Sallid</button>
+    <GoTo title="Kindad" link="/kindad"></GoTo>
+    <GoTo title="Mütsid" link="/mutsid"></GoTo>
+    <GoTo title="Sallid" link="/sallid"></GoTo>
   </div>
 </template>
+
+<script>
+import GoTo from '../components/GoTo.vue'
+
+export default {
+  components: {
+    GoTo
+  }
+}
+</script>

@@ -11,11 +11,19 @@
     <button>Näita kõike</button>
     <br>
     <br>
-    <button>Õueriided</button>
-    <button>Riided</button>
-    <button>Aksessuaarid</button>
-    <button>Jalanõud</button>
-    <button>Spordiriided</button>
-
+    <GoTo title="Õueriided" link="/oueriided"></GoTo>
+    <GoTo title="Riided" link="/riided"></GoTo>
+    <GoTo title="Aksessuaarid" link="/aksessuaarid"></GoTo>
+    <GoTo title="Jalanõud" link="/jalanoud"></GoTo>
+    <GoTo title="Spordiriided" link="/spordiriided"></GoTo>
   </div>
 </template>
+<script>
+import GoTo from '../components/GoTo.vue'
+
+export default {
+  components: {
+    GoTo
+  }
+}
+</script>

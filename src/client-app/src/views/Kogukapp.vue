@@ -10,42 +10,51 @@
     <button>Näita kogu kapi sisu</button>
     <br>
     <br>
-    <button>Lühikese varrukaga särgid</button>
-    <button>Pika varrukaga särgid</button>
-    <button>Lühikesed püksid</button>
+    <GoTo title="Lühikese varrukaga särgid" link="/luhikesevarrukagasargid"></GoTo>
+    <GoTo title="Pika varrukaga särgid" link="/pikavarrukagasargid"></GoTo>
+    <GoTo title="Lühikesed püksid" link="/luhikesedpuksid"></GoTo>
     <br>
     <br>
-    <button>Pikad püksid</button>
-    <button>Aluspesu</button>
-    <button>Sokid</button>
+    <GoTo title="Pikad püksid" link="/pikadpuksid"></GoTo>
+    <GoTo title="Aluspesu" link="/aluspesu"></GoTo>
+    <GoTo title="Sokid" link="/sokid"></GoTo>
     <br>
     <br>
-    <button>Sukapüksid</button>
-    <button>Kindad</button>
-    <button>Mütsid</button>
+    <GoTo title="Sukapüksid" link="/sukapuksid"></GoTo>
+    <GoTo title="Kindad" link="/kindad"></GoTo>
+    <GoTo title="Mütsid" link="/mutsid"></GoTo>
     <br>
     <br>
-    <button>Sallid</button>
-    <button>Joped</button>
-    <button>Kombekad</button>
+    <GoTo title="Sallid" link="/sallid"></GoTo>
+    <GoTo title="Joped" link="/joped"></GoTo>
+    <GoTo title="Kombekad" link="/kombekad"></GoTo>
     <br>
     <br>
-    <button>Õuepüksid</button>
-    <button>Seelikud</button>
-    <button>Kleidid</button>
+    <GoTo title="Õuepüksid" link="/ouepuksid"></GoTo>
+    <GoTo title="Seelikud" link="/seelikud"></GoTo>
+    <GoTo title="Kleidid" link="/kleidid"></GoTo>
     <br>
     <br>
-    <button>Romperid</button>
-    <button>Tuduriided</button>
-    <button>Bodyd</button>
+    <GoTo title="Romperid" link="/romperid"></GoTo>
+    <GoTo title="Tuduriided" link="/tuduriided"></GoTo>
+    <GoTo title="Bodyd" link="/bodyd"></GoTo>
     <br>
     <br>
-    <button>Sipukad</button>
-    <button>Ujumisriided</button>
-    <button>Pusad</button>
+    <GoTo title="Sipukad" link="/sipukad"></GoTo>
+    <GoTo title="Ujumisriided" link="/ujumisriided"></GoTo>
+    <GoTo title="Pusad" link="/pusad"></GoTo>
     <br>
     <br>
-    <button>Muu</button>
-
+    <GoTo title="Muu" link="/muu"></GoTo>
   </div>
 </template>
+
+<script>
+import GoTo from '../components/GoTo.vue'
+
+export default {
+  components: {
+    GoTo
+  }
+}
+</script>
