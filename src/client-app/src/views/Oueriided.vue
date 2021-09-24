@@ -1,7 +1,7 @@
 <template>
   <div class="oueriided">
     <GoTo title="+" link="/uusriideese"></GoTo>
-    <label> Sisesta kappi uus riideese</label>
+    <label> Sisesta kappi uued õueriided</label>
     <br>
     <br>
     <GoTo title="Joped" link="/joped"></GoTo>

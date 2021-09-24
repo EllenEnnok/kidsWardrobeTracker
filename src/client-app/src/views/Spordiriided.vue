@@ -1,7 +1,7 @@
 <template>
   <div class="spordiriided">
     <GoTo title="+" link="/uusriideese"></GoTo>
-    <label> Sisesta kappi uus riideese</label>
+    <label> Sisesta kappi uued spordiriided</label>
     <br>
     <br>
     <goTo title="Lühikese varrukaga särgid" link="/luhikesevarrukagasargid"></goTo>
