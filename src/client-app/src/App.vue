@@ -1,3 +1,4 @@
+
 <template>
   <div id="app" class="container">
     <div id="nav">
@@ -31,3 +32,4 @@
   color: #42b983;
 }
 </style>
+
