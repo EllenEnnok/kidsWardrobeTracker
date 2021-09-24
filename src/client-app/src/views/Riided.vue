@@ -29,6 +29,12 @@
     <GoTo title="Pusad" link="/pusad"></GoTo>
     <br>
     <br>
+    <GoTo title="Kindad" link="/kindad"></GoTo>
+    <GoTo title="Mütsid" link="/mutsid"></GoTo>
+    <GoTo title="Sallid" link="/sallid"></GoTo>
+    <br>
+    <br>
+    <GoTo title="Jalanõud" link="/jalanoud"></GoTo>
     <GoTo title="Muu" link="/muu"></GoTo>
   </div>
 </template>

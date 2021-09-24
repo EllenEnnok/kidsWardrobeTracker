@@ -36,7 +36,7 @@ import Ujumisriided from '../views/Ujumisriided.vue'
 import Kapisisulist from '../views/Kapisisulist.vue'
 import Uusriideese from '../views/Uusriideese.vue'
 import Uusjalanou from '../views/Uusjalanou.vue'
-import Koikkategooriad from "../views/Koikkategooriad";
+
 
 
 Vue.use(VueRouter)
@@ -222,13 +222,7 @@ const routes = [
         path: '/uusjalanou',
         name: 'Uusjalanou',
         component: Uusjalanou
-    },
-    {
-        path: '/koikkategooriad',
-        name: 'Koikkategooriad',
-        component: Koikkategooriad
     }
-
 ]
 
 const router = new VueRouter({

@@ -8,7 +8,7 @@
     <label> Sisesta kappi uus jalanõu</label>
     <h1>Vali kategooria</h1>
     <br>
-    <GoTo title="Näita kõike" link="/koikkategooriad"></GoTo>
+    <GoTo title="Näita kõike" link="/kogukapp"></GoTo>
     <br>
     <br>
     <GoTo title="Õueriided" link="/oueriided"></GoTo>
