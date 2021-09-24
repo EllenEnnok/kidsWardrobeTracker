@@ -14,7 +14,7 @@
     <GoTo title="Sokid" link="/sokid"></GoTo>
     <br>
     <br>
-    <GoTo title="Sukapüksid" link="/sukapuksid"></GoTo>
+    <GoTo title="Sukapüksid" link="/sukakad"></GoTo>
     <GoTo title="Seelikud" link="/seelikud"></GoTo>
     <GoTo title="Kleidid" link="/kleidid"></GoTo>
     <br>

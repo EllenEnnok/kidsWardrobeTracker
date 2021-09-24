@@ -30,7 +30,7 @@ import Romperid from '../views/Romperid.vue'
 import Sallid from '../views/Sallid.vue'
 import Seelikud from '../views/Seelikud.vue'
 import Sipukad from '../views/Sipukad.vue'
-import Sukapuksid from '../views/Sukapuksid.vue'
+import Sukakad from '../views/Sukakad.vue'
 import Tuduriided from '../views/Tuduriided.vue'
 import Ujumisriided from '../views/Ujumisriided.vue'
 import Kapisisulist from '../views/Kapisisulist.vue'
@@ -194,9 +194,9 @@ const routes = [
         component: Sipukad
     },
     {
-        path: '/sukapukaid',
-        name: 'Sukapuksid',
-        component: Sukapuksid
+        path: '/sukakad',
+        name: 'Sukakad',
+        component: Sukakad
     },
     {
         path: '/tududriided',

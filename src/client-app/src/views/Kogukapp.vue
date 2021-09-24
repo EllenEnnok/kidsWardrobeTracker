@@ -20,7 +20,7 @@
     <GoTo title="Sokid" link="/sokid"></GoTo>
     <br>
     <br>
-    <GoTo title="Sukapüksid" link="/sukapuksid"></GoTo>
+    <GoTo title="Sukapüksid" link="/sukakad"></GoTo>
     <GoTo title="Kindad" link="/kindad"></GoTo>
     <GoTo title="Mütsid" link="/mutsid"></GoTo>
     <br>
