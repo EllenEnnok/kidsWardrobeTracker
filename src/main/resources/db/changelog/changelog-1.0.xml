@@ -429,4 +429,7 @@
 <changeSet id="2021-09-24 drop table test" author="Ellen Ennok">
     <dropTable tableName="test"/>
 </changeSet>
+    <changeSet id="2021-09-24 DELETE column suurus_jalatsid in riideese" author="EllenEnnok">
+        <dropColumn tableName="riideese" columnName="suurus_jalatsid_id"/>
+    </changeSet>
 </databaseChangeLog>

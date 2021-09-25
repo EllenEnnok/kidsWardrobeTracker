@@ -125,5 +125,8 @@ public class KidsWardrobeService {
         }
     }
 
+    public void kustutaEse(KustutaEseDto kustutaEseDto) {
+        kidsWardrobeRepository.kustutaEse(kustutaEseDto);
+    }
 
 }

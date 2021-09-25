@@ -69,5 +69,16 @@ public class KidsWardrobeController {
     }
 
 
+    @DeleteMapping("/riidekapp/kustutaEse")
+    public void kustutaEse(@RequestParam(required = false) Integer jalatsidId,
+                           @RequestParam(required = false) Integer riidedId) {
+        KustutaEseDto kustutaEseDto = new KustutaEseDto();
+        kustutaEseDto.setJalatsidId(jalatsidId);
+        kustutaEseDto.setRiidedId(riidedId);
+        kidsWardrobeService.kustutaEse(kustutaEseDto);
+    }
+
+
+
 }
 

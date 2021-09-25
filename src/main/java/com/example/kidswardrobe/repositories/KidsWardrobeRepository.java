@@ -7,9 +7,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import com.example.kidswardrobe.services.KidsWardrobeService;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
 import java.util.List;
+
 import java.util.Map;
 
 @Repository
@@ -46,7 +48,12 @@ public class KidsWardrobeRepository {
                 "LEFT JOIN kategooria ON riideese.kategooria_id = kategooria.id " +
                 "WHERE 1 = 1 ";
 
-        return addFilterValueToSql(sql, filter);
+        HashMap<String, Object> map = new HashMap<>();
+
+        sql = createSqlForRiided(sql, map, filter);
+
+        List<EsemeKuvaDto> vastus = JdbcTemplate.query(sql, map, new KidsWardrobeService.EsemeKuvaDtoRowMapper());
+        return vastus;
     }
 
 
@@ -62,24 +69,65 @@ public class KidsWardrobeRepository {
                 "LEFT JOIN kategooria ON jalatsid.kategooria_id = kategooria.id " +
                 "WHERE 1 = 1 ";
 
-        return addFilterValueToSql(sql, filter);
-    }
+        HashMap<String, Object> map = new HashMap<>();
 
+        sql = createSqlForJalatsid(sql, map, filter);
 
-    public List<EsemeKuvaDto> addFilterValueToSql(String sql, EsemeFilterDto filter) {
-
-        Map<String, Object> map = new HashMap<>();
-        if (filter.getHooaeg() != null) {
-            sql = sql + " AND hooaeg_id = :hooaegId";
-            map.put("hooaegId", filter.getHooaeg());
-        }
-
-        if (filter.getKategooria() != null) {
-            sql = sql + " AND kategooria_id = :kategooriaId";
-            map.put("kategooriaId", filter.getKategooria());
-        }
         List<EsemeKuvaDto> vastus = JdbcTemplate.query(sql, map, new KidsWardrobeService.EsemeKuvaDtoRowMapper());
         return vastus;
+    }
+
+    public String createSqlForRiided(String sql, HashMap<String, Object> paramMap, EsemeFilterDto filter) {
+        sql = createSqlFromFilter(sql, paramMap, filter);
+        if (filter.getSuurusRiided() != null ) {
+            sql = sql + " AND suurus_riided_id = :suurusRiidedId ";
+            paramMap.put("suurusRiidedId", filter.getSuurusRiided());
+        }
+
+        return sql;
+    }
+
+    public String createSqlForJalatsid(String sql, HashMap<String, Object> paramMap, EsemeFilterDto filter) {
+        sql = createSqlFromFilter(sql, paramMap, filter);
+        if (filter.getSuurusJalatsid() != null ) {
+            sql = sql + " AND suurus_jalatsid_id = :suurusJalatsidId ";
+            paramMap.put("suurusJalatsidId", filter.getSuurusJalatsid());
+        }
+
+        return sql;
+    }
+
+    public String createSqlFromFilter(String sql, HashMap<String, Object> paramMap, EsemeFilterDto filter) {
+        if (filter.getHooaeg() != null) {
+            sql = sql + " AND hooaeg_id = :hooaegId";
+            paramMap.put("hooaegId", filter.getHooaeg());
+        }
+        if (filter.getKategooria() != null) {
+            sql = sql + " AND kategooria_id = :kategooriaId";
+            paramMap.put("kategooriaId", filter.getKategooria());
+        }
+        if (filter.getAsukoht() != null) {
+            sql = sql + " AND asukoht_id = :asukohtId";
+            paramMap.put("asukohtId", filter.getAsukoht());
+        }
+        if (filter.getSugu() != null) {
+            sql = sql + " AND sugu_id = :suguId";
+            paramMap.put("suguId", filter.getSugu());
+        }
+        if (filter.getMaterjal() != null) {
+            sql = sql + " AND materjal_id = :materjalId";
+            paramMap.put("materjalId", filter.getMaterjal());
+        }
+        if (filter.getTyyp() != null ) {
+            sql = sql + " AND tüüp_id = :tyypId";
+            paramMap.put("tyypId", filter.getTyyp());
+        }
+        if (filter.getVarv() != null ) {
+            sql = sql + " AND värv_id = :varvId";
+            paramMap.put("varvId", filter.getVarv());
+        }
+
+        return sql;
     }
 
 
@@ -119,5 +167,22 @@ public class KidsWardrobeRepository {
 
         JdbcTemplate.update(sql, new MapSqlParameterSource(paramMap));
 
+    }
+
+    public void kustutaEse(KustutaEseDto kustutaEseDto) {
+
+
+        if (kustutaEseDto.getRiidedId() != null) {
+            String sql = "DELETE FROM riideese WHERE id = :riidedId";
+            Map<String, Object> paramMap = new HashMap<>();
+            paramMap.put("riidedId", kustutaEseDto.getRiidedId());
+            JdbcTemplate.update(sql, new MapSqlParameterSource(paramMap));
+        }
+        if (kustutaEseDto.getJalatsidId() != null) {
+            String sql = "DELETE FROM jalatsid WHERE id = :jalatsidId";
+            Map<String, Object> paramMap = new HashMap<>();
+            paramMap.put("jalatsidId", kustutaEseDto.getJalatsidId());
+            JdbcTemplate.update(sql, new MapSqlParameterSource(paramMap));
+        }
     }
 }
