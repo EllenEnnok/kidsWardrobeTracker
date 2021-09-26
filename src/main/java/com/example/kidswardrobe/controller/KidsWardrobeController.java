@@ -26,38 +26,25 @@ public class KidsWardrobeController {
             @RequestParam(required = false) Integer varvId
     ) {
         EsemeFilterDto filter = new EsemeFilterDto();
-        filter.setHooaeg(hooaegId);
-        filter.setKategooria(kategooriaId);
-        filter.setAsukoht(asukohtId);
-        filter.setMaterjal(materjalId);
-        filter.setSugu(suguId);
-        filter.setSuurusJalatsid(suurusJalatsidId);
-        filter.setSuurusRiided(suurusRiidedId);
-        filter.setTyyp(tyypId);
-        filter.setVarv(varvId);
+        filter.setHooaegId(hooaegId);
+        filter.setKategooriaId(kategooriaId);
+        filter.setAsukohtId(asukohtId);
+        filter.setMaterjalId(materjalId);
+        filter.setSuguId(suguId);
+        filter.setSuurusJalatsidId(suurusJalatsidId);
+        filter.setSuurusRiidedId(suurusRiidedId);
+        filter.setTyypId(tyypId);
+        filter.setVarvId(varvId);
 
        return kidsWardrobeService.kuvaKoguKapp(filter);
     }
 
-    @GetMapping("/riidekapp/kuvaKoikRiided")        //kuvab koik riideesemed (id, suurus, kategooria, pilt)
-    public List<EsemeKuvaDto> kuvariided() {
-        return kidsWardrobeService.kuvariided(new EsemeFilterDto());
-    }
 
-    @GetMapping("/riidekapp/kuvaKoikJalatsid")      //kuvab k6ik jalatsid (id, suurus, kategooria, pilt)
-    public List<EsemeKuvaDto> kuvaJalatsid() {
-        return kidsWardrobeService.kuvaJalatsid(new EsemeFilterDto());
-    }
+    @PostMapping("/riidekapp/lisaEseKappi")
+    public void lisaEseKappi(@RequestBody LisaEseDto lisaEseDto) {
+        kidsWardrobeService.lisaEseKappi(lisaEseDto);
 
-    @PostMapping("/riidekapp/lisaRiietusKappi")     // lisab riietuse riideeseme tabelisse (vali 1 v mitu sisendit, id on autoincr.)
-    public void lisaRiietusKappi(@RequestBody LisaRiietusDto lisaRiietusDto) {
-        kidsWardrobeService.lisaRiietusKappi(lisaRiietusDto);
     }
-    @PostMapping("/riidekapp/lisaJalatsidKappi")    // lisab jalatsi jalatsi tabelisse (vali 1 v mitu sisendit, id on autoincr.)
-    public void lisaJalatsidKappi(@RequestBody LisaJalatsDto lisaJalatsDto) {
-        kidsWardrobeService.lisaJalatsidKappi(lisaJalatsDto);
-    }
-
     @GetMapping("/riidekapp/logiSisse")
     public String logiSisse(@RequestBody LoginDto loginDto) {
         return kidsWardrobeService.logiSisse(loginDto);
@@ -70,13 +57,24 @@ public class KidsWardrobeController {
 
 
     @DeleteMapping("/riidekapp/kustutaEse")
-    public void kustutaEse(@RequestParam(required = false) Integer jalatsidId,
-                           @RequestParam(required = false) Integer riidedId) {
+    public void kustutaEse(@RequestParam Integer esemeId) {
         KustutaEseDto kustutaEseDto = new KustutaEseDto();
-        kustutaEseDto.setJalatsidId(jalatsidId);
-        kustutaEseDto.setRiidedId(riidedId);
+        kustutaEseDto.setEsemeId(esemeId);
         kidsWardrobeService.kustutaEse(kustutaEseDto);
     }
+
+    @PostMapping("/riidekapp/lisaAsukoht")
+    public void lisaAsukoht(@RequestBody LisaAsukohtDto lisaAsukohtDto) {
+        kidsWardrobeService.lisaAsukoht(lisaAsukohtDto);
+    }
+
+    @GetMapping("/riidekapp/kuvaEsemeDetailid")
+    public EsemeDetailidDto kuvaEsemeDetailid(@RequestParam Integer esemeId){
+        return kidsWardrobeService.kuvaEsemeDetailid(esemeId);
+    }
+
+
+
 
 
 

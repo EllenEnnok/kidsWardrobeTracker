@@ -1,85 +1,100 @@
 package com.example.kidswardrobe.dto;
 
 public class EsemeFilterDto {
-    private Integer hooaeg;
-    private Integer kategooria;
-    private Integer asukoht;
-    private Integer materjal;
-    private Integer sugu;
-    private Integer suurusJalatsid;
-    private Integer suurusRiided;
-    private Integer tyyp;
-    private Integer varv;
+    private Integer hooaegId;
+    private Integer kategooriaId;
+    private Integer asukohtId;
+    private Integer materjalId;
+    private Integer suguId;
+    private Integer suurusJalatsidId;
+    private Integer suurusRiidedId;
+    private Integer tyypId;
+    private Integer varvId;
 
-    public Integer getAsukoht() {
-        return asukoht;
+    public EsemeFilterDto() {
     }
 
-    public void setAsukoht(Integer asukoht) {
-        this.asukoht = asukoht;
+    public Integer getHooaegId() {
+        return hooaegId;
     }
 
-    public Integer getMaterjal() {
-        return materjal;
+    public void setHooaegId(Integer hooaegId) {
+        this.hooaegId = hooaegId;
     }
 
-    public void setMaterjal(Integer materjal) {
-        this.materjal = materjal;
+    public Integer getKategooriaId() {
+        return kategooriaId;
     }
 
-    public Integer getSugu() {
-        return sugu;
+    public void setKategooriaId(Integer kategooriaId) {
+        this.kategooriaId = kategooriaId;
     }
 
-    public void setSugu(Integer sugu) {
-        this.sugu = sugu;
+    public Integer getAsukohtId() {
+        return asukohtId;
     }
 
-    public Integer getSuurusJalatsid() {
-        return suurusJalatsid;
+    public void setAsukohtId(Integer asukohtId) {
+        this.asukohtId = asukohtId;
     }
 
-    public void setSuurusJalatsid(Integer suurusJalatsid) {
-        this.suurusJalatsid = suurusJalatsid;
+    public Integer getMaterjalId() {
+        return materjalId;
     }
 
-    public Integer getSuurusRiided() {
-        return suurusRiided;
+    public void setMaterjalId(Integer materjalId) {
+        this.materjalId = materjalId;
     }
 
-    public void setSuurusRiided(Integer suurusRiided) {
-        this.suurusRiided = suurusRiided;
+    public Integer getSuguId() {
+        return suguId;
     }
 
-    public Integer getTyyp() {
-        return tyyp;
+    public void setSuguId(Integer suguId) {
+        this.suguId = suguId;
     }
 
-    public void setTyyp(Integer tyyp) {
-        this.tyyp = tyyp;
+    public Integer getSuurusJalatsidId() {
+        return suurusJalatsidId;
     }
 
-    public Integer getVarv() {
-        return varv;
+    public void setSuurusJalatsidId(Integer suurusJalatsidId) {
+        this.suurusJalatsidId = suurusJalatsidId;
     }
 
-    public void setVarv(Integer varv) {
-        this.varv = varv;
+    public Integer getSuurusRiidedId() {
+        return suurusRiidedId;
     }
 
-    public Integer getHooaeg() {
-        return hooaeg;
+    public void setSuurusRiidedId(Integer suurusRiidedId) {
+        this.suurusRiidedId = suurusRiidedId;
     }
 
-    public void setHooaeg(Integer hooaeg) {
-        this.hooaeg = hooaeg;
+    public Integer getTyypId() {
+        return tyypId;
     }
 
-    public Integer getKategooria() {
-        return kategooria;
+    public void setTyypId(Integer tyypId) {
+        this.tyypId = tyypId;
     }
 
-    public void setKategooria(Integer kategooria) {
-        this.kategooria = kategooria;
+    public Integer getVarvId() {
+        return varvId;
+    }
+
+    public void setVarvId(Integer varvId) {
+        this.varvId = varvId;
+    }
+
+    public EsemeFilterDto(Integer hooaegId, Integer kategooriaId, Integer asukohtId, Integer materjalId, Integer suguId, Integer suurusJalatsidId, Integer suurusRiidedId, Integer tyypId, Integer varvId) {
+        this.hooaegId = hooaegId;
+        this.kategooriaId = kategooriaId;
+        this.asukohtId = asukohtId;
+        this.materjalId = materjalId;
+        this.suguId = suguId;
+        this.suurusJalatsidId = suurusJalatsidId;
+        this.suurusRiidedId = suurusRiidedId;
+        this.tyypId = tyypId;
+        this.varvId = varvId;
     }
 }

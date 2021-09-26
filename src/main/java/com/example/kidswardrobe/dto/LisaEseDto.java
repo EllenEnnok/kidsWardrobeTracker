@@ -2,10 +2,11 @@ package com.example.kidswardrobe.dto;
 
 import java.sql.Blob;
 
-public class LisaRiietusDto {
+public class LisaEseDto {
     private Integer tyyp;
     private Integer hooaeg;
     private Integer riideSuurus;
+    private Integer jalatsiSuurus;
     private Integer varv;
     private Integer sugu;
     private Integer materjal;
@@ -14,20 +15,6 @@ public class LisaRiietusDto {
     private String lisainfo;
     private String tootja;
     Blob pilt;
-
-    public LisaRiietusDto(Integer tyyp, Integer hooaeg, Integer riideSuurus, Integer asukoht, Integer varv, Integer sugu, Integer materjal, Integer kategooria, String lisainfo, String tootja, Blob pilt) {
-        this.tyyp = tyyp;
-        this.hooaeg = hooaeg;
-        this.riideSuurus = riideSuurus;
-        this.varv = varv;
-        this.sugu = sugu;
-        this.materjal = materjal;
-        this.asukoht = asukoht;
-        this.kategooria = kategooria;
-        this.lisainfo = lisainfo;
-        this.tootja = tootja;
-        this.pilt = pilt;
-    }
 
     public Integer getTyyp() {
         return tyyp;
@@ -53,7 +40,13 @@ public class LisaRiietusDto {
         this.riideSuurus = riideSuurus;
     }
 
+    public Integer getJalatsiSuurus() {
+        return jalatsiSuurus;
+    }
 
+    public void setJalatsiSuurus(Integer jalatsiSuurus) {
+        this.jalatsiSuurus = jalatsiSuurus;
+    }
 
     public Integer getVarv() {
         return varv;
@@ -116,6 +109,24 @@ public class LisaRiietusDto {
     }
 
     public void setPilt(Blob pilt) {
+        this.pilt = pilt;
+    }
+
+    public LisaEseDto() {
+    }
+
+    public LisaEseDto(Integer tyyp, Integer hooaeg, Integer riideSuurus, Integer jalatsiSuurus, Integer varv, Integer sugu, Integer materjal, Integer asukoht, Integer kategooria, String lisainfo, String tootja, Blob pilt) {
+        this.tyyp = tyyp;
+        this.hooaeg = hooaeg;
+        this.riideSuurus = riideSuurus;
+        this.jalatsiSuurus = jalatsiSuurus;
+        this.varv = varv;
+        this.sugu = sugu;
+        this.materjal = materjal;
+        this.asukoht = asukoht;
+        this.kategooria = kategooria;
+        this.lisainfo = lisainfo;
+        this.tootja = tootja;
         this.pilt = pilt;
     }
 }

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import com.example.kidswardrobe.services.KidsWardrobeService;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
 import java.util.List;
@@ -37,152 +36,140 @@ public class KidsWardrobeRepository {
 
         JdbcTemplate.update(sql, new MapSqlParameterSource(paramMap));
     }
-    public List<EsemeKuvaDto> kuvariided(EsemeFilterDto filter) {
+
+    public List<EsemeKuvaDto> kuvaRiided(EsemeFilterDto filter) {
         String sql = "SELECT " +
-                "riideese.id as id," +
-                "suuruse_vahemik as suurus," +
+                "esemed.id as id," +
+                "COALESCE(suurus_riided.suuruse_vahemik, cast(suurus_jalatsid.suurus as varchar)) as suurus," +
                 "kategooria," +
                 "pilt" +
-                " FROM riideese " +
-                "LEFT JOIN suurus_riided ON riideese.suurus_riided_id = suurus_riided.id " +
-                "LEFT JOIN kategooria ON riideese.kategooria_id = kategooria.id " +
+                " FROM esemed " +
+                "LEFT JOIN suurus_riided ON esemed.suurus_riided_id = suurus_riided.id " +
+                "LEFT JOIN suurus_jalatsid ON esemed.suurus_jalatsid_id = suurus_jalatsid.id " +
+                "LEFT JOIN kategooria ON esemed.kategooria_id = kategooria.id "+
                 "WHERE 1 = 1 ";
 
-        HashMap<String, Object> map = new HashMap<>();
 
-        sql = createSqlForRiided(sql, map, filter);
+        HashMap<String, Object> paramMap = new HashMap<>();
 
-        List<EsemeKuvaDto> vastus = JdbcTemplate.query(sql, map, new KidsWardrobeService.EsemeKuvaDtoRowMapper());
+        sql = createSqlFromFilter(sql, paramMap, filter);
+
+        List<EsemeKuvaDto> vastus = JdbcTemplate.query(sql, paramMap, new KidsWardrobeService.EsemeKuvaDtoRowMapper());
         return vastus;
     }
 
-
-    public List<EsemeKuvaDto> kuvaJalatsid(EsemeFilterDto filter) {
-
-        String sql = "SELECT" +
-                " jalatsid.id," +
-                "suurus," +
-                "kategooria," +
-                "pilt" +
-                " FROM jalatsid " +
-                "LEFT JOIN suurus_jalatsid ON jalatsid.suurus_jalatsid_id = suurus_jalatsid.id " +
-                "LEFT JOIN kategooria ON jalatsid.kategooria_id = kategooria.id " +
-                "WHERE 1 = 1 ";
-
-        HashMap<String, Object> map = new HashMap<>();
-
-        sql = createSqlForJalatsid(sql, map, filter);
-
-        List<EsemeKuvaDto> vastus = JdbcTemplate.query(sql, map, new KidsWardrobeService.EsemeKuvaDtoRowMapper());
-        return vastus;
-    }
-
-    public String createSqlForRiided(String sql, HashMap<String, Object> paramMap, EsemeFilterDto filter) {
-        sql = createSqlFromFilter(sql, paramMap, filter);
-        if (filter.getSuurusRiided() != null ) {
-            sql = sql + " AND suurus_riided_id = :suurusRiidedId ";
-            paramMap.put("suurusRiidedId", filter.getSuurusRiided());
-        }
-
-        return sql;
-    }
-
-    public String createSqlForJalatsid(String sql, HashMap<String, Object> paramMap, EsemeFilterDto filter) {
-        sql = createSqlFromFilter(sql, paramMap, filter);
-        if (filter.getSuurusJalatsid() != null ) {
-            sql = sql + " AND suurus_jalatsid_id = :suurusJalatsidId ";
-            paramMap.put("suurusJalatsidId", filter.getSuurusJalatsid());
-        }
-
-        return sql;
-    }
 
     public String createSqlFromFilter(String sql, HashMap<String, Object> paramMap, EsemeFilterDto filter) {
-        if (filter.getHooaeg() != null) {
+        if (filter.getHooaegId() != null) {
             sql = sql + " AND hooaeg_id = :hooaegId";
-            paramMap.put("hooaegId", filter.getHooaeg());
+            paramMap.put("hooaegId", filter.getHooaegId());
         }
-        if (filter.getKategooria() != null) {
+        if (filter.getKategooriaId() != null) {
             sql = sql + " AND kategooria_id = :kategooriaId";
-            paramMap.put("kategooriaId", filter.getKategooria());
+            paramMap.put("kategooriaId", filter.getKategooriaId());
         }
-        if (filter.getAsukoht() != null) {
+        if (filter.getAsukohtId() != null) {
             sql = sql + " AND asukoht_id = :asukohtId";
-            paramMap.put("asukohtId", filter.getAsukoht());
+            paramMap.put("asukohtId", filter.getAsukohtId());
         }
-        if (filter.getSugu() != null) {
+        if (filter.getSuguId() != null) {
             sql = sql + " AND sugu_id = :suguId";
-            paramMap.put("suguId", filter.getSugu());
+            paramMap.put("suguId", filter.getSuguId());
         }
-        if (filter.getMaterjal() != null) {
+        if (filter.getMaterjalId() != null) {
             sql = sql + " AND materjal_id = :materjalId";
-            paramMap.put("materjalId", filter.getMaterjal());
+            paramMap.put("materjalId", filter.getMaterjalId());
         }
-        if (filter.getTyyp() != null ) {
+        if (filter.getTyypId() != null ) {
             sql = sql + " AND tüüp_id = :tyypId";
-            paramMap.put("tyypId", filter.getTyyp());
+            paramMap.put("tyypId", filter.getTyypId());
         }
-        if (filter.getVarv() != null ) {
+        if (filter.getVarvId() != null ) {
             sql = sql + " AND värv_id = :varvId";
-            paramMap.put("varvId", filter.getVarv());
+            paramMap.put("varvId", filter.getVarvId());
+        }
+        if (filter.getSuurusRiidedId() != null ) {
+            sql = sql + " AND suurus_riided_id = :suurusRiidedId";
+            paramMap.put("suurusRiidedId", filter.getSuurusRiidedId());
+        }
+        if (filter.getSuurusJalatsidId() != null ) {
+            sql = sql + " AND suurus_jalatsid_id = :suurusJalatsidId";
+            paramMap.put("suurusJalatsidId", filter.getSuurusJalatsidId());
         }
 
         return sql;
     }
 
-
-    public void lisaRiietusKappi(LisaRiietusDto lisaRiietusDto) {
-        String sql = "INSERT INTO riideese (tüüp_id, hooaeg_id, suurus_riided_id, värv_id," +
+    public void lisaEseKappi(LisaEseDto lisaEseDto) {
+        String sql = "INSERT INTO esemed (tüüp_id, hooaeg_id, suurus_riided_id, suurus_jalatsid_id, värv_id," +
                 " sugu_id, materjal_id, kategooria_id, lisainfo, tootja, asukoht_id)" +
-                " VALUES (:tyyp, :hooaeg, :riideSuurus, :värv, :sugu, :materjal, :kategooria, :lisainfo, :tootja, :asukoht)";
+                " VALUES (:tyyp, :hooaeg, :riideSuurus, :jalatsiSuurus, :värv, :sugu, :materjal, :kategooria, :lisainfo, :tootja, :asukoht)";
         Map<String, Object> paramMap = new HashMap<>();
-        paramMap.put("tyyp", lisaRiietusDto.getTyyp());
-        paramMap.put("hooaeg", lisaRiietusDto.getHooaeg());
-        paramMap.put("riideSuurus", lisaRiietusDto.getRiideSuurus());
-        paramMap.put("värv", lisaRiietusDto.getVarv());
-        paramMap.put("sugu", lisaRiietusDto.getSugu());
-        paramMap.put("materjal", lisaRiietusDto.getMaterjal());
-        paramMap.put("kategooria", lisaRiietusDto.getKategooria());
-        paramMap.put("lisainfo", lisaRiietusDto.getLisainfo());
-        paramMap.put("tootja", lisaRiietusDto.getTootja());
-        paramMap.put("asukoht", lisaRiietusDto.getAsukoht());
-        paramMap.put("pilt", lisaRiietusDto.getPilt());
+        paramMap.put("tyyp", lisaEseDto.getTyyp());
+        paramMap.put("hooaeg", lisaEseDto.getHooaeg());
+        paramMap.put("riideSuurus", lisaEseDto.getRiideSuurus());
+        paramMap.put("jalatsiSuurus", lisaEseDto.getJalatsiSuurus());
+        paramMap.put("värv", lisaEseDto.getVarv());
+        paramMap.put("sugu", lisaEseDto.getSugu());
+        paramMap.put("materjal", lisaEseDto.getMaterjal());
+        paramMap.put("kategooria", lisaEseDto.getKategooria());
+        paramMap.put("lisainfo", lisaEseDto.getLisainfo());
+        paramMap.put("tootja", lisaEseDto.getTootja());
+        paramMap.put("asukoht", lisaEseDto.getAsukoht());
+        paramMap.put("pilt", lisaEseDto.getPilt());
 
         JdbcTemplate.update(sql, new MapSqlParameterSource(paramMap));
 
     }
 
-    public void lisaJalatsidKappi(LisaJalatsDto lisaJalatsDto) {
-        String sql = "INSERT INTO jalatsid (suurus_jalatsid_id, hooaeg_id, kategooria_id, sugu_id, värv_id, lisainfo, tootja, pilt)" +
-                "VALUES (:jalatsiSuurus, :hooaeg, :kategooria, :sugu, :värv, :lisainfo, :tootja, :pilt)";
-        Map<String, Object> paramMap = new HashMap<>();
-        paramMap.put("jalatsiSuurus", lisaJalatsDto.getSuurusJalatsid());
-        paramMap.put("hooaeg", lisaJalatsDto.getHooaeg());
-        paramMap.put("kategooria", lisaJalatsDto.getKategooria());
-        paramMap.put("sugu", lisaJalatsDto.getSugu());
-        paramMap.put("värv", lisaJalatsDto.getVarv());
-        paramMap.put("lisainfo", lisaJalatsDto.getLisainfo());
-        paramMap.put("tootja", lisaJalatsDto.getTootja());
-        paramMap.put("pilt", lisaJalatsDto.getPilt());
-
-        JdbcTemplate.update(sql, new MapSqlParameterSource(paramMap));
-
-    }
 
     public void kustutaEse(KustutaEseDto kustutaEseDto) {
 
+        String sql = "DELETE FROM esemed WHERE id = :esemeId";
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("esemeId", kustutaEseDto.getEsemeId());
+        JdbcTemplate.update(sql, new MapSqlParameterSource(paramMap));
 
-        if (kustutaEseDto.getRiidedId() != null) {
-            String sql = "DELETE FROM riideese WHERE id = :riidedId";
-            Map<String, Object> paramMap = new HashMap<>();
-            paramMap.put("riidedId", kustutaEseDto.getRiidedId());
-            JdbcTemplate.update(sql, new MapSqlParameterSource(paramMap));
-        }
-        if (kustutaEseDto.getJalatsidId() != null) {
-            String sql = "DELETE FROM jalatsid WHERE id = :jalatsidId";
-            Map<String, Object> paramMap = new HashMap<>();
-            paramMap.put("jalatsidId", kustutaEseDto.getJalatsidId());
-            JdbcTemplate.update(sql, new MapSqlParameterSource(paramMap));
-        }
+    }
+
+    public void lisaAsukoht(LisaAsukohtDto lisaAsukohtDto) {
+        String sql = "INSERT INTO asukoht (asukoht)" +
+                "VALUES (:asukoht) ";
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("asukoht", lisaAsukohtDto.getAsukoht());
+        JdbcTemplate.update(sql, new MapSqlParameterSource(paramMap));
+    }
+
+    public EsemeDetailidDto kuvaEsemeDetailid(Integer esemeId){
+        String sql = "SELECT " +
+                "esemed.id as id, "+
+                " COALESCE(suurus_riided.suuruse_vahemik, cast(suurus_jalatsid.suurus as varchar)) as suurus," +
+                " kategooria," +
+                " tüüp.nimetus as tüüp," +
+                " hooaeg," +
+                " värv," +
+                " sugu," +
+                " materjal," +
+                " asukoht," +
+                " lisainfo," +
+                " tootja," +
+                " pilt" +
+                " FROM esemed " +
+                " LEFT JOIN suurus_riided ON esemed.suurus_riided_id = suurus_riided.id " +
+                " LEFT JOIN suurus_jalatsid ON esemed.suurus_jalatsid_id = suurus_jalatsid.id " +
+                " LEFT JOIN asukoht ON esemed.asukoht_id = asukoht.id " +
+                " LEFT JOIN hooaeg ON esemed.hooaeg_id = hooaeg.id " +
+                " LEFT JOIN materjal ON esemed.materjal_id = materjal.id " +
+                " LEFT JOIN sugu ON esemed.sugu_id = sugu.id " +
+                " LEFT JOIN tüüp ON esemed.tüüp_id = tüüp.id " +
+                " LEFT JOIN värv ON esemed.värv_id = värv.id " +
+                " LEFT JOIN kategooria ON esemed.kategooria_id = kategooria.id " +
+                "WHERE esemed.id = :esemeId";
+
+
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("esemeId", esemeId);
+        EsemeDetailidDto vastus = JdbcTemplate.queryForObject(sql, paramMap, new KidsWardrobeService.EsemeDetailidRowMapper());
+        return vastus;
     }
 }
