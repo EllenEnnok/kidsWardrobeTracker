@@ -1,4 +1,5 @@
 <template>
+
   <div class="avaleht">
     <label>E-post</label>
     <input type="text" v-model="email"/>
