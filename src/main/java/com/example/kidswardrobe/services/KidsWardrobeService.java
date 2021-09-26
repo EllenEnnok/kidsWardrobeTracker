@@ -37,13 +37,13 @@ public class KidsWardrobeService {
         }
 
         Date now = new Date();    // tokeni genereerimine
-        Date expiration = new Date(now.getTime() + 1000l*60l*60l*24l*10l);
+        Date expiration = new Date(now.getTime() + 1000l * 60l * 60l * 24l * 10l);
         JwtBuilder jwtBuilder = Jwts.builder()
                 .setExpiration(expiration)
                 .setIssuedAt(new Date())
                 .setIssuer("issuer")
 
-                .signWith(SignatureAlgorithm.HS256,"secret")
+                .signWith(SignatureAlgorithm.HS256, "secret")
                 .claim("username",
                         userName);
         String jwt = jwtBuilder.compact();
@@ -53,7 +53,7 @@ public class KidsWardrobeService {
     }
 
 
-    public void looKonto(LoginDto loginDto){
+    public void looKonto(LoginDto loginDto) {
         String kasutajanimi = loginDto.getKasutajanimi();
         String parool = loginDto.getParool();
         String encodedParool = passwordEncoder.encode(parool);
@@ -65,52 +65,13 @@ public class KidsWardrobeService {
 
 
     public List<EsemeKuvaDto> kuvaKoguKapp(EsemeFilterDto filter) {
-        List<EsemeKuvaDto> riided = kuvariided(filter);
-        List<EsemeKuvaDto> jalatsid = kuvaJalatsid(filter);
-
-        riided.addAll(jalatsid);  // liidab kokku jalatsi ja riiete listid yheks listiks
-        return riided;
+        return kidsWardrobeRepository.kuvaRiided(filter);
     }
 
-    public List<EsemeKuvaDto> kuvariided(EsemeFilterDto filter) {
-        return kidsWardrobeRepository.kuvariided(filter);
+    public void lisaEseKappi(LisaEseDto lisaEseDto) {
+        kidsWardrobeRepository.lisaEseKappi(lisaEseDto);
     }
 
-    public List<EsemeKuvaDto> kuvaJalatsid(EsemeFilterDto filter) {
-        return kidsWardrobeRepository.kuvaJalatsid(filter);
-    }
-
-    public void lisaRiietusKappi(LisaRiietusDto lisaRiietusDto) {
-        kidsWardrobeRepository.lisaRiietusKappi(lisaRiietusDto);
-    }
-
-    public void lisaJalatsidKappi(LisaJalatsDto lisaJalatsDto) {
-        kidsWardrobeRepository.lisaJalatsidKappi(lisaJalatsDto);
-    }
-
-    public static class KuvaKoikRiidedDtoRowMapper implements RowMapper<KuvaKoikRiidedDto> {
-        public KuvaKoikRiidedDto mapRow(ResultSet resultSet, int i) throws SQLException {
-            KuvaKoikRiidedDto result = new KuvaKoikRiidedDto();
-            result.setSuurus(resultSet.getString("suurusRiided"));
-            result.setKategooria(resultSet.getString("kategooria"));
-            result.setPilt((Blob) resultSet.getBlob("pilt"));
-            result.setId(resultSet.getInt("id"));
-            return result;
-        }
-    }
-
-    public static class KuvaKoikJalatsidDtoRowMapper implements RowMapper<KuvaKoikJalatsidDto> {
-
-        @Override
-        public KuvaKoikJalatsidDto mapRow(ResultSet resultSet, int i) throws SQLException {
-            KuvaKoikJalatsidDto result = new KuvaKoikJalatsidDto();
-            result.setSuurus(resultSet.getString("suurusJalatsid"));
-            result.setKategooria(resultSet.getString("kategooria"));
-            result.setPilt((Blob) resultSet.getBlob("pilt"));
-            result.setId(resultSet.getInt("id"));
-            return result;
-        }
-    }
 
     public static class EsemeKuvaDtoRowMapper implements RowMapper<EsemeKuvaDto> {
 
@@ -126,7 +87,36 @@ public class KidsWardrobeService {
     }
 
     public void kustutaEse(KustutaEseDto kustutaEseDto) {
+
         kidsWardrobeRepository.kustutaEse(kustutaEseDto);
     }
 
+    public void lisaAsukoht(LisaAsukohtDto lisaAsukohtDto) {
+        kidsWardrobeRepository.lisaAsukoht(lisaAsukohtDto);
+    }
+
+    public EsemeDetailidDto kuvaEsemeDetailid(Integer esemeId) {
+        return kidsWardrobeRepository.kuvaEsemeDetailid(esemeId);
+    }
+
+    public static class EsemeDetailidRowMapper implements RowMapper<EsemeDetailidDto> {
+
+        @Override
+        public EsemeDetailidDto mapRow(ResultSet resultSet, int i) throws SQLException {
+            EsemeDetailidDto result = new EsemeDetailidDto();
+            result.setEsemeId(resultSet.getInt("id"));
+            result.setTyyp(resultSet.getString("tüüp"));
+            result.setVarv(resultSet.getString("värv"));
+            result.setHooaeg(resultSet.getString("hooaeg"));
+            result.setSuurus(resultSet.getString("suurus"));
+            result.setSugu(resultSet.getString("sugu"));
+            result.setMaterjal(resultSet.getString("materjal"));
+            result.setAsukoht(resultSet.getString("asukoht"));
+            result.setKategooria(resultSet.getString("kategooria"));
+            result.setLisainfo(resultSet.getString("lisainfo"));
+            result.setTootja(resultSet.getString("tootja"));
+            result.setPilt((Blob) resultSet.getBlob("pilt"));
+            return result;
+        }
+    }
 }
