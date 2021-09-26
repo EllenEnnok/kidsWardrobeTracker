@@ -13,6 +13,11 @@ import "bootstrap/dist/css/bootstrap.css";*/
 //
 // Vue.use(AtComponents)
 
+//import SvgIcon from "@/assets"
+//Vue.component('svg-icon', SvgIcon)
+
+
+
 const token = localStorage.getItem('user-token')
     if (token) {
     axios.defaults.headers.common['Authorization']="Bearer "+ token

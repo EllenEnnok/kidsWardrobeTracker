@@ -1,6 +1,5 @@
 <template>
   <div class="filtreeri">
-
     <input type="checkbox">
     <label>Õueriided</label>
     <select name="oueriided" id="oueriided">

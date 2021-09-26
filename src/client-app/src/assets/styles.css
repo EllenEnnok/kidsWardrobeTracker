@@ -1,10 +1,12 @@
-label{
-    display:inline-block;
-    width:200px;
-    margin-right:30px;
-    text-align:right;
+label {
+    display: inline-block;
+    width: 200px;
+    margin-right: 30px;
+    text-align: right;
+    color: black;
 
 }
+
 select {
     width: 210px;
     padding: 0;
@@ -14,6 +16,7 @@ select {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 input {
     height: 16px;
     width: 200px;
@@ -21,40 +24,70 @@ input {
 
 .body {
     margin-right: 150px;
-    background: white;
-    color: #5f7d95;
-    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-family: Arial Narrow;
     line-height: 1.5;
     text-align: left;
 }
+
 #app
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 7px;
+    margin: 1px;
+    padding: 8px;
     text-align: center;
-    background: white;
-    color: #5f7d95;
+    background: snow;
+    color: black;
     font-weight: inherit;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
+}
 
-}
 #nav {
-    padding: 30px;
+    padding: 33px;
 }
+
 #nav a {
     font-weight: bold;
-    color: #5f7d95;
+    color: black;
 }
+
 #nav a.router-link-exact-active {
     color: mediumseagreen;
 }
-.button {
-    padding: 0.8rem 1rem 0.7rem;
-    border: 0.2rem solid #4d4d4d;
-    cursor: pointer;
-    text-transform: capitalize;
+header {
+    background: black;
+    color: whitesmoke;
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    align-items: normal;
+    justify-content: center;
 }
 
+button {
+    border: 0.01rem solid mediumseagreen;
+    border-radius: 3px;
+    background-color: darkorange; /*see osa ei tööta, nupu taustavärv*/
+    cursor: pointer;
+    text-transform: capitalize;
+
+}
+img {
+    height: 2px;
+    color: #222222;
+}
+.btn {
+    background-color: DodgerBlue; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: RoyalBlue;
+}
