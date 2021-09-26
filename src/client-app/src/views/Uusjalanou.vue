@@ -1,5 +1,5 @@
 <template>
-  <div class="aksessuaarid">
+  <div class="body">
     <label>Kategooria</label>
     <input/>
     <br>
