@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div class="avaleht">
     <label>E-post</label>
     <input type="text" v-model="email"/>
     <br>
@@ -29,8 +29,18 @@ export default {
   methods: {
     login: function () {
 
+      localStorage.setItem('user-token', token) // store the token
+      let token;
+      this.$http.defaults.headers.common['Authorization'] = "Bearer " + token
     }
+  },
+    logout: function () {
+
+    localStorage.removeItem('user-token') // remove on logout
+    location.reload();
+
   }
+
 }
 
 </script>

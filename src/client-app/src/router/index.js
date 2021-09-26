@@ -37,7 +37,8 @@ import Kapisisulist from '../views/Kapisisulist.vue'
 import Uusriideese from '../views/Uusriideese.vue'
 import Uusjalanou from '../views/Uusjalanou.vue'
 
-
+// import LoginComponent from "../views/login.vue"
+// import SecureComponent from "../views/secure.vue"
 
 Vue.use(VueRouter)
 

@@ -4,7 +4,11 @@
     <label> Sisesta kappi uued õueriided</label>
     <br>
     <br>
-    <GoTo title="Joped" link="/joped"></GoTo>
+
+    <div class="icons">
+      <span class=".flaticon-jacket-1"></span>
+      <GoTo title="Joped" link="/joped"></GoTo>
+    </div>
     <GoTo title="Kombekad" link="/kombekad"></GoTo>
     <GoTo title="Õuepüksid" link="/ouepuksid"></GoTo>
 

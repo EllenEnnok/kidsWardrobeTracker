@@ -21,4 +21,40 @@ input {
 
 .body {
     margin-right: 150px;
+    background: white;
+    color: #5f7d95;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    text-align: left;
 }
+#app
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 7px;
+    text-align: center;
+    background: white;
+    color: #5f7d95;
+    font-weight: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+
+}
+#nav {
+    padding: 30px;
+}
+#nav a {
+    font-weight: bold;
+    color: #5f7d95;
+}
+#nav a.router-link-exact-active {
+    color: mediumseagreen;
+}
+.button {
+    padding: 0.8rem 1rem 0.7rem;
+    border: 0.2rem solid #4d4d4d;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
