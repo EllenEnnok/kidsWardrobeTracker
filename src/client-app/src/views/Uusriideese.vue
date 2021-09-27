@@ -172,39 +172,5 @@ export default {
     this.uuendaKlassifikaatorid();
   }
 }
-
-</script>
-
-<script>
-export default {
-  name: 'Uusriideese',
-  data: function () {
-    return {
-      tyyp: [],
-      hooaeg: [],
-      riideSuurus: [],
-      varv: [],
-      sugu: [],
-      materjal: [],
-      asukoht: '',
-      kategooria: [],
-      lisainfo: '',
-      tootja: '',
-      /*pilt: ''*/
-    }
-  },
-  methods: {
-    /*salvesta:function() {
-      this.$http.post("/riidekapp/lisaRiietusKappi")
-          .then(response => {
-            console.log(response.data);
-            alert("Tehtud")
-          }).catch(function(response) {
-      }
-
-    }*/
-  }
-}
-
 </script>
 
