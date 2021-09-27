@@ -1,137 +1,178 @@
 <template>
   <div class="body">
     <label>Tüüp</label>
-    <select name="tyyp" id="tyyp">
-      <option value="0"></option>
-      <option value="1">Õueriided</option>
-      <option value="2">Riided</option>
-      <option value="3">Aksessuaarid</option>
-      <option value="5">Spordiriided</option>
+    <select v-model="uusEse.tyyp">
+      <option :value="null">----</option>
+      <option :key="tyyp.id" v-for="tyyp in klassifikaatorid.tyybid" :value="tyyp.id">{{ tyyp.nimetus }}</option>
     </select>
     <br>
     <br>
     <label>Kategooria</label>
-    <select name="uusriie" id="uusriie">
-      <option value="0"></option>
-      <option value="1">Lühikese varrukaga särgid</option>
-      <option value="2">Pika varrukaga särgid</option>
-      <option value="3">Lühikesed püksid</option>
-      <option value="4">Pikad püksid</option>
-      <option value="5">Aluspesu</option>
-      <option value="6">Sokid</option>
-      <option value="7">Sukapüksid</option>
-      <option value="8">Kindad</option>
-      <option value="9">Mütsid</option>
-      <option value="10">Sallid</option>
-      <option value="11">Joped</option>
-      <option value="12">Kombekad</option>
-      <option value="13">Õuepüksid</option>
-      <option value="14">Seelikud</option>
-      <option value="15">Kleidid</option>
-      <option value="16">Romperid</option>
-      <option value="17">Tuduriided</option>
-      <option value="18">Bodyd</option>
-      <option value="19">Sipukad</option>
-      <option value="20">Ujumisriided</option>
-      <option value="21">Pusad</option>
-      <option value="22">Muu</option>
+    <select v-model="uusEse.kategooria">
+      <option :value="null">----</option>
+      <option :key="kategooria.id" v-for="kategooria in klassifikaatorid.kategooriad" :value="kategooria.id">
+        {{ kategooria.nimetus }}
+      </option>
+
     </select>
     <br>
     <br>
-    <label>Suurus</label>
-    <select name="suurus" id="suurus">
-      <option value="0"></option>
-      <option value="1">56-62</option>
-      <option value="2">62-68</option>
-      <option value="3">68-74</option>
-      <option value="4">74-80</option>
-      <option value="5">80-86</option>
-      <option value="6">86-92</option>
-      <option value="7">92-98</option>
-      <option value="8">98-104</option>
-      <option value="9">104-110</option>
-      <option value="10">110-116</option>
-      <option value="11">116-122</option>
-      <option value="12">122-128</option>
-      <option value="13">128-134</option>
-      <option value="14">134-140</option>
-      <option value="15">140-146</option>
-      <option value="16">146-152</option>
-      <option value="17">152-158</option>
-      <option value="18">158-164</option>
-      <option value="19">164-170</option>
+    <label>Riietuse suurus</label>
+    <select v-model="uusEse.riideSuurus">
+      <option :value="null">----</option>
+      <option :key="suurusRiided.id" v-for="suurusRiided in klassifikaatorid.suurus_riided" :value="suurusRiided.id">
+        {{ suurusRiided.nimetus }}
+      </option>
+    </select>
+    <br>
+    <br>
+    <label>Jalatsi suurus</label>
+    <select v-model="uusEse.jalatsiSuurus">
+      <option :value="null">----</option>
+      <option :key="suurusJalatsid.id" v-for="suurusJalatsid in klassifikaatorid.suurus_jalatsid"
+              :value="suurusJalatsid.id">{{ suurusJalatsid.nimetus }}
+      </option>
     </select>
     <br>
     <br>
     <label>Hooaeg</label>
-    <select name="hooaeg" id="hooaeg">
-      <option value="0"></option>
-      <option value="1">Suvi</option>
-      <option value="2">Kevad/sügis</option>
-      <option value="3">Talv</option>
-      <option value="4">Aastaringne</option>
+    <select v-model="uusEse.hooaeg">
+      <option :value="null">----</option>
+      <option :key="hooaeg.id" v-for="hooaeg in klassifikaatorid.hooajad" :value="hooaeg.id">{{ hooaeg.nimetus }}
+      </option>
     </select>
     <br>
     <br>
     <label>Värv</label>
-    <select name="värv" id="värv">
-      <option value="0"></option>
-      <option value="1">Kollane</option>
-      <option value="2">Oranz</option>
-      <option value="3">Punane</option>
-      <option value="4">Lilla</option>
-      <option value="5">Sinine</option>
-      <option value="6">Roheline</option>
-      <option value="7">Must</option>
-      <option value="8">Valge</option>
-      <option value="9">Hall</option>
-      <option value="10">Beez</option>
-      <option value="11">Mitmevärviline</option>
+    <select v-model="uusEse.varv">
+      <option :value="null">----</option>
+      <option :key="varv.id" v-for="varv in klassifikaatorid.varvid" :value="varv.id">{{ varv.nimetus }}</option>
     </select>
     <br>
     <br>
     <label>Sugu</label>
-    <select name="sugu" id="sugu">
-      <option value="0"></option>
-      <option value="1">Poiss</option>
-      <option value="2">Tüdruk</option>
-      <option value="3">Unisex</option>
+    <select v-model="uusEse.sugu">
+      <option :value="null">----</option>
+      <option :key="sugu.id" v-for="sugu in klassifikaatorid.sugu" :value="sugu.id">{{ sugu.nimetus }}</option>
     </select>
     <br>
     <br>
     <label>Materjal</label>
-    <select name="materjal" id="materjal">
-      <option value="0"></option>
-      <option value="1">puuvill</option>
-      <option value="2">vill</option>
-      <option value="3">polüester</option>
-      <option value="4">viskoos</option>
-      <option value="5">linane</option>
-      <option value="6">siid</option>
-      <option value="7">teksa</option>
-      <option value="8">elastaan</option>
-      <option value="9">meriinovill</option>
+    <select v-model="uusEse.materjal">
+      <option :value="null">----</option>
+      <option :key="materjal.id" v-for="materjal in klassifikaatorid.materjalid" :value="materjal.id">
+        {{ materjal.nimetus }}
+      </option>
     </select>
     <br>
     <br>
     <label>Asukoht</label>
-    <input type="text"/>
+    <select v-model="uusEse.asukoht">
+      <option :value="null">----</option>
+      <option :key="asukoht.id" v-for="asukoht in klassifikaatorid.asukohad" :value="asukoht.id">{{ asukoht.nimetus }}
+      </option>
+    </select>
+    <input placeholder="Lisa uus asukoht" v-model="Asukoht.asukoht">
+    <button v-on:click="lisaAsukoht()">Lisa</button>
     <br>
     <br>
     <label>Lisainfo</label>
-    <input type="text"/>
+    <input v-model="uusEse.lisainfo" type="text"/>
     <br>
     <br>
     <label>Tootja</label>
-    <input type="text"/>
+    <input v-model="uusEse.tootja" type="text"/>
     <br>
     <br>
+
+
     <label>Pilt</label>
-    <input type="blob"/>
+    <input type="file" @change="onFileSelected"/>
+
     <br>
     <br>
-    <button>Salvesta</button>
+    <button @click="salvestaEse">Salvesta</button>
+
 
   </div>
 </template>
+<script>
+export default {
+  name: 'HelloWorld',
+  data() {
+    return {
+      selectedFile: null,
+      klassifikaatorid: {
+        asukohad: [],
+        materjalid: [],
+        sugu: [],
+        hooajad: [],
+        kategooriad: [],
+        suurus_jalatsid: [],
+        suurus_riided: [],
+        tyybid: [],
+        varvid: []
+      },
+      esemed: [],
+      Asukoht: {
+        id: '',
+        asukoht: ''
+      },
+      uusEse: {
+        asukoht: null,
+        materjal: null,
+        sugu: null,
+        hooaeg: null,
+        kategooria: null,
+        jalatsiSuurus: null,
+        riideSuurus: null,
+        tyyp: null,
+        varv: null,
+        lisainfo: null,
+        tootja: null
+      }
+    }
+  },
+  methods: {
+
+    lisaAsukoht: function () {
+      this.$http.post("/riidekapp/lisaAsukoht", {
+        id: '',
+        asukoht: this.Asukoht.asukoht
+      })
+          .then(() => {
+            this.uuendaKlassifikaatorid();
+          })
+
+    },
+
+    onFileSelected(event) {
+      this.selectedFile = event.target.files[0]
+    },
+
+    uuendaKlassifikaatorid: function () {
+      this.$http.get('/riidekapp/annaKoikFiltrid').then((response) => {
+        console.log(response.data)
+        this.klassifikaatorid = response.data
+      })
+    },
+
+    salvestaEse: function () {
+      const formData = new FormData();
+      Object.keys(this.uusEse).forEach(key => {
+        if (this.uusEse[key]) {
+          formData.append(key, this.uusEse[key]);
+        }
+      });
+      formData.append("pilt", this.selectedFile);
+      this.$http.post('/riidekapp/lisaEseKappi', formData);
+      console.log(formData);
+    }
+  },
+  created() {
+    this.uuendaKlassifikaatorid();
+  }
+}
+
+</script>
 

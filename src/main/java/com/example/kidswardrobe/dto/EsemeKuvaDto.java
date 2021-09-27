@@ -1,12 +1,13 @@
 package com.example.kidswardrobe.dto;
 
 import java.sql.Blob;
+import java.util.Base64;
 
 public class EsemeKuvaDto {
     int id;
     String suurus;
     String kategooria;
-    Blob pilt;
+    String piltBase64;
 
     public String getSuurus() {
         return suurus;
@@ -16,11 +17,11 @@ public class EsemeKuvaDto {
         this.suurus = suurus;
     }
 
-    public EsemeKuvaDto(int id, String suurus, String kategooria, Blob pilt) {
+    public EsemeKuvaDto(int id, String suurus, String kategooria, String pilt) {
         this.id = id;
         this.suurus = suurus;
         this.kategooria = kategooria;
-        this.pilt = pilt;
+        this.piltBase64 = pilt;
 
     }
 
@@ -44,11 +45,14 @@ public class EsemeKuvaDto {
         this.kategooria = kategooria;
     }
 
-    public Blob getPilt() {
-        return pilt;
+    public String getPilt() {
+        return piltBase64;
     }
 
-    public void setPilt(Blob pilt) {
-        this.pilt = pilt;
+    public void setPilt(byte[] piltBytes) {
+        if (piltBytes == null) {
+            return;
+        }
+        this.piltBase64 = Base64.getEncoder().encodeToString(piltBytes);
     }
 }

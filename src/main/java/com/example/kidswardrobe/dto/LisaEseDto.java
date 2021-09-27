@@ -1,5 +1,8 @@
 package com.example.kidswardrobe.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 import java.sql.Blob;
 
 public class LisaEseDto {
@@ -14,7 +17,7 @@ public class LisaEseDto {
     private Integer kategooria;
     private String lisainfo;
     private String tootja;
-    Blob pilt;
+    private MultipartFile pilt;
 
     public Integer getTyyp() {
         return tyyp;
@@ -104,18 +107,22 @@ public class LisaEseDto {
         this.tootja = tootja;
     }
 
-    public Blob getPilt() {
+    public MultipartFile getPilt() {
         return pilt;
     }
 
-    public void setPilt(Blob pilt) {
+    public byte[] getPictureBytes() throws IOException {
+        return pilt.getBytes();
+    }
+
+    public void setPilt(MultipartFile pilt) {
         this.pilt = pilt;
     }
 
     public LisaEseDto() {
     }
 
-    public LisaEseDto(Integer tyyp, Integer hooaeg, Integer riideSuurus, Integer jalatsiSuurus, Integer varv, Integer sugu, Integer materjal, Integer asukoht, Integer kategooria, String lisainfo, String tootja, Blob pilt) {
+    public LisaEseDto(Integer tyyp, Integer hooaeg, Integer riideSuurus, Integer jalatsiSuurus, Integer varv, Integer sugu, Integer materjal, Integer asukoht, Integer kategooria, String lisainfo, String tootja, MultipartFile pilt) {
         this.tyyp = tyyp;
         this.hooaeg = hooaeg;
         this.riideSuurus = riideSuurus;
