@@ -1,7 +1,7 @@
 <template>
   <div class="body">
     <label>Tüüp</label>
-    <select name="tyyp" id="tyyp">
+    <select v-model="tyyp">
       <option value="0"></option>
       <option value="1">Õueriided</option>
       <option value="2">Riided</option>
@@ -11,7 +11,7 @@
     <br>
     <br>
     <label>Kategooria</label>
-    <select name="uusriie" id="uusriie">
+    <select v-model="kategooria">
       <option value="0"></option>
       <option value="1">Lühikese varrukaga särgid</option>
       <option value="2">Pika varrukaga särgid</option>
@@ -130,8 +130,41 @@
     <input type="blob"/>
     <br>
     <br>
-    <button>Salvesta</button>
+    <button v.on:click="salvesta()">Salvesta</button>
 
   </div>
 </template>
+
+<script>
+export default {
+  name: 'Uusriideese',
+  data: function () {
+    return {
+      tyyp: [],
+      hooaeg: [],
+      riideSuurus: [],
+      varv: [],
+      sugu: [],
+      materjal: [],
+      asukoht: '',
+      kategooria: [],
+      lisainfo: '',
+      tootja: '',
+      /*pilt: ''*/
+    }
+  },
+  methods: {
+    /*salvesta:function() {
+      this.$http.post("/riidekapp/lisaRiietusKappi")
+          .then(response => {
+            console.log(response.data);
+            alert("Tehtud")
+          }).catch(function(response) {
+      }
+
+    }*/
+  }
+}
+
+</script>
 
