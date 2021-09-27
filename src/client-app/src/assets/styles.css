@@ -28,6 +28,8 @@ input {
     font-family: Avenir, Arial, Helvetica, sans-serif;
     line-height: 1.5;
     text-align: left;
+
+
 }
 
 #app
@@ -36,11 +38,14 @@ input {
     margin: 1px;
     padding: 8px;
     text-align: center;
-    background: image([url]);
     color: #2c3e50;
     font-weight: inherit;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /*background-image: url("~../../public/kapiuksed.jpg");*/
+}
+image {
+    size: 200px;
 
 }
 
@@ -56,7 +61,7 @@ input {
 
 #nav a.router-link-exact-active {
     color: #2c3e50;
-    background: honeydew;
+    background: snow;
     border-radius: .5rem;
 }
 
@@ -72,9 +77,9 @@ header {
 }
 
 button {
-    border: 0.001rem solid mediumseagreen;
+    border: 0.001rem solid deepskyblue;
     border-radius: 4px;
-    background-color: honeydew;
+    background-color: skyblue;
     text-transform: capitalize;
     color: #2c3e50;
     padding: 10px 10px;
@@ -98,5 +103,18 @@ margin-left: 7px;
 [class*=" flaticon-"]:after {
     font-size: 150px;
 }*/
+#nav {
+    padding: 30px;
+    text-align: center;
+}
 
+#nav a {
+    font-weight: bold;
+    color: #2c3e50;
+}
 
+#nav a.router-link-exact-active {
+    color: whitesmoke;
+    background: lightskyblue;
+    border-radius: .5rem;
+}

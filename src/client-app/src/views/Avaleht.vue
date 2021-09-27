@@ -55,5 +55,22 @@ export default {
 }
 
 </script>
+<style scoped>
+  body {
+    cursor: pointer;
+    text-transform: capitalize;
+    background-size: auto;
+    background-color: #4ad295; /*ei kuva */
+    }
+  label {
+    display: inline-block;
+    width: 70px;
+    margin-right: 30px;
+    text-align: right;
+    color: #2c3e50;
+    }
+
+
+</style>
 
 

@@ -25,7 +25,7 @@ export default {
           {kasutajanimi: this.kasutajanimi, parool: this.parool})
           .then(function (data) {
             console.log(data);
-            alert(this.kasutajanimi);
+            alert("Tehtud");
           })
           .catch(function (error) {
             console.log(error);
