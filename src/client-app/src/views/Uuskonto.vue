@@ -23,9 +23,9 @@ export default {
     looKonto: function () {
       this.$http.post("/uuskonto/looKonto",
           {kasutajanimi: this.kasutajanimi, parool: this.parool})
-          .then(function (data) {
-            console.log(data);
-            alert(this.kasutajanimi);
+          .then(response => {
+            console.log(response);
+            this.$router.push("/riidekapp");
           })
           .catch(function (error) {
             console.log(error);
