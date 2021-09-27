@@ -17,7 +17,6 @@
 <script>
 import GoTo from '../components/GoTo.vue'
 
-
 export default {
   components: {
     GoTo
@@ -38,6 +37,7 @@ export default {
             localStorage.setItem('user-token', token) // store the token
             this.$http.defaults.headers.common['Authorization'] = "Bearer " + token
             console.log(response);
+            this.$router.push("/riidekapp");
           })
           .catch(function (error) {
             console.log(error);
