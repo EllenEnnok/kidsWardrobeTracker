@@ -1,0 +1,176 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("./flaticon.ttf?aa312913077fc589c90530895da1f2f6") format("truetype"),
+url("./flaticon.woff?aa312913077fc589c90530895da1f2f6") format("woff"),
+url("./flaticon.woff2?aa312913077fc589c90530895da1f2f6") format("woff2"),
+url("./flaticon.eot?aa312913077fc589c90530895da1f2f6#iefix") format("embedded-opentype"),
+url("./flaticon.svg?aa312913077fc589c90530895da1f2f6#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-user-info-interface-symbol-with-text-lines-at-right-side:before {
+    content: "\f101";
+}
+.flaticon-two-circular-arrows:before {
+    content: "\f102";
+}
+.flaticon-checkmark-outline:before {
+    content: "\f103";
+}
+.flaticon-recycling-bin:before {
+    content: "\f104";
+}
+.flaticon-minus-circular-button:before {
+    content: "\f105";
+}
+.flaticon-right-arrow-circular-button-outline:before {
+    content: "\f106";
+}
+.flaticon-down-arrow-square-outlined-button:before {
+    content: "\f107";
+}
+.flaticon-upload:before {
+    content: "\f108";
+}
+.flaticon-up-arrow-with-house-shape-outlined-symbol:before {
+    content: "\f109";
+}
+.flaticon-list-interface-symbol:before {
+    content: "\f10a";
+}
+.flaticon-back-left-arrow-square-button-outline:before {
+    content: "\f10b";
+}
+.flaticon-up-circular-interface-button:before {
+    content: "\f10c";
+}
+.flaticon-left-arrow-square-outlined-button:before {
+    content: "\f10d";
+}
+.flaticon-checkmark-square-button-outline:before {
+    content: "\f10e";
+}
+.flaticon-right-arrow-square-outlined-button:before {
+    content: "\f10f";
+}
+.flaticon-save-button-interface-symbol-of-outlined-diskette:before {
+    content: "\f110";
+}
+.flaticon-left-arrow-with-a-cross:before {
+    content: "\f111";
+}
+.flaticon-tshirt:before {
+    content: "\f112";
+}
+.flaticon-winter-clothing:before {
+    content: "\f113";
+}
+.flaticon-sweatshirt:before {
+    content: "\f114";
+}
+.flaticon-baby-body:before {
+    content: "\f115";
+}
+.flaticon-hoodie:before {
+    content: "\f116";
+}
+.flaticon-jacket:before {
+    content: "\f117";
+}
+.flaticon-coat:before {
+    content: "\f118";
+}
+.flaticon-underwear:before {
+    content: "\f119";
+}
+.flaticon-jeans:before {
+    content: "\f11a";
+}
+.flaticon-hoodie-1:before {
+    content: "\f11b";
+}
+.flaticon-shoe:before {
+    content: "\f11c";
+}
+.flaticon-shoe-1:before {
+    content: "\f11d";
+}
+.flaticon-socks:before {
+    content: "\f11e";
+}
+.flaticon-rubber-gloves:before {
+    content: "\f11f";
+}
+.flaticon-winter-hat:before {
+    content: "\f120";
+}
+.flaticon-winter-scarf:before {
+    content: "\f121";
+}
+.flaticon-jacket-1:before {
+    content: "\f122";
+}
+.flaticon-baby-dress:before {
+    content: "\f123";
+}
+.flaticon-shorts:before {
+    content: "\f124";
+}
+.flaticon-clothes:before {
+    content: "\f125";
+}
+.flaticon-protection:before {
+    content: "\f126";
+}
+.flaticon-trousers:before {
+    content: "\f127";
+}
+.flaticon-trousers-1:before {
+    content: "\f128";
+}
+.flaticon-uniform:before {
+    content: "\f129";
+}
+.flaticon-baby-clothes:before {
+    content: "\f12a";
+}
+.flaticon-baby-clothes-1:before {
+    content: "\f12b";
+}
+.flaticon-baby-clothes-2:before {
+    content: "\f12c";
+}
+.flaticon-baby-clothes-with-pin:before {
+    content: "\f12d";
+}
+.flaticon-skirt:before {
+    content: "\f12e";
+}
+.flaticon-tights:before {
+    content: "\f12f";
+}
+.flaticon-tights-1:before {
+    content: "\f130";
+}
+.flaticon-pyjamas:before {
+    content: "\f131";
+}
+.flaticon-swim-suit:before {
+    content: "\f132";
+}
+.flaticon-swimming-trunks:before {
+    content: "\f133";
+}
+.flaticon-hanger:before {
+    content: "\f134";
+}

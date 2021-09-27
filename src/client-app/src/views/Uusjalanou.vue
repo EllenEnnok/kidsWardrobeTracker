@@ -1,0 +1,37 @@
+<template>
+  <div class="body">
+    <label>Kategooria</label>
+    <input/>
+    <br>
+    <br>
+    <label>Suurus</label>
+    <input/>
+    <br>
+    <br>
+    <label>Hooaeg</label>
+    <input/>
+    <br>
+    <br>
+    <label>Värv</label>
+    <input/>
+    <br>
+    <br>
+    <label>Sugu</label>
+    <input/>
+    <br>
+    <br>
+    <label>Lisainfo</label>
+    <input/>
+    <br>
+    <br>
+    <label>Tootja</label>
+    <input/>
+    <br>
+    <br>
+    <label>Pilt</label>
+    <input/>
+    <br>
+    <br>
+    <button>Salvesta</button>
+  </div>
+</template>

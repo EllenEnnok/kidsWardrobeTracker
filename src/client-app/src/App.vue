@@ -1,35 +1,34 @@
 
 <template>
   <div id="app" class="container">
+  <Header/>
     <div id="nav">
-      <router-link to="/">Avaleht</router-link> |
-      <router-link to="/riidekapp">Riidekapp</router-link> |
-      <router-link to="/filtreeri">Filtreeri</router-link>
-    </div>
-    <router-view/>
+      <router-link to="/"><i class="fa fa-home"></i>Avaleht</router-link> |
+      <router-link to="/riidekapp"><i class="flaticon-baby-body"></i>Riidekapp</router-link> |
+      <router-link to="/filtreeri">Filtreeri</router-link> |
+      <router-link to="/otsi">
+        <input class="form-control mr-sm-2" type="search" placeholder="Otsi" aria-label="Otsi">
+          <button>Otsi</button>
+      </router-link> |
+      <router-link to="/peamenuu"><i class="fa fa-bars"></i></router-link>
+    </div><router-view/>
+
   </div>
 </template>
 
+<script>
+import Header from './components/layout/Header';
+
+export default  {
+  name: 'app',
+  components: {
+    Header,
+
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+@import './assets/styles.css';
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
-

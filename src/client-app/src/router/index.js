@@ -30,11 +30,15 @@ import Romperid from '../views/Romperid.vue'
 import Sallid from '../views/Sallid.vue'
 import Seelikud from '../views/Seelikud.vue'
 import Sipukad from '../views/Sipukad.vue'
-import Sukapuksid from '../views/Sukapuksid.vue'
+import Sukakad from '../views/Sukakad.vue'
 import Tuduriided from '../views/Tuduriided.vue'
 import Ujumisriided from '../views/Ujumisriided.vue'
 import Kapisisulist from '../views/Kapisisulist.vue'
+import Uusriideese from '../views/Uusriideese.vue'
+import Uusjalanou from '../views/Uusjalanou.vue'
 
+// import LoginComponent from "../views/login.vue"
+// import SecureComponent from "../views/secure.vue"
 
 Vue.use(VueRouter)
 
@@ -191,9 +195,9 @@ const routes = [
         component: Sipukad
     },
     {
-        path: '/sukapukaid',
-        name: 'Sukapuksid',
-        component: Sukapuksid
+        path: '/sukakad',
+        name: 'Sukakad',
+        component: Sukakad
     },
     {
         path: '/tududriided',
@@ -209,8 +213,17 @@ const routes = [
         path: '/kapisisulist',
         name: 'Kapisisulist',
         component: Kapisisulist
+    },
+    {
+        path: '/uusriideese',
+        name: 'Uusriideese',
+        component: Uusriideese
+    },
+    {
+        path: '/uusjalanou',
+        name: 'Uusjalanou',
+        component: Uusjalanou
     }
-
 ]
 
 const router = new VueRouter({
