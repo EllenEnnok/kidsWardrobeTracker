@@ -1,25 +1,38 @@
 <template>
   <div class="avaleht">
 
-        <label>E-post</label>
-        <input type="text" v-model="email"/>
-        <br>
-        <label>Salasõna</label>
-        <input type="password" v-model="password"/>
-        <br>
-        <button v-on:click="salvesta()">Salvesta</button>
+    <label>E-post</label>
+    <input type="text" v-model="kasutajanimi"/>
+    <br>
+    <label>Salasõna</label>
+    <input type="password" v-model="parool"/>
+    <br>
+    <button v-on:click="looKonto">Salvesta</button>
 
   </div>
 </template>
 <script>
 export default {
-  name: 'uuskonto',
   data: function () {
     return {
-      email
+      kasutajanimi: '',
+      parool: ''
+    }
+  },
+  methods: {
+    looKonto: function () {
+      this.$http.post("/uuskonto/looKonto",
+          {kasutajanimi: this.kasutajanimi, parool: this.parool})
+          .then(function (data) {
+            console.log(data);
+            alert(this.kasutajanimi);
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
     }
   }
-
 }
 </script>
+
 

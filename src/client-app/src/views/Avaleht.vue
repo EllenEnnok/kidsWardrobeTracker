@@ -29,18 +29,8 @@ export default {
     }
   },
   methods: {
-    lookonto: function () {
-      this.$http.post("/uuskonto/lookonto",
-          {kasutajanimi: this.kasutajanimi, parool: this.parool})
-          .then(function (){
-
-          })
-
-
-    },
-
     login: function () {
-      this.$http.post("/avaleht/logisisse",
+      this.$http.post("/avaleht/logiSisse",
           {kasutajanimi: this.kasutajanimi, parool: this.parool})
           .then(function (response) {
             let token=response.data
