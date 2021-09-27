@@ -1,12 +1,26 @@
 <template>
   <div class="oueriided">
-    <button>+</button>
-    <label> Sisesta kappi uus riideese</label>
+    <GoTo title="+" link="/uusriideese"></GoTo>
+    <label> Sisesta kappi uued õueriided</label>
     <br>
     <br>
-    <button>Joped</button>
-    <button>Kombekad</button>
-    <button>Õuepüksid</button>
+
+    <div class="icons">
+      <span class=".flaticon-jacket-1"></span>
+      <GoTo title="Joped" link="/joped"></GoTo>
+    </div>
+    <GoTo title="Kombekad" link="/kombekad"></GoTo>
+    <GoTo title="Õuepüksid" link="/ouepuksid"></GoTo>
 
   </div>
 </template>
+
+<script>
+import GoTo from '../components/GoTo.vue'
+
+export default {
+  components: {
+    GoTo
+  }
+}
+</script>

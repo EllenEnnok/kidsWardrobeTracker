@@ -1,6 +1,6 @@
 <template>
   <div class="jalanoud">
-    <button>+</button>
+    <GoTo title="+" link="/uusjalanou"></GoTo>
     <label> Sisesta kappi uus jalanõu</label>
     <br>
     <br>
@@ -10,3 +10,13 @@
 
   </div>
 </template>
+
+<script>
+import GoTo from '../components/GoTo.vue'
+
+export default {
+  components: {
+    GoTo
+  }
+}
+</script>

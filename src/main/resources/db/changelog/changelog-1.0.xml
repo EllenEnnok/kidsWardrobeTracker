@@ -429,4 +429,72 @@
 <changeSet id="2021-09-24 drop table test" author="Ellen Ennok">
     <dropTable tableName="test"/>
 </changeSet>
+    <changeSet id="2021-09-24 DELETE column suurus_jalatsid in riideese" author="EllenEnnok">
+        <dropColumn tableName="riideese" columnName="suurus_jalatsid_id"/>
+    </changeSet>
+
+    <changeSet id="2021-09-25 muudan jalatsi ja riideeseme tabeli yheks" author="Ellen Ennok">
+        <renameTable oldTableName="riideese" newTableName="esemed"/>
+    </changeSet>
+    <changeSet id="2021-09-25 add column jalatsi suurus id to table esemed" author="Ellen Ennok">
+        <addColumn tableName="esemed">
+            <column name="suurus_jalatsid_id" type="int">
+                <constraints foreignKeyName="fk_esemed_suurus_jalatsid" references="suurus_jalatsid(id)"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet id="2021-09-25 drop table jalatsid" author="Ellen Ennok">
+        <dropTable tableName="jalatsid"/>
+    </changeSet>
+    
+    <changeSet id="drop current fk constraints " author="Ellen Ennok">
+        <dropAllForeignKeyConstraints baseTableName="esemed"/>
+    </changeSet>
+    
+    <changeSet id="2021-09-25 drop table esemed" author="Ellen Ennok">
+        <dropTable tableName="esemed"/>
+    </changeSet>
+
+    <changeSet id="2021-09-25 create new table esemed with fk constraints" author="Ellen Ennok">
+        <createTable tableName="esemed">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="tüüp_id" type="int">
+                <constraints foreignKeyName="fk_esemed_tüüp" references="tüüp(id)"/>
+            </column>
+            <column name="hooaeg_id" type="int">
+                <constraints foreignKeyName="fk_esemed_hooaeg" references="hooaeg(id)"/>
+            </column>
+            <column name="suurus_riided_id" type="int">
+                <constraints foreignKeyName="fk_esemed_suurus_riided" references="suurus_riided(id)"/>
+            </column>
+            <column name="suurus_jalatsid_id" type="int">
+                <constraints foreignKeyName="fk_esemed_suurus_jalatsid" references="suurus_jalatsid(id)"/>
+            </column>
+            <column name="värv_id" type="int">
+                <constraints foreignKeyName="fk_esemed_värv" references="värv(id)"/>
+            </column>
+            <column name="sugu_id" type="int">
+                <constraints foreignKeyName="fk_esemed_sugu" references="sugu(id)"/>
+            </column>
+            <column name="materjal_id" type="int">
+                <constraints foreignKeyName="fk_esemed_materjal" references="materjal(id)"/>
+            </column>
+            <column name="asukoht_id" type="int">
+                <constraints foreignKeyName="fk_esemed_asukoht" references="asukoht(id)"/>
+            </column>
+            <column name="kategooria_id" type="int">
+                <constraints foreignKeyName="fk_esemed_kategooria" references="kategooria(id)"/>
+            </column>
+            <column name="lisainfo" type="text"/>
+            <column name="tootja" type="text"/>
+            <column name="pilt" type="bytea"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2021-09-25 add autoincrement to id in esemed" author="Ellen Ennok">
+        <addAutoIncrement tableName="esemed" columnName="id"/>
+    </changeSet>
+
 </databaseChangeLog>
