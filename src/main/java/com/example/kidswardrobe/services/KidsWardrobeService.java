@@ -5,6 +5,7 @@ import com.example.kidswardrobe.repositories.KidsWardrobeRepository;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import liquibase.pro.packaged.K;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -116,6 +117,41 @@ public class KidsWardrobeService {
             result.setLisainfo(resultSet.getString("lisainfo"));
             result.setTootja(resultSet.getString("tootja"));
             result.setPilt((Blob) resultSet.getBlob("pilt"));
+            return result;
+        }
+    }
+
+    public FiltridDto annaKoikFiltrid() {
+        FiltridDto filtrid = new FiltridDto();
+        List<KlassifikaatorDto> asukohad = kidsWardrobeRepository.annaKoikAsukohad();
+        List<KlassifikaatorDto> hooajad = kidsWardrobeRepository.annaKoikHooajad();
+        List<KlassifikaatorDto> kategooriad = kidsWardrobeRepository.annaKoikKategooriad();
+        List<KlassifikaatorDto> materjalid = kidsWardrobeRepository.annaKoikMaterjalid();
+        List<KlassifikaatorDto> sugu = kidsWardrobeRepository.annaKoikSugu();
+        List<KlassifikaatorDto> suurusJalatsid = kidsWardrobeRepository.annaKoikJalatsiSuurused();
+        List<KlassifikaatorDto> suurusRiided = kidsWardrobeRepository.annaKoikRiideSuurused();
+        List<KlassifikaatorDto> tyybid = kidsWardrobeRepository.annaKoikTyybid();
+        List<KlassifikaatorDto> varvid = kidsWardrobeRepository.annaKoikVarvid();
+
+        filtrid.setVarvid(varvid);
+        filtrid.setTyybid(tyybid);
+        filtrid.setSuurus_riided(suurusRiided);
+        filtrid.setSuurus_jalatsid(suurusJalatsid);
+        filtrid.setSugu(sugu);
+        filtrid.setMaterjalid(materjalid);
+        filtrid.setKategooriad(kategooriad);
+        filtrid.setHooajad(hooajad);
+        filtrid.setAsukohad(asukohad);
+        return filtrid;
+    }
+
+    public static class KlassifikaatorDtoRowMapper implements RowMapper<KlassifikaatorDto> {
+
+        @Override
+        public KlassifikaatorDto mapRow(ResultSet resultSet, int i) throws SQLException {
+            KlassifikaatorDto result = new KlassifikaatorDto();
+            result.setId(resultSet.getInt("id"));
+            result.setNimetus(resultSet.getString("nimetus"));
             return result;
         }
     }
