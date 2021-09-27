@@ -45,15 +45,16 @@ public class KidsWardrobeController {
         kidsWardrobeService.lisaEseKappi(lisaEseDto);
 
     }
-    @GetMapping("/riidekapp/logiSisse")
+    @PostMapping ("/avaleht/logiSisse")
     public String logiSisse(@RequestBody LoginDto loginDto) {
         return kidsWardrobeService.logiSisse(loginDto);
     }
 
-    @PostMapping("/riidekapp/looKonto")
+    @PostMapping("/uuskonto/looKonto")
     public void looKonto(@RequestBody LoginDto loginDto) {
         kidsWardrobeService.looKonto(loginDto);
     }
+
 
 
     @DeleteMapping("/riidekapp/kustutaEse")

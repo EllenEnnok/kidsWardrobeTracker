@@ -2,10 +2,10 @@
 
   <div class="avaleht">
     <label>E-post</label>
-    <input type="text" v-model="email"/>
+    <input type="text" v-model="kasutajanimi"/>
     <br>
     <label>Salasõna</label>
-    <input type="password" v-model="password"/>
+    <input type="password" v-model="parool"/>
     <br>
     <button v-on:click="login">Logi sisse</button>
 
@@ -17,28 +17,46 @@
 <script>
 import GoTo from '../components/GoTo.vue'
 
+
 export default {
   components: {
     GoTo
   },
   data: function () {
     return {
-      password: "",
-      email: ""
+      kasutajanimi: '',
+      parool: ''
     }
   },
   methods: {
-    login: function () {
+    lookonto: function () {
+      this.$http.post("/uuskonto/lookonto",
+          {kasutajanimi: this.kasutajanimi, parool: this.parool})
+          .then(function (){})
 
-      localStorage.setItem('user-token', token) // store the token
-      let token;
-      this.$http.defaults.headers.common['Authorization'] = "Bearer " + token
+
+    },
+
+    login: function () {
+      this.$http.post("/avaleht/logisisse",
+          {kasutajanimi: this.kasutajanimi, parool: this.parool})
+          .then(function (response) {
+            let token=response.data
+
+            localStorage.setItem('user-token', token) // store the token
+            this.$http.defaults.headers.common['Authorization'] = "Bearer " + token
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+
     }
   },
     logout: function () {
-
-    localStorage.removeItem('user-token') // remove on logout
-    location.reload();
+      this.$http.post("/avaleht/logikonto")
+      localStorage.removeItem('user-token') // remove on logout
+      location.reload();
 
   }
 

@@ -7,8 +7,19 @@
         <label>Salasõna</label>
         <input type="password" v-model="password"/>
         <br>
-        <button v-on:click="register()">Salvesta</button>
+        <button v-on:click="salvesta()">Salvesta</button>
 
   </div>
 </template>
+<script>
+export default {
+  name: 'uuskonto',
+  data: function () {
+    return {
+      email
+    }
+  }
+
+}
+</script>
 
