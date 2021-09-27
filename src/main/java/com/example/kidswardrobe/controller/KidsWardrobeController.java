@@ -73,6 +73,11 @@ public class KidsWardrobeController {
         return kidsWardrobeService.kuvaEsemeDetailid(esemeId);
     }
 
+    @GetMapping("/riidekapp/annaKoikFiltrid")
+    public FiltridDto annaKoikFiltrid() {
+        return kidsWardrobeService.annaKoikFiltrid();
+    }
+
 
 
 

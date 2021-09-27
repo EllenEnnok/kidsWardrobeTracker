@@ -172,4 +172,57 @@ public class KidsWardrobeRepository {
         EsemeDetailidDto vastus = JdbcTemplate.queryForObject(sql, paramMap, new KidsWardrobeService.EsemeDetailidRowMapper());
         return vastus;
     }
+
+    public List<KlassifikaatorDto> annaKoikAsukohad(){
+        String sql = "SELECT id, asukoht as nimetus FROM asukoht";
+        List<KlassifikaatorDto> vastus = JdbcTemplate.query(sql, new KidsWardrobeService.KlassifikaatorDtoRowMapper());
+        return vastus;
+    }
+    public List<KlassifikaatorDto> annaKoikHooajad(){
+        String sql = "SELECT id, hooaeg as nimetus FROM hooaeg";
+        List<KlassifikaatorDto> vastus = JdbcTemplate.query(sql, new KidsWardrobeService.KlassifikaatorDtoRowMapper());
+        return vastus;
+    }
+    public List<KlassifikaatorDto> annaKoikKategooriad(){
+        String sql = "SELECT id, kategooria as nimetus FROM kategooria";
+        List<KlassifikaatorDto> vastus = JdbcTemplate.query(sql, new KidsWardrobeService.KlassifikaatorDtoRowMapper());
+        return vastus;
+    }
+    public List<KlassifikaatorDto> annaKoikMaterjalid(){
+        String sql = "SELECT id, materjal as nimetus FROM materjal";
+        List<KlassifikaatorDto> vastus = JdbcTemplate.query(sql, new KidsWardrobeService.KlassifikaatorDtoRowMapper());
+        return vastus;
+    }
+    public List<KlassifikaatorDto> annaKoikSugu(){
+        String sql = "SELECT id, sugu as nimetus FROM sugu";
+        List<KlassifikaatorDto> vastus = JdbcTemplate.query(sql, new KidsWardrobeService.KlassifikaatorDtoRowMapper());
+        return vastus;
+    }
+    public List<KlassifikaatorDto> annaKoikJalatsiSuurused(){
+        String sql = "SELECT id, suurus as nimetus FROM suurus_jalatsid";
+        List<KlassifikaatorDto> vastus = JdbcTemplate.query(sql, new KidsWardrobeService.KlassifikaatorDtoRowMapper());
+        return vastus;
+    }
+    public List<KlassifikaatorDto> annaKoikRiideSuurused(){
+        String sql = "SELECT id, suuruse_vahemik as nimetus FROM suurus_riided";
+        List<KlassifikaatorDto> vastus = JdbcTemplate.query(sql, new KidsWardrobeService.KlassifikaatorDtoRowMapper());
+        return vastus;
+    }
+    public List<KlassifikaatorDto> annaKoikTyybid(){
+        String sql = "SELECT id, nimetus FROM tüüp";
+        List<KlassifikaatorDto> vastus = JdbcTemplate.query(sql, new KidsWardrobeService.KlassifikaatorDtoRowMapper());
+        return vastus;
+    }
+    public List<KlassifikaatorDto> annaKoikVarvid(){
+        String sql = "SELECT id, värv as nimetus FROM värv";
+        List<KlassifikaatorDto> vastus = JdbcTemplate.query(sql, new KidsWardrobeService.KlassifikaatorDtoRowMapper());
+        return vastus;
+    }
+
+
+
+
+
+
+
 }
