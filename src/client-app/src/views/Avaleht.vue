@@ -32,7 +32,9 @@ export default {
     lookonto: function () {
       this.$http.post("/uuskonto/lookonto",
           {kasutajanimi: this.kasutajanimi, parool: this.parool})
-          .then(function (){})
+          .then(function (){
+
+          })
 
 
     },
@@ -52,13 +54,13 @@ export default {
           })
 
     }
-  },
-    logout: function () {
+  }
+    /*logout: function () {
       this.$http.post("/avaleht/logikonto")
       localStorage.removeItem('user-token') // remove on logout
       location.reload();
 
-  }
+  }*/
 
 }
 
