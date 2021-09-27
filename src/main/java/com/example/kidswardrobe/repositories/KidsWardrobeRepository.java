@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import com.example.kidswardrobe.services.KidsWardrobeService;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -100,10 +101,10 @@ public class KidsWardrobeRepository {
         return sql;
     }
 
-    public void lisaEseKappi(LisaEseDto lisaEseDto) {
+    public void lisaEseKappi(LisaEseDto lisaEseDto) throws IOException {
         String sql = "INSERT INTO esemed (tüüp_id, hooaeg_id, suurus_riided_id, suurus_jalatsid_id, värv_id," +
-                " sugu_id, materjal_id, kategooria_id, lisainfo, tootja, asukoht_id)" +
-                " VALUES (:tyyp, :hooaeg, :riideSuurus, :jalatsiSuurus, :värv, :sugu, :materjal, :kategooria, :lisainfo, :tootja, :asukoht)";
+                " sugu_id, materjal_id, kategooria_id, lisainfo, tootja, asukoht_id, pilt)" +
+                " VALUES (:tyyp, :hooaeg, :riideSuurus, :jalatsiSuurus, :värv, :sugu, :materjal, :kategooria, :lisainfo, :tootja, :asukoht, :pilt)";
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("tyyp", lisaEseDto.getTyyp());
         paramMap.put("hooaeg", lisaEseDto.getHooaeg());
@@ -116,7 +117,7 @@ public class KidsWardrobeRepository {
         paramMap.put("lisainfo", lisaEseDto.getLisainfo());
         paramMap.put("tootja", lisaEseDto.getTootja());
         paramMap.put("asukoht", lisaEseDto.getAsukoht());
-        paramMap.put("pilt", lisaEseDto.getPilt());
+        paramMap.put("pilt", lisaEseDto.getPictureBytes());
 
         JdbcTemplate.update(sql, new MapSqlParameterSource(paramMap));
 

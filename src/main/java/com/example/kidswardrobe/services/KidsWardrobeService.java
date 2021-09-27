@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.sql.Blob;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -69,7 +70,7 @@ public class KidsWardrobeService {
         return kidsWardrobeRepository.kuvaRiided(filter);
     }
 
-    public void lisaEseKappi(LisaEseDto lisaEseDto) {
+    public void lisaEseKappi(LisaEseDto lisaEseDto) throws IOException {
         kidsWardrobeRepository.lisaEseKappi(lisaEseDto);
     }
 
@@ -81,7 +82,7 @@ public class KidsWardrobeService {
             EsemeKuvaDto result = new EsemeKuvaDto();
             result.setSuurus(resultSet.getString("suurus"));
             result.setKategooria(resultSet.getString("kategooria"));
-            result.setPilt((Blob) resultSet.getBlob("pilt"));
+            result.setPilt(resultSet.getBytes("pilt"));
             result.setId(resultSet.getInt("id"));
             return result;
         }
