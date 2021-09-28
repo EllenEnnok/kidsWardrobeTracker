@@ -23,6 +23,7 @@
     "vue": "^2.6.11",
     "vue-awesome": "^4.3.1",
     "vue-axios": "^3.3.7",
+    "vue-clickaway": "^2.2.2",
     "vue-router": "^3.5.2",
     "vue-unicons": "^3.2.1"
   },

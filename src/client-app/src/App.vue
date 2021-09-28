@@ -4,7 +4,9 @@
   <Header/>
     <div id="nav">
       <router-link to="/"><i class="fa fa-home"></i>Avaleht</router-link> |
-      <router-link to="/riidekapp"><i class="flaticon-baby-body"></i>Riidekapp</router-link> |
+      <router-link to="/riidekapp">
+<!--        <img src="scarf.svg">-->
+        Riidekapp</router-link> |
       <router-link to="/filtreeri">Filtreeri</router-link> |
       <router-link to="/otsi">
         <input class="form-control mr-sm-2" type="search" placeholder="Otsi" aria-label="Otsi">
@@ -13,7 +15,7 @@
       <router-link to="/peamenuu"><i class="fa fa-bars"></i></router-link>
     </div><router-view/>
 
-  </div>
+      </div>
 </template>
 
 <script>

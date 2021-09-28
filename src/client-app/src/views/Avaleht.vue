@@ -11,6 +11,8 @@
 
     <h1>Pole kontot?</h1>
     <GoTo title="Loo uus konto" link="/uuskonto"></GoTo>
+    <br>
+
   </div>
 </template>
 
@@ -31,8 +33,8 @@ export default {
     login: function () {
       this.$http.post("/avaleht/logiSisse",
           {kasutajanimi: this.kasutajanimi, parool: this.parool})
-          .then(function (response) {
-            let token=response.data
+          .then(response => {
+            let token = response.data
 
             localStorage.setItem('user-token', token) // store the token
             this.$http.defaults.headers.common['Authorization'] = "Bearer " + token
@@ -42,34 +44,11 @@ export default {
           .catch(function (error) {
             console.log(error);
           })
-
     }
   }
-    /*logout: function () {
-      this.$http.post("/avaleht/logikonto")
-      localStorage.removeItem('user-token') // remove on logout
-      location.reload();
-
-  }*/
-
 }
-
 </script>
 <style scoped>
-  body {
-    cursor: pointer;
-    text-transform: capitalize;
-    background-size: auto;
-    background-color: #4ad295; /*ei kuva */
-    }
-  label {
-    display: inline-block;
-    width: 70px;
-    margin-right: 30px;
-    text-align: right;
-    color: #2c3e50;
-    }
-
 
 </style>
 
