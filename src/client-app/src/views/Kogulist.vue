@@ -1,5 +1,5 @@
 <template>
-  <div class="kapisiulist">
+  <div class="kogulist">
     <label>Sul on kapis</label>
     <br>
     <br>
@@ -29,8 +29,7 @@ export default {
     }
   },
   mounted() {
-   let muutuja = this.$route.query.id
-    this.$http.get("/riidekapp/kuvaKoguKapp?kategooriaId=" + muutuja)
+    this.$http.get("/riidekapp/kuvaKoguKapp")
         .then(response => {
           this.kategooria = response.data;
         }).catch(function (error) {

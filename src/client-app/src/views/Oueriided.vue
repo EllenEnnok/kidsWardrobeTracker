@@ -1,16 +1,15 @@
 <template>
   <div class="oueriided">
-    <GoTo title="+" link="/uusriideese"></GoTo>
-    <label> Sisesta kappi uued õueriided</label>
+    <GoTo title="+" link="/uusese"></GoTo>
+    <label> Sisesta kappi uus ese</label>
     <br>
     <br>
-
     <div class="icons">
       <span class=".flaticon-jacket-1"></span>
-      <GoTo title="Joped" link="/joped"></GoTo>
+      <GoTo title="Joped" link="/kapisisulist" page-id="11"></GoTo>
     </div>
-    <GoTo title="Kombekad" link="/kombekad"></GoTo>
-    <GoTo title="Õuepüksid" link="/ouepuksid"></GoTo>
+    <GoTo title="Kombekad" link="/kapisisulist" page-id="12"></GoTo>
+    <GoTo title="Õuepüksid" link="/kapisisulist" page-id="13"></GoTo>
 
   </div>
 </template>
