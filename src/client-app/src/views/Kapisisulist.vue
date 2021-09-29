@@ -9,6 +9,7 @@
       <img v-if="ese.pilt" :src="getImageSource(ese)" alt="pilt"/>
       <h1>{{ ese.kategooria }}</h1>
       <h1>Suurus: {{ ese.suurus }}</h1>
+      <button v-on:click="kuvaDetailid(ese.id)">Kuva detailid</button>
       <button @click="uuendaKapp" v-on:click="kustutaEse(ese.id)">Kustuta ese</button>
 
     </div>
@@ -90,6 +91,12 @@ export default {
         baseUrl += `&varvId=${this.filter.varvId}`;
       }
       return baseUrl;
+    },
+    kuvaDetailid(id) {
+      this.$http.get(this.ehitaEsemeDetailidUrl(id)).then(response => {
+        console.log(response)
+        window.alert(response.data);
+      })
     }
   }
 }
