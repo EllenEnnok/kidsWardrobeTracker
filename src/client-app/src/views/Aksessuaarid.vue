@@ -10,6 +10,7 @@
   </div>
 </template>
 
+
 <script>
 import GoTo from '../components/GoTo.vue'
 

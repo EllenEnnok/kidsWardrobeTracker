@@ -1,17 +1,44 @@
 <template>
   <div class="kindad">
-    <GoTo title="+" link="/uusriideese"></GoTo>
-    <label> Sisesta kappi uued kindad</label>
-<!--    kuvab listi kinnastest-->
+    <label>Sul on kapis</label>
+
+    <div class="esemeKuva" v-for="ese in kategooria" :key="ese.id">
+
+      <img v-if="ese.pilt" :src="getImageSource(ese)" alt="pilt"/>
+      <h1>{{ ese.kategooria }}</h1>
+      <h1>Suurus: {{ ese.suurus }}</h1>
+
+      <!--
+            <button @click="uuendaKapp" v-on:click="kustutaEse(ese.id)">Kustuta ese</button>
+      -->
+
+    </div>
   </div>
+
 </template>
 
+
 <script>
-import GoTo from '../components/GoTo.vue'
 
 export default {
-  components: {
-    GoTo
+
+  data: function () {
+    return {
+      kategooria: ''
+    }
+  },
+  mounted() {
+    this.$http.get("/riidekapp/kuvaKoguKapp?kategooriaId=8")
+        .then(response => {
+          this.kategooria = response.data;
+        }).catch(function (error) {
+      console.log(error);
+    })
+  },
+  methods: {
+    getImageSource(ese) {
+      return `data:image/png;base64, ${ese.pilt}`;
+    }
   }
 }
 </script>
