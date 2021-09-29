@@ -1,17 +1,17 @@
 
 /* HEADER */
 .header {
-    padding: 10px;
+    padding: 20px 40px 10px 50px;
     background-color: white;
     color: black;
     text-decoration: none;
     text-transform: uppercase;
     margin-top: 0px;
-    background-image: url("~../../public/clothing rack.jpg");
+    background-image: url("~../../public/ikea cabinet.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    height: 300px;
+    height: 310px;
     width: auto;
 }
 
@@ -58,25 +58,18 @@ input {
     border-radius: 10px 10px 0 0;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 1px;
-    padding: 8px;
-    text-align: center;
-    font-weight: inherit;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
 #nav {
     padding: 30px;
     text-align: center;
     box-sizing: border-box;
-    margin: 1px;
+    margin: 0;
     color: #2c3e50;
     font-weight: inherit;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: row;
+    width: auto;
 }
 #nav a {
     font-weight: bold;
@@ -121,12 +114,38 @@ button {
     width: 1px;
 
 }
+body {
+     background: white;
+     color: black;
+     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     text-align: center;
+     font-weight: inherit;
+     line-height: 1.5;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+ }
+section {
+    background: white;
+    color: black;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+
+}
+/*div {
+    background: red;
+    margin: auto;
+    width: 100px;
+}*/
 
 /* FOOTER */
 footer {
     background: white;
     color: gray;
     font-size: 12px;
-    padding: 20px 20px;
+    padding: 10px 20px;
     text-align: center;
 }
