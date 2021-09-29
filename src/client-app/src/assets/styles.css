@@ -1,11 +1,20 @@
+body {
+    background: white;
+    color: #e4a199;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
 
 /* HEADER */
-.header {
-    padding: 20px 40px 10px 50px;
+header {
+    padding: 20px;
     background-color: white;
-    color: black;
+    color: #ce897b;
     text-decoration: none;
     text-transform: uppercase;
+    text-align: right;
     margin-top: 0px;
     background-image: url("~../../public/ikea cabinet.jpg");
     background-size: 100%;
@@ -14,8 +23,52 @@
     height: 310px;
     width: auto;
 }
+section {
+    background: whitesmoke;
+    color: #ce897b;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
 
-/* FEATURES */
+}
+section div {
+    background: hotpink;
+    width: 100%;
+    margin: 1px;
+
+}
+div {
+    background: white;
+    margin: auto;
+    width: 100%;
+}
+/*ul*/
+nav {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+/*li*/
+nav {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 2px;
+    margin-right: 20px;
+
+}
+nav:hover {
+    background-color: hotpink;
+}
+nav:first-child {
+    margin-left: 0;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
 label {
     display: inline-block;
     width: 200px;
@@ -23,21 +76,21 @@ label {
     text-align: right;
     color: #2c3e50;
 }
-/*select {*/
-/*    width: 210px;*/
-/*    padding: 0;*/
-/*    margin: 0;*/
-/*    height: 22px;*/
-/*    -moz-box-sizing: border-box;*/
-/*    -webkit-box-sizing: border-box;*/
-/*    box-sizing: border-box;*/
-/*}*/
-
-input {
-    height: 30px;
-    width: 200px;
+button {
+     border: 0.001rem solid #ead3d7;
+     border-radius: 5px;
+     background-color: #fbd2d7;
+     text-transform: capitalize;
+     color: #ce897b;
+     padding: 10px 10px;
+     font-size: 12px;
+     cursor: pointer;
 }
 
+input {
+      height: 30px;
+      width: 200px;
+}
 .esemeKuva {
     float: left;
     height: 400px;
@@ -58,15 +111,48 @@ input {
     border-radius: 10px 10px 0 0;
 }
 
-#nav {
+/* ICONS */
+
+.icon {
+    width: 19px;
+    height: auto;
+    border-radius: 0;
+}
+
+img {
+    width: 19px;
+    height: auto;
+    border-radius: 0;
+}
+
+/* FOOTER */
+footer {
+    background: white;
+    color: #c38888;
+    font-size: 12px;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/*select {*/
+/*    width: 210px;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    height: 22px;*/
+/*    -moz-box-sizing: border-box;*/
+/*    -webkit-box-sizing: border-box;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*#nav {
     padding: 30px;
     text-align: center;
     box-sizing: border-box;
     margin: 0;
     color: #2c3e50;
     font-weight: inherit;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    !*-webkit-font-smoothing: antialiased;*!
+    !*-moz-osx-font-smoothing: grayscale;*!
     display: flex;
     flex-direction: row;
     width: auto;
@@ -76,22 +162,12 @@ input {
     color: #2c3e50;
 }
 #nav a.router-link-exact-active {
-    color: whitesmoke;
-    background: lightskyblue;
-    border-radius: 7px;
-}
-button {
-    border: 0.001rem solid deepskyblue;
+    color: deeppink;
+    background: #ffe4e1;
     border-radius: 5px;
-    background-color: skyblue;
-    text-transform: capitalize;
-    color: #2c3e50;
-    padding: 10px 10px;
-    font-size: 12px;
-    cursor: pointer;
-}
+}*/
 
-.features {
+/*.features {
     background: white;
     color: #2c3e50;
     padding: 10px;
@@ -107,14 +183,11 @@ button {
     border-radius: 30%;
     width: 100px;
 
-}
+}*/
 
-/* ICONS */
-.icon {
-    width: 1px;
 
-}
-body {
+/*BODY OSA */
+/*body {
      background: white;
      color: black;
      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -135,17 +208,9 @@ section {
     flex-direction: row;
 
 }
-/*div {
+!*div {
     background: red;
     margin: auto;
     width: 100px;
-}*/
+}*!*/
 
-/* FOOTER */
-footer {
-    background: white;
-    color: gray;
-    font-size: 12px;
-    padding: 10px 20px;
-    text-align: center;
-}
