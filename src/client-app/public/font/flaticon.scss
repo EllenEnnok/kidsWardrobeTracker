@@ -1,0 +1,233 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?aa312913077fc589c90530895da1f2f6") format("truetype"),
+url("./flaticon.woff?aa312913077fc589c90530895da1f2f6") format("woff"),
+url("./flaticon.woff2?aa312913077fc589c90530895da1f2f6") format("woff2"),
+url("./flaticon.eot?aa312913077fc589c90530895da1f2f6#iefix") format("embedded-opentype"),
+url("./flaticon.svg?aa312913077fc589c90530895da1f2f6#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "user-info-interface-symbol-with-text-lines-at-right-side": "\f101",
+    "two-circular-arrows": "\f102",
+    "checkmark-outline": "\f103",
+    "recycling-bin": "\f104",
+    "minus-circular-button": "\f105",
+    "right-arrow-circular-button-outline": "\f106",
+    "down-arrow-square-outlined-button": "\f107",
+    "upload": "\f108",
+    "up-arrow-with-house-shape-outlined-symbol": "\f109",
+    "list-interface-symbol": "\f10a",
+    "back-left-arrow-square-button-outline": "\f10b",
+    "up-circular-interface-button": "\f10c",
+    "left-arrow-square-outlined-button": "\f10d",
+    "checkmark-square-button-outline": "\f10e",
+    "right-arrow-square-outlined-button": "\f10f",
+    "save-button-interface-symbol-of-outlined-diskette": "\f110",
+    "left-arrow-with-a-cross": "\f111",
+    "tshirt": "\f112",
+    "winter-clothing": "\f113",
+    "sweatshirt": "\f114",
+    "baby-body": "\f115",
+    "hoodie": "\f116",
+    "jacket": "\f117",
+    "coat": "\f118",
+    "underwear": "\f119",
+    "jeans": "\f11a",
+    "hoodie-1": "\f11b",
+    "shoe": "\f11c",
+    "shoe-1": "\f11d",
+    "socks": "\f11e",
+    "rubber-gloves": "\f11f",
+    "winter-hat": "\f120",
+    "winter-scarf": "\f121",
+    "jacket-1": "\f122",
+    "baby-dress": "\f123",
+    "shorts": "\f124",
+    "clothes": "\f125",
+    "protection": "\f126",
+    "trousers": "\f127",
+    "trousers-1": "\f128",
+    "uniform": "\f129",
+    "baby-clothes": "\f12a",
+    "baby-clothes-1": "\f12b",
+    "baby-clothes-2": "\f12c",
+    "baby-clothes-with-pin": "\f12d",
+    "skirt": "\f12e",
+    "tights": "\f12f",
+    "tights-1": "\f130",
+    "pyjamas": "\f131",
+    "swim-suit": "\f132",
+    "swimming-trunks": "\f133",
+    "hanger": "\f134",
+);
+
+.flaticon-user-info-interface-symbol-with-text-lines-at-right-side:before {
+    content: map-get($flaticon-map, "user-info-interface-symbol-with-text-lines-at-right-side");
+}
+.flaticon-two-circular-arrows:before {
+    content: map-get($flaticon-map, "two-circular-arrows");
+}
+.flaticon-checkmark-outline:before {
+    content: map-get($flaticon-map, "checkmark-outline");
+}
+.flaticon-recycling-bin:before {
+    content: map-get($flaticon-map, "recycling-bin");
+}
+.flaticon-minus-circular-button:before {
+    content: map-get($flaticon-map, "minus-circular-button");
+}
+.flaticon-right-arrow-circular-button-outline:before {
+    content: map-get($flaticon-map, "right-arrow-circular-button-outline");
+}
+.flaticon-down-arrow-square-outlined-button:before {
+    content: map-get($flaticon-map, "down-arrow-square-outlined-button");
+}
+.flaticon-upload:before {
+    content: map-get($flaticon-map, "upload");
+}
+.flaticon-up-arrow-with-house-shape-outlined-symbol:before {
+    content: map-get($flaticon-map, "up-arrow-with-house-shape-outlined-symbol");
+}
+.flaticon-list-interface-symbol:before {
+    content: map-get($flaticon-map, "list-interface-symbol");
+}
+.flaticon-back-left-arrow-square-button-outline:before {
+    content: map-get($flaticon-map, "back-left-arrow-square-button-outline");
+}
+.flaticon-up-circular-interface-button:before {
+    content: map-get($flaticon-map, "up-circular-interface-button");
+}
+.flaticon-left-arrow-square-outlined-button:before {
+    content: map-get($flaticon-map, "left-arrow-square-outlined-button");
+}
+.flaticon-checkmark-square-button-outline:before {
+    content: map-get($flaticon-map, "checkmark-square-button-outline");
+}
+.flaticon-right-arrow-square-outlined-button:before {
+    content: map-get($flaticon-map, "right-arrow-square-outlined-button");
+}
+.flaticon-save-button-interface-symbol-of-outlined-diskette:before {
+    content: map-get($flaticon-map, "save-button-interface-symbol-of-outlined-diskette");
+}
+.flaticon-left-arrow-with-a-cross:before {
+    content: map-get($flaticon-map, "left-arrow-with-a-cross");
+}
+.flaticon-tshirt:before {
+    content: map-get($flaticon-map, "tshirt");
+}
+.flaticon-winter-clothing:before {
+    content: map-get($flaticon-map, "winter-clothing");
+}
+.flaticon-sweatshirt:before {
+    content: map-get($flaticon-map, "sweatshirt");
+}
+.flaticon-baby-body:before {
+    content: map-get($flaticon-map, "baby-body");
+}
+.flaticon-hoodie:before {
+    content: map-get($flaticon-map, "hoodie");
+}
+.flaticon-jacket:before {
+    content: map-get($flaticon-map, "jacket");
+}
+.flaticon-coat:before {
+    content: map-get($flaticon-map, "coat");
+}
+.flaticon-underwear:before {
+    content: map-get($flaticon-map, "underwear");
+}
+.flaticon-jeans:before {
+    content: map-get($flaticon-map, "jeans");
+}
+.flaticon-hoodie-1:before {
+    content: map-get($flaticon-map, "hoodie-1");
+}
+.flaticon-shoe:before {
+    content: map-get($flaticon-map, "shoe");
+}
+.flaticon-shoe-1:before {
+    content: map-get($flaticon-map, "shoe-1");
+}
+.flaticon-socks:before {
+    content: map-get($flaticon-map, "socks");
+}
+.flaticon-rubber-gloves:before {
+    content: map-get($flaticon-map, "rubber-gloves");
+}
+.flaticon-winter-hat:before {
+    content: map-get($flaticon-map, "winter-hat");
+}
+.flaticon-winter-scarf:before {
+    content: map-get($flaticon-map, "winter-scarf");
+}
+.flaticon-jacket-1:before {
+    content: map-get($flaticon-map, "jacket-1");
+}
+.flaticon-baby-dress:before {
+    content: map-get($flaticon-map, "baby-dress");
+}
+.flaticon-shorts:before {
+    content: map-get($flaticon-map, "shorts");
+}
+.flaticon-clothes:before {
+    content: map-get($flaticon-map, "clothes");
+}
+.flaticon-protection:before {
+    content: map-get($flaticon-map, "protection");
+}
+.flaticon-trousers:before {
+    content: map-get($flaticon-map, "trousers");
+}
+.flaticon-trousers-1:before {
+    content: map-get($flaticon-map, "trousers-1");
+}
+.flaticon-uniform:before {
+    content: map-get($flaticon-map, "uniform");
+}
+.flaticon-baby-clothes:before {
+    content: map-get($flaticon-map, "baby-clothes");
+}
+.flaticon-baby-clothes-1:before {
+    content: map-get($flaticon-map, "baby-clothes-1");
+}
+.flaticon-baby-clothes-2:before {
+    content: map-get($flaticon-map, "baby-clothes-2");
+}
+.flaticon-baby-clothes-with-pin:before {
+    content: map-get($flaticon-map, "baby-clothes-with-pin");
+}
+.flaticon-skirt:before {
+    content: map-get($flaticon-map, "skirt");
+}
+.flaticon-tights:before {
+    content: map-get($flaticon-map, "tights");
+}
+.flaticon-tights-1:before {
+    content: map-get($flaticon-map, "tights-1");
+}
+.flaticon-pyjamas:before {
+    content: map-get($flaticon-map, "pyjamas");
+}
+.flaticon-swim-suit:before {
+    content: map-get($flaticon-map, "swim-suit");
+}
+.flaticon-swimming-trunks:before {
+    content: map-get($flaticon-map, "swimming-trunks");
+}
+.flaticon-hanger:before {
+    content: map-get($flaticon-map, "hanger");
+}

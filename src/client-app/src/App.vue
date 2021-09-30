@@ -1,35 +1,71 @@
-
 <template>
   <div id="app" class="container">
-    <div id="nav">
-      <router-link to="/">Avaleht</router-link> |
-      <router-link to="/riidekapp">Riidekapp</router-link> |
-      <router-link to="/filtreeri">Filtreeri</router-link>
-    </div>
+    <!--    <div class="container">-->
+    <header>
+      <nav>
+        <ul>
+          <li><router-link to="/">
+            <img src="home.svg">Avaleht
+          </router-link></li>
+          <li><router-link to="/riidekapp">
+            <img src="hanger.svg">
+            Riidekapp
+          </router-link></li>
+          <li><router-link to="/filtreeri"><img src="sort.svg">Filtreeri</router-link></li>
+
+          <li> <div class="search-wrapper">
+            <form><input type="text" name="focus" required class="search-box" placeholder="Enter search term" />
+              <button class="close-icon" type="reset"></button>
+            </form></div></li><li>
+            <div class="ui icon buttons" @click="toggle">
+               <div id="menuNupp" class="ui top left pointing dropdown button">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+                <div :class="menuClasses">
+                  <div class="item"><i class="user icon"></i> Minu seaded</div>
+                  <div class="item"><i class="question circle icon"></i> KKK</div>
+                  <div class="item"><i class="x icon"></i> Logi välja</div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <h1>Lapse riidekapp</h1>
+    </header>
     <router-view/>
   </div>
 </template>
 
+<script>
+
+export default {
+  name: 'app',
+  components: {
+  },
+
+  data () {
+    return {
+      active: false
+    }
+  },
+  computed: {
+    menuClasses() {
+      if (!this.active) {
+        return "menu transition hidden";
+      } else {
+        return "menu transition visible"
+      }
+    }
+  },
+  methods: {
+    toggle () {
+      this.active = !this.active
+    }
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+@import './assets/styles.css';
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
-

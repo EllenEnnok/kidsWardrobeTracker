@@ -1,51 +1,59 @@
 <template>
   <div class="kogukapp">
-    <button>+</button>
-    <label> Sisesta kappi uus riideese</label>
+    <GoTo title="+" link="/uuseese"></GoTo>
+    <label> Sisesta kappi uus ese</label>
     <br>
     <br>
-    <button>+</button>
-    <label> Sisesta kappi uus jalanõu</label>
     <h1>Vali kategooria</h1>
-    <button>Näita kogu kapi sisu</button>
+    <GoTo title="Näita kogu kapi sisu" link="/kogulist"></GoTo>
     <br>
     <br>
-    <button>Lühikese varrukaga särgid</button>
-    <button>Pika varrukaga särgid</button>
-    <button>Lühikesed püksid</button>
+    <GoTo title="Lühikese varrukaga särgid" link="/kapisisulist" page-id="1"></GoTo>
+    <GoTo title="Pika varrukaga särgid" link="/kapisisulist" page-id="2"></GoTo>
+    <GoTo title="Lühikesed püksid" link="/kapisisulist" page-id="3"></GoTo>
     <br>
     <br>
-    <button>Pikad püksid</button>
-    <button>Aluspesu</button>
-    <button>Sokid</button>
+    <GoTo title="Pikad püksid" link="/kapisisulist" page-id="4"></GoTo>
+    <GoTo title="Aluspesu" link="/kapisisulist" page-id="5"></GoTo>
+    <GoTo title="Sokid" link="/kapisisulist" page-id="6"></GoTo>
     <br>
     <br>
-    <button>Sukapüksid</button>
-    <button>Kindad</button>
-    <button>Mütsid</button>
+    <GoTo title="Sukapüksid" link="/kapisisulist" page-id="7"></GoTo>
+    <GoTo title="Kindad" link="/kapisisulist" page-id="8"></GoTo>
+    <GoTo title="Mütsid" link="/kapisisulist" page-id="9"></GoTo>
     <br>
     <br>
-    <button>Sallid</button>
-    <button>Joped</button>
-    <button>Kombekad</button>
+    <GoTo title="Sallid" link="/kapisisulist" page-id="10"></GoTo>
+    <GoTo title="Joped" link="/kapisiulist" page-id="11"></GoTo>
+    <GoTo title="Kombekad" link="/kapisisulist" page-id="12"></GoTo>
     <br>
     <br>
-    <button>Õuepüksid</button>
-    <button>Seelikud</button>
-    <button>Kleidid</button>
+    <GoTo title="Õuepüksid" link="/kapisisulist" page-id="13"></GoTo>
+    <GoTo title="Seelikud" link="/kapisisulist" page-id="14"></GoTo>
+    <GoTo title="Kleidid" link="/kapisisulist" page-id="15"></GoTo>
     <br>
     <br>
-    <button>Romperid</button>
-    <button>Tuduriided</button>
-    <button>Bodyd</button>
+    <GoTo title="Romperid" link="/kapisisulist" page-id="16"></GoTo>
+    <GoTo title="Tuduriided" link="/kapisisulist" page-id="17"></GoTo>
+    <GoTo title="Bodyd" link="/kapisisulist" page-id="18"></GoTo>
     <br>
     <br>
-    <button>Sipukad</button>
-    <button>Ujumisriided</button>
-    <button>Pusad</button>
+    <GoTo title="Sipukad" link="/kapisisulist" page-id="19"></GoTo>
+    <GoTo title="Ujumisriided" link="/kapisisulist" page-id="20"></GoTo>
+    <GoTo title="Pusad" link="/kapisisulist" page-id="21"></GoTo>
     <br>
     <br>
-    <button>Muu</button>
-
+    <GoTo title="Muu" link="/kapisisulist" page-id="22"></GoTo>
+    <GoTo title="Jalatsid" link="/kapisisulist" page-id="24"></GoTo>
   </div>
 </template>
+
+<script>
+import GoTo from '../components/GoTo.vue'
+
+export default {
+  components: {
+    GoTo
+  }
+}
+</script>

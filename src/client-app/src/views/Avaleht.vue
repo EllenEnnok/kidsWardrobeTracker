@@ -1,25 +1,49 @@
-
-
 <template>
-  <div class="avaleht">
-        <label>E-post</label>
-        <input type="text" v-model="email"/>
-        <br>
-        <label>Salasõna</label>
-        <input type="password" v-model="password"/>
-        <br>
-        <button v-on:click="register()">Logi sisse</button>
-        <h1>Pole kontot?</h1>
-        <button @click="goTo">Loo uus konto</button>
-  </div>
+
+  <div class="">
+    </div>
 </template>
 
 <script>
+
 export default {
+  components: {
+  },
+  data: function () {
+    return {
+      kasutajanimi: '',
+      parool: ''
+    }
+  },
   methods: {
-    goTo() {
-      return this.$router.push('/uuskonto');
+    login: function () {
+      this.$http.post("/avaleht/logiSisse",
+          {kasutajanimi: this.kasutajanimi, parool: this.parool})
+          .then(response => {
+            let token = response.data
+
+            localStorage.setItem('user-token', token) // store the token
+            this.$http.defaults.headers.common['Authorization'] = "Bearer " + token
+            console.log(response);
+            this.$router.push("/riidekapp");
+            location.reload();
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+
+
+    },
+    logout: function () {
+      this.$http.post("/avaleht/logikonto")
+      localStorage.removeItem('user-token') // remove on logout
+      location.reload();
     }
   }
 }
 </script>
+<style scoped>
+
+</style>
+
+

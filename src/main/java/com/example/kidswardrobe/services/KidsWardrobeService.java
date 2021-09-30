@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.sql.Blob;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -68,7 +69,7 @@ public class KidsWardrobeService {
         return kidsWardrobeRepository.kuvaRiided(filter);
     }
 
-    public void lisaEseKappi(LisaEseDto lisaEseDto) {
+    public void lisaEseKappi(LisaEseDto lisaEseDto) throws IOException {
         kidsWardrobeRepository.lisaEseKappi(lisaEseDto);
     }
 
@@ -80,7 +81,7 @@ public class KidsWardrobeService {
             EsemeKuvaDto result = new EsemeKuvaDto();
             result.setSuurus(resultSet.getString("suurus"));
             result.setKategooria(resultSet.getString("kategooria"));
-            result.setPilt((Blob) resultSet.getBlob("pilt"));
+            result.setPilt(resultSet.getBytes("pilt"));
             result.setId(resultSet.getInt("id"));
             return result;
         }
@@ -115,7 +116,42 @@ public class KidsWardrobeService {
             result.setKategooria(resultSet.getString("kategooria"));
             result.setLisainfo(resultSet.getString("lisainfo"));
             result.setTootja(resultSet.getString("tootja"));
-            result.setPilt((Blob) resultSet.getBlob("pilt"));
+            result.setPilt(resultSet.getBytes("pilt"));
+            return result;
+        }
+    }
+
+    public FiltridDto annaKoikFiltrid() {
+        FiltridDto filtrid = new FiltridDto();
+        List<KlassifikaatorDto> asukohad = kidsWardrobeRepository.annaKoikAsukohad();
+        List<KlassifikaatorDto> hooajad = kidsWardrobeRepository.annaKoikHooajad();
+        List<KlassifikaatorDto> kategooriad = kidsWardrobeRepository.annaKoikKategooriad();
+        List<KlassifikaatorDto> materjalid = kidsWardrobeRepository.annaKoikMaterjalid();
+        List<KlassifikaatorDto> sugu = kidsWardrobeRepository.annaKoikSugu();
+        List<KlassifikaatorDto> suurusJalatsid = kidsWardrobeRepository.annaKoikJalatsiSuurused();
+        List<KlassifikaatorDto> suurusRiided = kidsWardrobeRepository.annaKoikRiideSuurused();
+        List<KlassifikaatorDto> tyybid = kidsWardrobeRepository.annaKoikTyybid();
+        List<KlassifikaatorDto> varvid = kidsWardrobeRepository.annaKoikVarvid();
+
+        filtrid.setVarvid(varvid);
+        filtrid.setTyybid(tyybid);
+        filtrid.setSuurus_riided(suurusRiided);
+        filtrid.setSuurus_jalatsid(suurusJalatsid);
+        filtrid.setSugu(sugu);
+        filtrid.setMaterjalid(materjalid);
+        filtrid.setKategooriad(kategooriad);
+        filtrid.setHooajad(hooajad);
+        filtrid.setAsukohad(asukohad);
+        return filtrid;
+    }
+
+    public static class KlassifikaatorDtoRowMapper implements RowMapper<KlassifikaatorDto> {
+
+        @Override
+        public KlassifikaatorDto mapRow(ResultSet resultSet, int i) throws SQLException {
+            KlassifikaatorDto result = new KlassifikaatorDto();
+            result.setId(resultSet.getInt("id"));
+            result.setNimetus(resultSet.getString("nimetus"));
             return result;
         }
     }

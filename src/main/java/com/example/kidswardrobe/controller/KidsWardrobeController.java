@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.example.kidswardrobe.services.KidsWardrobeService;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -41,19 +42,20 @@ public class KidsWardrobeController {
 
 
     @PostMapping("/riidekapp/lisaEseKappi")
-    public void lisaEseKappi(@RequestBody LisaEseDto lisaEseDto) {
+    public void lisaEseKappi(LisaEseDto lisaEseDto) throws IOException {
         kidsWardrobeService.lisaEseKappi(lisaEseDto);
 
     }
-    @GetMapping("/riidekapp/logiSisse")
+    @PostMapping ("/avaleht/logiSisse")
     public String logiSisse(@RequestBody LoginDto loginDto) {
         return kidsWardrobeService.logiSisse(loginDto);
     }
 
-    @PostMapping("/riidekapp/looKonto")
+    @PostMapping("/uuskonto/looKonto")
     public void looKonto(@RequestBody LoginDto loginDto) {
         kidsWardrobeService.looKonto(loginDto);
     }
+
 
 
     @DeleteMapping("/riidekapp/kustutaEse")
@@ -73,8 +75,10 @@ public class KidsWardrobeController {
         return kidsWardrobeService.kuvaEsemeDetailid(esemeId);
     }
 
-
-
+    @GetMapping("/riidekapp/annaKoikFiltrid")
+    public FiltridDto annaKoikFiltrid() {
+        return kidsWardrobeService.annaKoikFiltrid();
+    }
 
 
 

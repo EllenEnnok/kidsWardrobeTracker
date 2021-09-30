@@ -1,21 +1,27 @@
 <template>
   <div class="riidekapp">
-    <button>+</button>
-    <label> Sisesta kappi uus riideese</label>
+    <GoTo title="+" link="/uusese"></GoTo>
+    <label> Sisesta kappi uus ese</label>
     <br>
     <br>
-    <button>+</button>
-    <label> Sisesta kappi uus jalanõu</label>
     <h1>Vali kategooria</h1>
     <br>
-    <button>Näita kõike</button>
+    <GoTo title="Näita kõike" link="/kogukapp"></GoTo>
     <br>
     <br>
-    <button>Õueriided</button>
-    <button>Riided</button>
-    <button>Aksessuaarid</button>
-    <button>Jalanõud</button>
-    <button>Spordiriided</button>
-
+    <GoTo title="Õueriided" link="/oueriided"></GoTo>
+    <GoTo title="Riided" link="/riided"></GoTo>
+    <GoTo title="Aksessuaarid" link="/aksessuaarid"></GoTo>
+    <GoTo title="Jalanõud" link="/kapisisulist"></GoTo>
+    <GoTo title="Spordiriided" link="/spordiriided"></GoTo>
   </div>
 </template>
+<script>
+import GoTo from '../components/GoTo.vue'
+
+export default {
+  components: {
+    GoTo
+  }
+}
+</script>
