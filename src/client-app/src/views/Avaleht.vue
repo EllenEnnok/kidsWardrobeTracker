@@ -22,10 +22,13 @@ export default {
   components: {
     GoTo
   },
+  mounted() {
+    this.loggedIn = localStorage.getItem('user-token')
+  },
   data: function () {
     return {
       kasutajanimi: '',
-      parool: ''
+      parool: '',
     }
   },
   methods: {

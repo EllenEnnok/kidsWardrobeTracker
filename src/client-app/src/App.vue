@@ -10,7 +10,7 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Otsi" aria-label="Otsi">
           <button>Otsi</button>
       </router-link> |
-      <router-link><i class="fa fa-bars"></i>
+      <router-link v-if="token"><i class="fa fa-bars"></i>
         <option>Logi välja</option>
       </router-link>
 
@@ -26,6 +26,14 @@ export default  {
   name: 'app',
   components: {
     Header,
+  },
+  data: function (){
+    return {
+      token: ''
+    }
+  },
+  mounted() {
+    this.token = localStorage.getItem('user-token');
   }
 }
 </script>
