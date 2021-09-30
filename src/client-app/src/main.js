@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+/* import vuetify from 'vuetify' */
 
 
 const token = localStorage.getItem('user-token')
@@ -15,6 +16,7 @@ Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 
 new Vue({
+  // vuetify,
   router,
   render: h => h(App),
 }).$mount('#app')
