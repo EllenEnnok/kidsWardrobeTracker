@@ -18,7 +18,7 @@
           </li>
           <li>
             <div class="ui icon buttons" @click="toggle">
-               <div id="menuNupp" class="ui top left pointing dropdown button">
+               <div id="menuNupp" class="ui top right pointing dropdown button">
                 <i class="fa fa-bars" aria-hidden="true"></i>
                 <div :class="menuClasses">
                   <div class="item"><i class="user icon"></i> Minu seaded</div>

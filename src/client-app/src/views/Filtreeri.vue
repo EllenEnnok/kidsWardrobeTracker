@@ -110,15 +110,15 @@
       <button @click="sulgeDetailid">Sulge</button>
     </div>
 
-    <div v-show="!detailid" class="esemeKuva" v-on:click="kuvaDetailid(ese)" v-for="ese in esemed" :key="ese.id">
+    <div v-show="!detailid" class="esemeKuva" v-for="ese in esemed" :key="ese.id">
 
 
       <img v-if="ese.pilt" :src="getImageSource(ese)" alt="pilt"/>
       <img v-else src="noimage.jpg"/>
       <h1>Kategooria: {{ ese.kategooria }}</h1>
       <h1>Suurus: {{ ese.suurus }}</h1>
-      <button   v-on:click="kuvaDetailid(ese)">Kuva detailid</button>
-      <button  @click="uuendaKapp" v-on:click="kustutaEse(ese.id)">Kustuta</button>
+      <button v-on:click="kuvaDetailid(ese)">Kuva detailid</button>
+      <button v-on:click="kustutaEse(ese.id)">Kustuta</button>
 
 
     </div>
