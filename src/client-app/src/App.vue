@@ -8,15 +8,15 @@
             <img src="home.svg">Avaleht
           </router-link></li>
           <li><router-link to="/riidekapp">
-            <img src="wardrobe.svg">
+            <img src="hanger.svg">
             Riidekapp
           </router-link></li>
-          <li><router-link to="/filtreeri"><img src="magnifying-glass.svg">Filtreeri</router-link></li>
-          <li><input class="form-control mr-sm-2" type="search" placeholder="Otsi"
-                     aria-label="Otsi"><img src="magnifying-glass.svg" alt="">
-            <button><img src="magnifying-glass-1.svg">Otsi</button>
-          </li>
-          <li>
+          <li><router-link to="/filtreeri"><img src="sort.svg">Filtreeri</router-link></li>
+
+          <li> <div class="search-wrapper">
+            <form><input type="text" name="focus" required class="search-box" placeholder="Enter search term" />
+              <button class="close-icon" type="reset"></button>
+            </form></div></li><li>
             <div class="ui icon buttons" @click="toggle">
                <div id="menuNupp" class="ui top left pointing dropdown button">
                 <i class="fa fa-bars" aria-hidden="true"></i>
