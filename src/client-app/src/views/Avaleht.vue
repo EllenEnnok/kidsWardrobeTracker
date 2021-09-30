@@ -11,7 +11,11 @@
 
     <h1>Pole kontot?</h1>
     <GoTo title="Loo uus konto" link="/uuskonto"></GoTo>
+
+    <button v-on:click="logout">Logi välja</button>
+=======
     <br>
+
 
   </div>
 </template>
@@ -40,10 +44,20 @@ export default {
             this.$http.defaults.headers.common['Authorization'] = "Bearer " + token
             console.log(response);
             this.$router.push("/riidekapp");
+            location.reload();
           })
           .catch(function (error) {
             console.log(error);
           })
+
+
+    },
+    logout: function () {
+      this.$http.post("/avaleht/logikonto")
+      localStorage.removeItem('user-token') // remove on logout
+      location.reload();
+=======
+
     }
   }
 }
