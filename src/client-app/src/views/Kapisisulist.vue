@@ -1,22 +1,8 @@
 <template>
   <div class="kapisiulist">
-    <div class="ui floating message"> Sul on kapis... </div>
+    <div class="ui floating message"> Sul on kapis...</div>
     <br>
     <br>
-
-    <div class="detailiKuva" v-if="!!detailid">
-      <h3>Asukoht: {{ detailid.asukoht }}</h3>
-      <h3>Tüüp: {{ detailid.tyyp }}</h3>
-      <h3>Hooaeg: {{ detailid.hooaeg }}</h3>
-      <h3>Värv: {{ detailid.varv }}</h3>
-      <h3>Sugu: {{ detailid.sugu }}</h3>
-      <h3>Materjal: {{ detailid.materjal }}</h3>
-      <h3>Lisainfo: {{ detailid.lisainfo }}</h3>
-      <h3>Tootja: {{ detailid.tootja }}</h3>
-      <h3>Jalatsi suurus: {{ detailid.suurusJalatsid }}</h3>
-      <h3>Riide suurus: {{ detailid.suurusRiided }}</h3>
-      <button @click="sulgeDetailid">Sulge</button>
-    </div>
 
     <div v-show="!detailid" class="esemeKuva" v-for="ese in kategooria" :key="ese.id">
 
@@ -30,14 +16,20 @@
 
 
     </div>
+    <DetailidModaal v-if="detailid" :detailid="detailid" v-on:close="sulgeDetailid"/>
   </div>
 
 </template>
 
 
 <script>
+import DetailidModaal from "../components/DetailidModaal";
+
 
 export default {
+  components: {
+    DetailidModaal
+  },
 
   data: function () {
     return {
@@ -70,7 +62,7 @@ export default {
     }
   },
   mounted() {
-   let muutuja = this.$route.query.id
+    let muutuja = this.$route.query.id
     this.$http.get("/riidekapp/kuvaKoguKapp?kategooriaId=" + muutuja)
         .then(response => {
           this.kategooria = response.data;
@@ -102,16 +94,7 @@ export default {
     getImageSource(ese) {
       return `data:image/png;base64, ${ese.pilt}`;
     },
-    lisaAsukoht: function () {
-      this.$http.post("/riidekapp/lisaAsukoht", {
-        id: '',
-        asukoht: this.Asukoht.asukoht
-      })
-          .then(() => {
-            this.uuendaKlassifikaatorid();
-          })
 
-    },
     uuendaKlassifikaatorid: function () {
       this.$http.get('/riidekapp/annaKoikFiltrid').then((response) => {
         console.log(response.data)

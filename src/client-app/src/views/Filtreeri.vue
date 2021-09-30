@@ -121,10 +121,12 @@
 
 <script>
 import DetailidModaal from "../components/DetailidModaal";
-// import DetailidModaal from "@/components/DetailidModaal";
+
 
 export default {
-  components: {DetailidModaal},
+  components: {
+    DetailidModaal
+  },
   data: function () {
     return {
       filter: {
@@ -154,40 +156,7 @@ export default {
       Asukoht: {
         id: '',
         asukoht: ''
-      },
-      Materjal: {
-        id: '',
-        materjal: ''
-      },
-      Sugu: {
-        id: '',
-        sugu: ''
-      },
-      Hooaeg: {
-        id: '',
-        hooaeg: ''
-      },
-      Kategooria: {
-        id: '',
-        kategooria: ''
-      },
-      SuurusJalatsid: {
-        id: '',
-        suurusJalatsid: ''
-      },
-      SuurusRiided: {
-        id: '',
-        suurusRiided: ''
-      },
-      Tyyp: {
-        id: '',
-        tyyp: ''
-      },
-      Varv: {
-        id: '',
-        varv: ''
       }
-
     }
   },
 
@@ -209,16 +178,7 @@ export default {
     getImageSource(ese) {
       return `data:image/png;base64, ${ese.pilt}`;
     },
-    lisaAsukoht: function () {
-      this.$http.post("/riidekapp/lisaAsukoht", {
-        id: '',
-        asukoht: this.Asukoht.asukoht
-      })
-          .then(() => {
-            this.uuendaKlassifikaatorid();
-          })
 
-    },
     uuendaKlassifikaatorid: function () {
       this.$http.get('/riidekapp/annaKoikFiltrid').then((response) => {
         console.log(response.data)

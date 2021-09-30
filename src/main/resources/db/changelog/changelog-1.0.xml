@@ -496,5 +496,13 @@
     <changeSet id="2021-09-25 add autoincrement to id in esemed" author="Ellen Ennok">
         <addAutoIncrement tableName="esemed" columnName="id"/>
     </changeSet>
+    <changeSet id="2021-09-30 lisa pruun ja roosa v2rv baasi" author="Ellen Ennok">
+        <sql>
+            INSERT INTO värv(värv)
+            VALUES ('roosa');
+            INSERT INTO värv(värv)
+            VALUES ('pruun');
+        </sql>
+    </changeSet>
 
 </databaseChangeLog>

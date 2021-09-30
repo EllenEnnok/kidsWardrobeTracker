@@ -45,10 +45,13 @@
     <br>
     <GoTo title="Muu" link="/kapisisulist" page-id="22"></GoTo>
     <GoTo title="Jalatsid" link="/kapisisulist" page-id="24"></GoTo>
+
+
   </div>
 </template>
 
 <script>
+
 import GoTo from '../components/GoTo.vue'
 
 export default {
