@@ -6,36 +6,12 @@ import Uuskonto from '../views/Uuskonto.vue'
 import Kogukapp from '../views/Kogukapp.vue'
 import Oueriided from '../views/Oueriided.vue'
 import Aksessuaarid from '../views/Aksessuaarid.vue'
-import Jalanoud from '../views/Jalanoud.vue'
 import Riided from '../views/Riided.vue'
 import Spordiriided from '../views/Spordiriided.vue'
 import Filtreeri from '../views/Filtreeri.vue'
-import Filtreerimistulemus from '../views/Filtreerimistulemus.vue'
-import Luhikesevarrukagasargid from '../views/Luhikesevarrukagasargid.vue'
-import Pikavarrukagasargid from '../views/Pikavarrukagasargid.vue'
-import Luhikesedpuksid from '../views/Luhikesedpuksid.vue'
-import Pikadpuksid from '../views/Pikadpuksid.vue'
-import Aluspesu from '../views/Aluspesu.vue'
-import Sokid from '../views/Sokid.vue'
-import Bodyd from '../views/Bodyd.vue'
-import Joped from '../views/Joped.vue'
-import Kindad from '../views/Kindad.vue'
-import Kleidid from '../views/Kleidid.vue'
-import Kombekad from '../views/Kombekad.vue'
-import Mutsid from '../views/Mutsid.vue'
-import Muu from '../views/Muu.vue'
-import Ouepuksid from '../views/Ouepuksid.vue'
-import Pusad from '../views/Pusad.vue'
-import Romperid from '../views/Romperid.vue'
-import Sallid from '../views/Sallid.vue'
-import Seelikud from '../views/Seelikud.vue'
-import Sipukad from '../views/Sipukad.vue'
-import Sukakad from '../views/Sukakad.vue'
-import Tuduriided from '../views/Tuduriided.vue'
-import Ujumisriided from '../views/Ujumisriided.vue'
 import Kapisisulist from '../views/Kapisisulist.vue'
-import Uusriideese from '../views/Uusriideese.vue'
-import Uusjalanou from '../views/Uusjalanou.vue'
+import Uusese from '../views/Uusese.vue'
+import Kogulist from '../views/Kogulist'
 
 // import LoginComponent from "../views/login.vue"
 // import SecureComponent from "../views/secure.vue"
@@ -75,11 +51,6 @@ const routes = [
         component: Aksessuaarid
     },
     {
-        path: '/jalanoud',
-        name: 'Jalanoud',
-        component: Jalanoud
-    },
-    {
         path: '/riided',
         name: 'Riided',
         component: Riided
@@ -95,134 +66,19 @@ const routes = [
         component: Filtreeri
     },
     {
-        path: '/filtreerimistulemus',
-        name: 'Filtreerimistulemus',
-        component: Filtreerimistulemus
-    },
-    {
-        path: '/luhikesevarrukagasargid',
-        name: 'Luhikesevarrukagasargid',
-        component: Luhikesevarrukagasargid
-    },
-    {
-        path: '/pikavarrukagasargid',
-        name: 'Pikavarrukagasargid',
-        component: Pikavarrukagasargid
-    },
-    {
-        path: '/luhikesedpuksid',
-        name: 'Luhikesedpuksid',
-        component: Luhikesedpuksid
-    },
-    {
-        path: '/pikadpuksid',
-        name: 'Pikadpuksid',
-        component: Pikadpuksid
-    },
-    {
-        path: '/aluspesu',
-        name: 'Aluspesu',
-        component: Aluspesu
-    },
-    {
-        path: '/sokid',
-        name: 'Sokid',
-        component: Sokid
-    },
-    {
-        path: '/bodyd',
-        name: 'Bodyd',
-        component: Bodyd
-    },
-    {
-        path: '/joped',
-        name: 'Joped',
-        component: Joped
-    },
-    {
-        path: '/kindad',
-        name: 'Kindad',
-        component: Kindad
-    },
-    {
-        path: '/kleidid',
-        name: 'Kleidid',
-        component: Kleidid
-    },
-    {
-        path: '/kombekad',
-        name: 'Kombekad',
-        component: Kombekad
-    },
-    {
-        path: '/mutsid',
-        name: 'Mutsid',
-        component: Mutsid
-    },
-    {
-        path: '/muu',
-        name: 'Muu',
-        component: Muu
-    },
-    {
-        path: '/ouepuksid',
-        name: 'Ouepuksid',
-        component: Ouepuksid
-    },
-    {
-        path: '/pusad',
-        name: 'Pusad',
-        component: Pusad
-    },
-    {
-        path: '/romperid',
-        name: 'Romperid',
-        component: Romperid
-    },
-    {
-        path: '/sallid',
-        name: 'Sallid',
-        component: Sallid
-    },
-    {
-        path: '/seelikud',
-        name: 'Seelikud',
-        component: Seelikud
-    },
-    {
-        path: '/sipukad',
-        name: 'Sipukad',
-        component: Sipukad
-    },
-    {
-        path: '/sukakad',
-        name: 'Sukakad',
-        component: Sukakad
-    },
-    {
-        path: '/tududriided',
-        name: 'Tududriided',
-        component: Tuduriided
-    },
-    {
-        path: '/ujumisriided',
-        name: 'Ujumisriided',
-        component: Ujumisriided
-    },
-    {
         path: '/kapisisulist',
         name: 'Kapisisulist',
         component: Kapisisulist
     },
     {
-        path: '/uusriideese',
-        name: 'Uusriideese',
-        component: Uusriideese
+        path: '/uusese',
+        name: 'Uusese',
+        component: Uusese
     },
     {
-        path: '/uusjalanou',
-        name: 'Uusjalanou',
-        component: Uusjalanou
+        path: '/kogulist',
+        name: 'Kogulist',
+        component: Kogulist
     }
 ]
 

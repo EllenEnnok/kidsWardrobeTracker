@@ -1,51 +1,50 @@
 <template>
   <div class="kogukapp">
-    <GoTo title="+" link="/uusriideese"></GoTo>
-    <label> Sisesta kappi uus riideese</label>
+    <GoTo title="+" link="/uuseese"></GoTo>
+    <label> Sisesta kappi uus ese</label>
     <br>
     <br>
-    <GoTo title="+" link="/uusjalanou"></GoTo>
-    <label> Sisesta kappi uus jalanõu</label>
     <h1>Vali kategooria</h1>
-    <button>Näita kogu kapi sisu</button>
+    <GoTo title="Näita kogu kapi sisu" link="/kogulist"></GoTo>
     <br>
     <br>
-    <GoTo title="Lühikese varrukaga särgid" link="/luhikesevarrukagasargid"></GoTo>
-    <GoTo title="Pika varrukaga särgid" link="/pikavarrukagasargid"></GoTo>
-    <GoTo title="Lühikesed püksid" link="/luhikesedpuksid"></GoTo>
+    <GoTo title="Lühikese varrukaga särgid" link="/kapisisulist" page-id="1"></GoTo>
+    <GoTo title="Pika varrukaga särgid" link="/kapisisulist" page-id="2"></GoTo>
+    <GoTo title="Lühikesed püksid" link="/kapisisulist" page-id="3"></GoTo>
     <br>
     <br>
-    <GoTo title="Pikad püksid" link="/pikadpuksid"></GoTo>
-    <GoTo title="Aluspesu" link="/aluspesu"></GoTo>
-    <GoTo title="Sokid" link="/sokid"></GoTo>
+    <GoTo title="Pikad püksid" link="/kapisisulist" page-id="4"></GoTo>
+    <GoTo title="Aluspesu" link="/kapisisulist" page-id="5"></GoTo>
+    <GoTo title="Sokid" link="/kapisisulist" page-id="6"></GoTo>
     <br>
     <br>
-    <GoTo title="Sukapüksid" link="/sukakad"></GoTo>
-    <GoTo title="Kindad" link="/kindad"></GoTo>
-    <GoTo title="Mütsid" link="/mutsid"></GoTo>
+    <GoTo title="Sukapüksid" link="/kapisisulist" page-id="7"></GoTo>
+    <GoTo title="Kindad" link="/kapisisulist" page-id="8"></GoTo>
+    <GoTo title="Mütsid" link="/kapisisulist" page-id="9"></GoTo>
     <br>
     <br>
-    <GoTo title="Sallid" link="/sallid"></GoTo>
-    <GoTo title="Joped" link="/joped"></GoTo>
-    <GoTo title="Kombekad" link="/kombekad"></GoTo>
+    <GoTo title="Sallid" link="/kapisisulist" page-id="10"></GoTo>
+    <GoTo title="Joped" link="/kapisiulist" page-id="11"></GoTo>
+    <GoTo title="Kombekad" link="/kapisisulist" page-id="12"></GoTo>
     <br>
     <br>
-    <GoTo title="Õuepüksid" link="/ouepuksid"></GoTo>
-    <GoTo title="Seelikud" link="/seelikud"></GoTo>
-    <GoTo title="Kleidid" link="/kleidid"></GoTo>
+    <GoTo title="Õuepüksid" link="/kapisisulist" page-id="13"></GoTo>
+    <GoTo title="Seelikud" link="/kapisisulist" page-id="14"></GoTo>
+    <GoTo title="Kleidid" link="/kapisisulist" page-id="15"></GoTo>
     <br>
     <br>
-    <GoTo title="Romperid" link="/romperid"></GoTo>
-    <GoTo title="Tuduriided" link="/tuduriided"></GoTo>
-    <GoTo title="Bodyd" link="/bodyd"></GoTo>
+    <GoTo title="Romperid" link="/kapisisulist" page-id="16"></GoTo>
+    <GoTo title="Tuduriided" link="/kapisisulist" page-id="17"></GoTo>
+    <GoTo title="Bodyd" link="/kapisisulist" page-id="18"></GoTo>
     <br>
     <br>
-    <GoTo title="Sipukad" link="/sipukad"></GoTo>
-    <GoTo title="Ujumisriided" link="/ujumisriided"></GoTo>
-    <GoTo title="Pusad" link="/pusad"></GoTo>
+    <GoTo title="Sipukad" link="/kapisisulist" page-id="19"></GoTo>
+    <GoTo title="Ujumisriided" link="/kapisisulist" page-id="20"></GoTo>
+    <GoTo title="Pusad" link="/kapisisulist" page-id="21"></GoTo>
     <br>
     <br>
-    <GoTo title="Muu" link="/muu"></GoTo>
+    <GoTo title="Muu" link="/kapisisulist" page-id="22"></GoTo>
+    <GoTo title="Jalatsid" link="/kapisisulist" page-id="24"></GoTo>
   </div>
 </template>
 
