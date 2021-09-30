@@ -129,6 +129,7 @@ margin-left: 7px;
 #nav {
     padding: 30px;
     text-align: center;
+    width: auto;
 }
 
 #nav a {

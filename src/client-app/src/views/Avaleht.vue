@@ -39,6 +39,7 @@ export default {
             this.$http.defaults.headers.common['Authorization'] = "Bearer " + token
             console.log(response);
             this.$router.push("/riidekapp");
+            location.reload();
           })
           .catch(function (error) {
             console.log(error);
