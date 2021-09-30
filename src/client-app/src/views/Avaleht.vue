@@ -11,6 +11,8 @@
 
     <h1>Pole kontot?</h1>
     <GoTo title="Loo uus konto" link="/uuskonto"></GoTo>
+
+    <button v-on:click="logout">Logi välja</button>
   </div>
 </template>
 
@@ -31,7 +33,7 @@ export default {
     login: function () {
       this.$http.post("/avaleht/logiSisse",
           {kasutajanimi: this.kasutajanimi, parool: this.parool})
-          .then(function (response) {
+          .then(response =>  {
             let token=response.data
 
             localStorage.setItem('user-token', token) // store the token
@@ -43,14 +45,14 @@ export default {
             console.log(error);
           })
 
-    }
-  }
-    /*logout: function () {
+    },
+
+    logout: function () {
       this.$http.post("/avaleht/logikonto")
       localStorage.removeItem('user-token') // remove on logout
       location.reload();
-
-  }*/
+    }
+  }
 
 }
 

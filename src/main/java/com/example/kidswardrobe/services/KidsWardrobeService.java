@@ -5,7 +5,6 @@ import com.example.kidswardrobe.repositories.KidsWardrobeRepository;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import liquibase.pro.packaged.K;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -117,7 +116,7 @@ public class KidsWardrobeService {
             result.setKategooria(resultSet.getString("kategooria"));
             result.setLisainfo(resultSet.getString("lisainfo"));
             result.setTootja(resultSet.getString("tootja"));
-            result.setPilt((Blob) resultSet.getBlob("pilt"));
+            result.setPilt(resultSet.getBytes("pilt"));
             return result;
         }
     }

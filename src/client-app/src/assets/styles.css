@@ -1,5 +1,4 @@
 
-
 label {
     display: inline-block;
     width: 200px;
@@ -19,13 +18,18 @@ label {
 /*    box-sizing: border-box;*/
 /*}*/
 
+#menuNupp {
+    background-color: skyblue;
+    padding: 2px!important;
 
+}
 input {
     height: 30px;
     width: 200px;
 }
 
 .body {
+
     margin-right: 150px;
     color: #2c3e50;
     font-family: Avenir, Arial, Helvetica, sans-serif;
@@ -33,14 +37,41 @@ input {
     text-align: left;
 
 
+
 }
-.esemeKuva {
-    float: left;
+.detailiKuva {
+
     height: 400px;
     width: 400px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
+}
+h1 {
+    font-size: 20px;
+}
+h3 {
+    font-size: 20px;
+}
+h2 {
+    font-size: 15px;
+    color: #2c3e50;
+}
+.kuvaNupp {
+    padding-left: 10px;
+}
+.esemeKuva {
+
+
+    margin-top: -100px;
+    margin-left: -100px;
+    float: left;
+    height: 370px;
+    width: 370px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    padding-left: 10px;
 }
 .Boxid {
     padding: 16px 16px;
@@ -100,6 +131,7 @@ header {
 }
 
 button {
+
     border: 0.001rem solid deepskyblue;
     border-radius: 4px;
     background-color: skyblue;
@@ -141,3 +173,4 @@ margin-left: 7px;
     background: lightskyblue;
     border-radius: .5rem;
 }
+

@@ -112,7 +112,10 @@ public class LisaEseDto {
     }
 
     public byte[] getPictureBytes() throws IOException {
-        return pilt.getBytes();
+        if (pilt != null) {
+            return pilt.getBytes();
+        }
+        return null;
     }
 
     public void setPilt(MultipartFile pilt) {
