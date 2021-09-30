@@ -217,7 +217,7 @@ export default {
           formData.append("pilt", this.selectedFile);
         }
         this.$http.post('/riidekapp/lisaEseKappi', formData).then(() => {
-          this.submitForm();
+          this.resetForm();
           console.log(formData)
           window.alert('Salvestatud!');
 
@@ -227,7 +227,7 @@ export default {
 
 
       },
-      submitForm: function () {
+      resetForm: function () {
         // Reset form
         this.uusEse.asukoht = null;
         this.uusEse.kategooria = null;

@@ -1,41 +1,42 @@
 <template>
   <div class="kogulist">
-    <label>Sul on kapis</label>
+    <div class="ui floating message"> Sul on kapis...</div>
     <br>
     <br>
-
-    <div class="esemeKuva" v-for="ese in kategooria" :key="ese.id">
+    <div v-show="!detailid" class="esemeKuva" v-for="ese in kategooria" :key="ese.id">
 
       <img v-if="ese.pilt" :src="getImageSource(ese)" alt="pilt"/>
-      <h1>{{ ese.kategooria }}</h1>
+      <img v-else src="noimage.jpg"/>
+      <h1>Kategooria: {{ ese.kategooria }}</h1>
       <h1>Suurus: {{ ese.suurus }}</h1>
-      <button v-on:click="kuvaDetailid(ese.id)">Kuva detailid</button>
-      <button @click="uuendaKapp" v-on:click="kustutaEse(ese.id)">Kustuta ese</button>
+      <button v-on:click="kuvaDetailid(ese)">Kuva detailid</button>
+      <button  v-on:click="kustutaEse(ese.id)">Kustuta ese</button>
 
     </div>
+    <DetailidModaal v-if="detailid" :detailid="detailid" v-on:close="sulgeDetailid"/>
   </div>
 
 </template>
 
 
 <script>
+import DetailidModaal from "../components/DetailidModaal";
 
 export default {
+  components: {
+    DetailidModaal
+  },
 
   data: function () {
     return {
       kategooria: ''
       ,
-      esemed: []
+      esemed: [],
+      detailid: null
     }
   },
   mounted() {
-    this.$http.get("/riidekapp/kuvaKoguKapp")
-        .then(response => {
-          this.kategooria = response.data;
-        }).catch(function (error) {
-      console.log(error);
-    })
+    this.uuendaKapp();
   },
   methods: {
     getImageSource(ese) {
@@ -47,11 +48,12 @@ export default {
       })
     },
     uuendaKapp() {
-      this.$http.get(this.ehitaFiltreerimisUrl()).then(response => {
-            this.esemed = response.data;
-            console.log(response);
-          },
-      )
+      this.$http.get("/riidekapp/kuvaKoguKapp")
+          .then(response => {
+            this.kategooria = response.data;
+          }).catch(function (error) {
+        console.log(error);
+      });
     },
     ehitaKustutaEseUrl(id) {
       let baseUrl = '/riidekapp/kustutaEse?';
@@ -60,42 +62,22 @@ export default {
       }
       return baseUrl;
     },
-    ehitaFiltreerimisUrl() {
-      let baseUrl = '/riidekapp/kuvaKoguKapp?';
-      if (this.filter.asukohtId) {
-        baseUrl += `&asukohtId=${this.filter.asukohtId}`;
-      }
-      if (this.filter.hooaegId) {
-        baseUrl += `&hooaegId=${this.filter.hooaegId}`;
-      }
-      if (this.filter.kategooriaId) {
-        baseUrl += `&kategooriaId=${this.filter.kategooriaId}`;
-      }
-      if (this.filter.materjalId) {
-        baseUrl += `&materjalId=${this.filter.materjalId}`;
-      }
-      if (this.filter.suguId) {
-        baseUrl += `&suguId=${this.filter.suguId}`;
-      }
-      if (this.filter.suurusJalatsidId) {
-        baseUrl += `&suurusJalatsidId=${this.filter.suurusJalatsidId}`;
-      }
-      if (this.filter.suurusRiidedId) {
-        baseUrl += `&suurusRiidedId=${this.filter.suurusRiidedId}`;
-      }
-      if (this.filter.tyypId) {
-        baseUrl += `&tyypId=${this.filter.tyypId}`;
-      }
-      if (this.filter.varvId) {
-        baseUrl += `&varvId=${this.filter.varvId}`;
+
+    ehitaEsemeDetailidUrl(id) {
+      let baseUrl = '/riidekapp/kuvaEsemeDetailid?';
+      if (id) {
+        baseUrl += `&esemeId=${id}`;
       }
       return baseUrl;
     },
-    kuvaDetailid(id) {
-      this.$http.get(this.ehitaEsemeDetailidUrl(id)).then(response => {
-        console.log(response)
-        window.alert(response.data);
+    kuvaDetailid(ese) {
+      this.$http.get(this.ehitaEsemeDetailidUrl(ese.id)).then(response => {
+        console.log(response.data)
+        this.detailid = response.data;
       })
+    },
+    sulgeDetailid() {
+      this.detailid = null;
     }
   }
 }

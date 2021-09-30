@@ -13,6 +13,7 @@ import Kapisisulist from '../views/Kapisisulist.vue'
 import Uusese from '../views/Uusese.vue'
 import Kogulist from '../views/Kogulist'
 
+
 // import LoginComponent from "../views/login.vue"
 // import SecureComponent from "../views/secure.vue"
 
