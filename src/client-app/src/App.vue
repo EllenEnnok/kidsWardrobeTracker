@@ -5,13 +5,13 @@
       <nav>
         <ul>
           <li><router-link to="/">
-            <img src="home.svg">Avaleht
+            <img src="home.svg"> Avaleht
           </router-link></li>
           <li><router-link to="/riidekapp">
             <img src="hanger.svg">
-            Riidekapp
+             Riidekapp
           </router-link></li>
-          <li><router-link to="/filtreeri"><img src="sort.svg">Filtreeri</router-link></li>
+          <li><router-link to="/filtreeri"><img src="sort.svg"> Filtreeri</router-link></li>
 
           <li> <div class="search-wrapper">
             <form><input type="text" name="focus" required class="search-box" placeholder="Enter search term" />
