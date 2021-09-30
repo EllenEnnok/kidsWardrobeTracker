@@ -17,9 +17,10 @@
 </template>
 
 <script>
-
+import GoTo from '../components/GoTo.vue'
 export default {
   components: {
+    GoTo
   },
   data: function () {
     return {
