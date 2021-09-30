@@ -13,7 +13,6 @@ body {
 
 }
 
-/* HEADER */
 header {
     padding: 20px;
     background-color: white;
@@ -43,18 +42,18 @@ section div {
     margin: 1px;
 
 }
-div {
-    background: white;
-    margin: auto;
-    width: 100%;}
+/*div {*/
+/*    background: white;*/
+/*    margin: auto;*/
+/*    width: 100%;}*/
 
-/*ul*/
+ul
 div {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
-/*li */
+li
 div {
     display: inline-block;
     border-radius: 3px;
@@ -99,7 +98,10 @@ input {
     height: 30px;
     width: 200px;
 }
+
+
 .esemeKuva {
+    text-align: center;
     float: left;
     height: 400px;
     width: 400px;
@@ -130,6 +132,9 @@ h1 {
     font-size: 20px;
 }
 h3 {
+    font-size: 15px;
+}
+h4 {
     font-size: 20px;
 }
 h2 {

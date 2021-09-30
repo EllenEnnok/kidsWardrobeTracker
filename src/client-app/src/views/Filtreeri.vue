@@ -1,5 +1,6 @@
 <template>
-  <div class="filtreeri">
+  <div>
+  <div>
 
     <label>Tüüp</label>
     <select v-model="filter.tyypId" class="ui dropdown">
@@ -96,39 +97,31 @@
     <button @click="uuendaKapp">Filtreeri</button>
     <br>
     <br>
-    <div class="detailiKuva" v-if="!!detailid">
-      <h3>Asukoht: {{ detailid.asukoht }}</h3>
-      <h3>Tüüp: {{ detailid.tyyp }}</h3>
-      <h3>Hooaeg: {{ detailid.hooaeg }}</h3>
-      <h3>Värv: {{ detailid.varv }}</h3>
-      <h3>Sugu: {{ detailid.sugu }}</h3>
-      <h3>Materjal: {{ detailid.materjal }}</h3>
-      <h3>Lisainfo: {{ detailid.lisainfo }}</h3>
-      <h3>Tootja: {{ detailid.tootja }}</h3>
-      <h3>Jalatsi suurus: {{ detailid.suurusJalatsid }}</h3>
-      <h3>Riide suurus: {{ detailid.suurusRiided }}</h3>
-      <button @click="sulgeDetailid">Sulge</button>
+
+
     </div>
 
     <div v-show="!detailid" class="esemeKuva" v-on:click="kuvaDetailid(ese)" v-for="ese in esemed" :key="ese.id">
-
 
       <img v-if="ese.pilt" :src="getImageSource(ese)" alt="pilt"/>
       <img v-else src="noimage.jpg"/>
       <h1>Kategooria: {{ ese.kategooria }}</h1>
       <h1>Suurus: {{ ese.suurus }}</h1>
-      <button   v-on:click="kuvaDetailid(ese)">Kuva detailid</button>
+      <button   @click="kuvaDetailid(ese)">Kuva detailid</button>
       <button  @click="uuendaKapp" v-on:click="kustutaEse(ese.id)">Kustuta</button>
 
-
     </div>
+
+    <DetailidModaal v-if="detailid" :detailid="detailid" v-on:close="sulgeDetailid" />
   </div>
-
-
 </template>
 
 <script>
+import DetailidModaal from "../components/DetailidModaal";
+// import DetailidModaal from "@/components/DetailidModaal";
+
 export default {
+  components: {DetailidModaal},
   data: function () {
     return {
       filter: {

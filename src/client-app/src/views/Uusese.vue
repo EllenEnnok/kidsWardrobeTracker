@@ -1,6 +1,6 @@
 <template>
   <div class="body">
-    <h2>* väljad on kohustuslikud</h2>
+    <div  class="ui floating message">* väljad on kohustuslikud</div>
     <br>
 
     <label>Tüüp</label>
@@ -75,13 +75,13 @@
       <option :key="asukoht.id" v-for="asukoht in klassifikaatorid.asukohad" :value="asukoht.id">{{ asukoht.nimetus }}
       </option>
     </select>
-    <div class="ui input">
+    <div  class="ui input">
     <input placeholder="Lisa uus asukoht" v-model="Asukoht.asukoht">
     <button v-on:click="lisaAsukoht()">Lisa</button>
     </div>
     <br>
     <br>
-    <div class="ui input">
+    <div  id="uusEseInput" class="ui input">
     <label>Lisainfo</label>
     <input v-model="uusEse.lisainfo" type="text"/>
     </div>
