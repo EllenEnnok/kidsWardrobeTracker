@@ -14,6 +14,7 @@
 
     <button v-on:click="logout">Logi välja</button>
   </div>
+
 </template>
 
 <script>
