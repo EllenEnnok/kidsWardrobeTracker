@@ -6,7 +6,7 @@
     <label>Salasõna</label>
     <input type="password" v-model="parool"/>
     <br>
-    <button v-on:click="login">Logi sisse</button>
+    <button v-on:click="login"><img src="">Logi sisse</button>
 
     <h1>Pole kontot?</h1>
     <GoTo title="Loo uus konto" link="/uuskonto"></GoTo>

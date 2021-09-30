@@ -9,7 +9,7 @@
     <GoTo title="Näita kõike" link="/kogukapp"></GoTo>
     <br>
     <br>
-    <GoTo title="Õueriided" link="/oueriided"></GoTo>
+    <GoTo title="Õueriided" img src="jacket.svg" link="/oueriided"></GoTo>
     <GoTo title="Riided" link="/riided"></GoTo>
     <GoTo title="Aksessuaarid" link="/aksessuaarid"></GoTo>
     <GoTo title="Jalanõud" link="/kapisisulist"></GoTo>
