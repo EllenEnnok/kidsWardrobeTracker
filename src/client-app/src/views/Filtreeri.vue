@@ -2,7 +2,7 @@
   <div class="filtreeri">
 
     <label>Tüüp</label>
-    <select v-model="filter.tyypId">
+    <select v-model="filter.tyypId" class="ui dropdown">
       <option :value="null">----</option>
       <option :key="tyyp.id" v-for="tyyp in klassifikaatorid.tyybid" :value="tyyp.id">{{ tyyp.nimetus }}</option>
     </select>
@@ -10,7 +10,7 @@
     <br>
 
     <label>Kategooria</label>
-    <select v-model="filter.kategooriaId">
+    <select v-model="filter.kategooriaId" class="ui dropdown">
       <option :value="null">----</option>
       <option :key="kategooria.id" v-for="kategooria in klassifikaatorid.kategooriad" :value="kategooria.id">
         {{ kategooria.nimetus }}
@@ -20,7 +20,7 @@
     <br>
 
     <label>Jalatsite suurus</label>
-    <select v-model="filter.suurusJalatsidId">
+    <select v-model="filter.suurusJalatsidId" class="ui dropdown">
       <option :value="null">----</option>
       <option :key="suurusJalatsid.id" v-for="suurusJalatsid in klassifikaatorid.suurus_jalatsid"
               :value="suurusJalatsid.id">{{ suurusJalatsid.nimetus }}
@@ -31,7 +31,7 @@
     <br>
 
     <label>Riiete suurus</label>
-    <select v-model="filter.suurusRiidedId">
+    <select v-model="filter.suurusRiidedId" class="ui dropdown">
       <option :value="null">----</option>
       <option :key="suurusRiided.id" v-for="suurusRiided in klassifikaatorid.suurus_riided" :value="suurusRiided.id">
         {{ suurusRiided.nimetus }}
@@ -43,7 +43,7 @@
 
 
     <label>Hooaeg</label>
-    <select v-model="filter.hooaegId">
+    <select v-model="filter.hooaegId" class="ui dropdown">
       <option :value="null">----</option>
       <option :key="hooaeg.id" v-for="hooaeg in klassifikaatorid.hooajad" :value="hooaeg.id">{{ hooaeg.nimetus }}
       </option>
@@ -53,7 +53,7 @@
     <br>
 
     <label>Värv</label>
-    <select v-model="filter.varvId">
+    <select v-model="filter.varvId" class="ui dropdown">
       <option :value="null">----</option>
       <option :key="varv.id" v-for="varv in klassifikaatorid.varvid" :value="varv.id">{{ varv.nimetus }}</option>
     </select>
@@ -62,7 +62,7 @@
     <br>
 
     <label>Sugu</label>
-    <select v-model="filter.suguId">
+    <select v-model="filter.suguId" class="ui dropdown">
       <option :value="null">----</option>
       <option :key="sugu.id" v-for="sugu in klassifikaatorid.sugu" :value="sugu.id">{{ sugu.nimetus }}</option>
     </select>
@@ -71,7 +71,7 @@
 
     <label>Materjal</label>
 
-    <select v-model="filter.materjalId">
+    <select v-model="filter.materjalId" class="ui dropdown">
       <option :value="null">----</option>
       <option :key="materjal.id" v-for="materjal in klassifikaatorid.materjalid" :value="materjal.id">
         {{ materjal.nimetus }}
@@ -83,13 +83,12 @@
     <br>
 
     <label>Asukoht</label>
-    <select v-model="filter.asukohtId">
+    <select v-model="filter.asukohtId" class="ui dropdown">
       <option :value="null">----</option>
       <option :key="asukoht.id" v-for="asukoht in klassifikaatorid.asukohad" :value="asukoht.id">{{ asukoht.nimetus }}
       </option>
     </select>
-    <input placeholder="Lisa uus asukoht" v-model="Asukoht.asukoht">
-    <button v-on:click="lisaAsukoht()">Lisa</button>
+
     <br>
     <br>
 
@@ -97,16 +96,30 @@
     <button @click="uuendaKapp">Filtreeri</button>
     <br>
     <br>
+    <div class="detailiKuva" v-if="!!detailid">
+      <h3>Asukoht: {{ detailid.asukoht }}</h3>
+      <h3>Tüüp: {{ detailid.tyyp }}</h3>
+      <h3>Hooaeg: {{ detailid.hooaeg }}</h3>
+      <h3>Värv: {{ detailid.varv }}</h3>
+      <h3>Sugu: {{ detailid.sugu }}</h3>
+      <h3>Materjal: {{ detailid.materjal }}</h3>
+      <h3>Lisainfo: {{ detailid.lisainfo }}</h3>
+      <h3>Tootja: {{ detailid.tootja }}</h3>
+      <h3>Jalatsi suurus: {{ detailid.suurusJalatsid }}</h3>
+      <h3>Riide suurus: {{ detailid.suurusRiided }}</h3>
+      <button @click="sulgeDetailid">Sulge</button>
+    </div>
 
-
-    <div class="esemeKuva" v-on:click="kuvaDetailid(ese.id)" v-for="ese in esemed" :key="ese.id">
+    <div v-show="!detailid" class="esemeKuva" v-on:click="kuvaDetailid(ese)" v-for="ese in esemed" :key="ese.id">
 
 
       <img v-if="ese.pilt" :src="getImageSource(ese)" alt="pilt"/>
-      <h1>{{ ese.kategooria }}</h1>
+      <img v-else src="noimage.jpg"/>
+      <h1>Kategooria: {{ ese.kategooria }}</h1>
       <h1>Suurus: {{ ese.suurus }}</h1>
-      <button v-on:click="kuvaDetailid(ese.id)">Kuva detailid</button>
-      <button @click="uuendaKapp" v-on:click="kustutaEse(ese.id)">Kustuta ese</button>
+      <button   v-on:click="kuvaDetailid(ese)">Kuva detailid</button>
+      <button  @click="uuendaKapp" v-on:click="kustutaEse(ese.id)">Kustuta</button>
+
 
     </div>
   </div>
@@ -141,6 +154,7 @@ export default {
         varvid: []
       },
       esemed: [],
+      detailid: null,
       Asukoht: {
         id: '',
         asukoht: ''
@@ -180,17 +194,21 @@ export default {
 
     }
   },
+
   methods: {
-    kuvaDetailid(id) {
-      this.$http.get(this.ehitaEsemeDetailidUrl(id)).then(response => {
-        console.log(response)
-        window.alert(response.data);
+    kuvaDetailid(ese) {
+      this.$http.get(this.ehitaEsemeDetailidUrl(ese.id)).then(response => {
+        console.log(response.data)
+        this.detailid = response.data;
       })
     },
     kustutaEse(id) {
       this.$http.delete(this.ehitaKustutaEseUrl(id)).then(() => {
         this.uuendaKapp()
       })
+    },
+    sulgeDetailid() {
+      this.detailid = null;
     },
     getImageSource(ese) {
       return `data:image/png;base64, ${ese.pilt}`;

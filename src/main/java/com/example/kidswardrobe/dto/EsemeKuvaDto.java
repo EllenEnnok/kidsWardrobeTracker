@@ -9,6 +9,16 @@ public class EsemeKuvaDto {
     String kategooria;
     String piltBase64;
 
+    public EsemeDetailidDto getDetailid() {
+        return detailid;
+    }
+
+    public void setDetailid(EsemeDetailidDto detailid) {
+        this.detailid = detailid;
+    }
+
+    EsemeDetailidDto detailid;
+
     public String getSuurus() {
         return suurus;
     }

@@ -1,6 +1,7 @@
 package com.example.kidswardrobe.dto;
 
 import java.sql.Blob;
+import java.util.Base64;
 
 public class EsemeDetailidDto {
     private String tyyp;
@@ -13,7 +14,7 @@ public class EsemeDetailidDto {
     private String kategooria;
     private String lisainfo;
     private String tootja;
-    private Blob pilt;
+    private String piltBase64;
     private Integer esemeId;
 
     public EsemeDetailidDto() {
@@ -28,7 +29,7 @@ public class EsemeDetailidDto {
         this.esemeId = esemeId;
     }
 
-    public EsemeDetailidDto(String tyyp, String hooaeg, String suurus, String varv, String sugu, String materjal, String asukoht, String kategooria, String lisainfo, String tootja, Blob pilt, Integer esemeId) {
+    public EsemeDetailidDto(String tyyp, String hooaeg, String suurus, String varv, String sugu, String materjal, String asukoht, String kategooria, String lisainfo, String tootja, String pilt, Integer esemeId) {
         this.tyyp = tyyp;
         this.hooaeg = hooaeg;
         this.suurus = suurus;
@@ -39,7 +40,7 @@ public class EsemeDetailidDto {
         this.kategooria = kategooria;
         this.lisainfo = lisainfo;
         this.tootja = tootja;
-        this.pilt = pilt;
+        this.piltBase64 = pilt;
         this.esemeId = esemeId;
     }
 
@@ -123,11 +124,14 @@ public class EsemeDetailidDto {
         this.tootja = tootja;
     }
 
-    public Blob getPilt() {
-        return pilt;
+    public String getPilt() {
+        return piltBase64;
     }
 
-    public void setPilt(Blob pilt) {
-        this.pilt = pilt;
+    public void setPilt(byte[] piltBytes) {
+        if (piltBytes == null) {
+            return;
+        }
+        this.piltBase64 = Base64.getEncoder().encodeToString(piltBytes);
     }
 }

@@ -16,22 +16,53 @@
                      aria-label="Otsi"><img src="magnifying-glass.svg" alt="">
             <button><img src="magnifying-glass-1.svg">Otsi</button>
           </li>
-          <li><router-link to="/peamenuu"><i class="fa fa-bars"></i></router-link></li>
+          <li>
+            <div class="ui icon buttons" @click="toggle">
+               <div id="menuNupp" class="ui top left pointing dropdown button">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+                <div :class="menuClasses">
+                  <div class="item"><i class="user icon"></i> Minu seaded</div>
+                  <div class="item"><i class="question circle icon"></i> KKK</div>
+                  <div class="item"><i class="x icon"></i> Logi välja</div>
+                </div>
+              </div>
+            </div>
+          </li>
         </ul>
       </nav>
       <h1>Lapse riidekapp</h1>
     </header>
-        <router-view/>
+    <router-view/>
   </div>
 </template>
+
 <script>
 
 export default {
   name: 'app',
   components: {
+  },
+
+  data () {
+    return {
+      active: false
+    }
+  },
+  computed: {
+    menuClasses() {
+      if (!this.active) {
+        return "menu transition hidden";
+      } else {
+        return "menu transition visible"
+      }
+    }
+  },
+  methods: {
+    toggle () {
+      this.active = !this.active
+    }
   }
 }
-
 </script>
 
 <style>
