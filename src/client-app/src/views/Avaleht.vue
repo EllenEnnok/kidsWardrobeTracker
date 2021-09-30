@@ -1,5 +1,4 @@
 <template>
-
   <div class="avaleht">
     <label>E-post</label>
     <input type="text" v-model="kasutajanimi"/>
@@ -14,7 +13,6 @@
 
     <button v-on:click="logout">Logi välja</button>
   </div>
-
 </template>
 
 <script>
