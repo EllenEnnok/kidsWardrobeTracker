@@ -78,7 +78,7 @@ header {
     height: 130px;
     width: auto;
 }
-/*section {
+section {
     background: whitesmoke;
     color: #ce897b;
     padding: 20px;
@@ -90,14 +90,13 @@ section div {
     background: hotpink;
     width: 100%;
     margin: 1px;
-
-
+}
+ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
-
 }
-
+li {
     display: inline-block;
     border-radius: 3px;
     padding: 2px;
@@ -105,7 +104,6 @@ section div {
     color: red;
     font-size: 16px;
     font-weight: bolder;
-
 }
 nav:hover {
 
@@ -147,7 +145,6 @@ input {
     height: 30px;
     width: 200px;
 }
-
 
 .esemeKuva {
     text-align: center;
@@ -211,95 +208,3 @@ footer {
     padding: 10px 20px;
     text-align: center;
 }
-
-/*select {*/
-/*    width: 210px;*/
-/*    padding: 0;*/
-/*    margin: 0;*/
-/*    height: 22px;*/
-/*    -moz-box-sizing: border-box;*/
-/*    -webkit-box-sizing: border-box;*/
-/*    box-sizing: border-box;*/
-/*}*/
-
-/*#nav {
-    padding: 30px;
-    text-align: center;
-    box-sizing: border-box;
-    margin: 0;
-    color: #2c3e50;
-    font-weight: inherit;
-    !*-webkit-font-smoothing: antialiased;*!
-    !*-moz-osx-font-smoothing: grayscale;*!
-    display: flex;
-    flex-direction: row;
-    width: auto;
-}
-#nav a {
-    font-weight: bold;
-    color: #2c3e50;
-}
-#nav a.router-link-exact-active {
-    color: deeppink;
-    background: #ffe4e1;
-    border-radius: 5px;
-}*/
-
-/*.features {
-    background: white;
-    color: #2c3e50;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-}
-.features figure {
-    margin: auto;
-    text-align: center;
-    width: 100px;
-}
-.features figure image {
-    border-radius: 30%;
-    width: 100px;
-
-}*/
-
-/*font-family: Flaticon;
-font-size: 50px;
-font-style: normal;
-margin-left: 7px;
-}
-[class^="flaticon-"]:before,
-[class*=" flaticon-"]:before,
-[class^="flaticon-"]:after,
-[class*=" flaticon-"]:after {
-    font-size: 150px;
-}*/
-
-/*BODY OSA */
-/*body {
-     background: white;
-     color: black;
-     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     text-align: center;
-     font-weight: inherit;
-     line-height: 1.5;
-     -webkit-font-smoothing: antialiased;
-     -moz-osx-font-smoothing: grayscale;
- }
-section {
-    background: white;
-    color: black;
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-
-
-}
-!*div {
-    background: red;
-    margin: auto;
-    width: 100px;
-}*!*/
