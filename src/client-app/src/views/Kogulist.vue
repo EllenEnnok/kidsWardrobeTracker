@@ -10,7 +10,7 @@
       <h1>Kategooria: {{ ese.kategooria }}</h1>
       <h1>Suurus: {{ ese.suurus }}</h1>
       <button v-on:click="kuvaDetailid(ese)">Kuva detailid</button>
-      <button  v-on:click="kustutaEse(ese.id)">Kustuta ese</button>
+      <button v-on:click="kustutaEse(ese.id)">Kustuta</button>
 
     </div>
     <DetailidModaal v-if="detailid" :detailid="detailid" v-on:close="sulgeDetailid"/>
@@ -32,6 +32,7 @@ export default {
       kategooria: ''
       ,
       esemed: [],
+
       detailid: null
     }
   },
@@ -39,14 +40,23 @@ export default {
     this.uuendaKapp();
   },
   methods: {
-    getImageSource(ese) {
-      return `data:image/png;base64, ${ese.pilt}`;
+    kuvaDetailid(ese) {
+      this.$http.get(this.ehitaEsemeDetailidUrl(ese.id)).then(response => {
+        console.log(response.data)
+        this.detailid = response.data;
+      })
     },
     kustutaEse(id) {
       this.$http.delete(this.ehitaKustutaEseUrl(id)).then(() => {
-        this.uuendaKapp()
+        this.$http.get("/riidekapp/kuvaKoguKapp")
+            .then(response => {
+              this.kategooria = response.data;
+            }).catch(function (error) {
+          console.log(error);
+        })
       })
     },
+
     uuendaKapp() {
       this.$http.get("/riidekapp/kuvaKoguKapp")
           .then(response => {
@@ -54,6 +64,22 @@ export default {
           }).catch(function (error) {
         console.log(error);
       });
+
+    sulgeDetailid() {
+      this.detailid = null;
+    },
+    getImageSource(ese) {
+      return `data:image/png;base64, ${ese.pilt}`;
+    },
+    
+    
+    ehitaEsemeDetailidUrl(id) {
+      let baseUrl = '/riidekapp/kuvaEsemeDetailid?';
+      if (id) {
+        baseUrl += `&esemeId=${id}`;
+      }
+      return baseUrl;
+
     },
     ehitaKustutaEseUrl(id) {
       let baseUrl = '/riidekapp/kustutaEse?';
@@ -70,6 +96,7 @@ export default {
       }
       return baseUrl;
     },
+
     kuvaDetailid(ese) {
       this.$http.get(this.ehitaEsemeDetailidUrl(ese.id)).then(response => {
         console.log(response.data)
@@ -78,7 +105,9 @@ export default {
     },
     sulgeDetailid() {
       this.detailid = null;
+  
     }
   }
+  
 }
 </script>
