@@ -40,32 +40,34 @@ section div {
 div {
     background: white;
     margin: auto;
-    width: 100%;
-}
+    width: 100%;}
+
 /*ul*/
-nav {
+div {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
-/*li*/
-nav {
+/*li */
+div {
     display: inline-block;
     border-radius: 3px;
     padding: 2px;
     margin-right: 20px;
 
 }
-nav:hover {
+/*nav:hover*/
+#nav a {
     background-color: hotpink;
 }
-nav:first-child {
+#nav:first-child {
     margin-left: 0;
 }
 a {
     text-decoration: none;
 }
-a:hover {
+/*a:hover*/
+#nav a.router-link-exact-active {
     text-decoration: underline;
 }
 
