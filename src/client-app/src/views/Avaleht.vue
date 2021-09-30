@@ -1,31 +1,13 @@
 <template>
 
-  <div class="avaleht">
-    <label>E-post</label>
-    <input type="text" v-model="kasutajanimi"/>
-    <br>
-    <label>Salasõna</label>
-    <input type="password" v-model="parool"/>
-    <br>
-    <button v-on:click="login">Logi sisse</button>
-
-    <h1>Pole kontot?</h1>
-    <GoTo title="Loo uus konto" link="/uuskonto"></GoTo>
-
-    <button v-on:click="logout">Logi välja</button>
-=======
-    <br>
-
-
-  </div>
+  <div class="">
+    </div>
 </template>
 
 <script>
-import GoTo from '../components/GoTo.vue'
 
 export default {
   components: {
-    GoTo
   },
   data: function () {
     return {
@@ -56,8 +38,6 @@ export default {
       this.$http.post("/avaleht/logikonto")
       localStorage.removeItem('user-token') // remove on logout
       location.reload();
-=======
-
     }
   }
 }
