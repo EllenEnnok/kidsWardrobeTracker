@@ -108,7 +108,6 @@
       <h1>Kategooria: {{ ese.kategooria }}</h1>
       <h1>Suurus: {{ ese.suurus }}</h1>
 
-
       <button id="kuvaDetailidnupp" v-on:click="kuvaDetailid(ese)">Kuva detailid</button>
       <button id="kustutanupp" v-on:click="kustutaEse(ese.id)">Kustuta</button>
 

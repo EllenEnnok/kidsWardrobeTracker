@@ -1,13 +1,14 @@
 <template>
   <div class="avaleht">
-<div class="logi">
-    <label>E-post</label>
-    <input type="text" v-model="kasutajanimi"/>
-    <br>
-    <label>Salasõna</label>
-    <input type="password" v-model="parool"/>
-    <br>
-</div>
+    <div class="logi">
+      <label>E-post</label>
+      <input type="text" v-model="kasutajanimi"/>
+      <br>
+      <br>
+      <label>Salasõna</label>
+      <input type="password" v-model="parool"/>
+      <br>
+    </div>
     <br>
 
 
