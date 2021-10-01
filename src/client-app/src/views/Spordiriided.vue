@@ -6,6 +6,7 @@
     <div>
     <goTo title="Lühikese varrukaga särgid" link="/kapisisulist" page-id="1">  </goTo>
     </div>
+    <br>
     <goTo title="Pika varrukaga särgid" link="/kapisisulist" page-id="2"></goTo>
     <goTo title="Lühikesed püksid" link="/kapisisulist" page-id="3"></goTo>
     <br>
