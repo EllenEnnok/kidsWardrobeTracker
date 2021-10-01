@@ -1,6 +1,6 @@
 <template>
   <div class="kogukapp">
-    <GoTo title="+" link="/uuseese"></GoTo>
+    <GoTo title="+" link="/uusese"></GoTo>
     <label> Sisesta kappi uus ese</label>
     <br>
     <br>
