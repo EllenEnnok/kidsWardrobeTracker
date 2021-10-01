@@ -19,8 +19,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-//                .antMatchers("/api/**").authenticated()
-                .antMatchers("/avaleht/**").permitAll()
+                .antMatchers("/riidekapp/**").authenticated()
+                .antMatchers("/avaleht", "/uuskonto/looKonto").permitAll()
                 .and()
                 .addFilterBefore(new JwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
         http.csrf().disable();

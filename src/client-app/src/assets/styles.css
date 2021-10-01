@@ -177,6 +177,7 @@ input {
     border-radius: 10px;
 
 }
+
 .detailiKuva {
 
     height: 400px;
@@ -248,4 +249,13 @@ h5 {
 }
 .kogukapp {
     text-align: center;
+}
+#asukohaNupp {
+    width: 80px;
+}
+#kustutanupp {
+    width: 100px;
+}
+#kuvaDetailidnupp {
+    width: 100px;
 }
