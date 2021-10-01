@@ -77,7 +77,7 @@
     </select>
     <div  class="ui input">
     <input placeholder="Lisa uus asukoht" v-model="Asukoht.asukoht">
-    <button v-on:click="lisaAsukoht()">Lisa</button>
+    <button id="asukohaNupp" v-on:click="lisaAsukoht()">Lisa</button>
     </div>
     <br>
     <br>
