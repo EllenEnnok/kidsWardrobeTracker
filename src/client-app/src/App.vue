@@ -13,12 +13,12 @@
           </router-link></li>
           <li><router-link v-show="token" to="/filtreeri"><img src="sort.svg"> Filtreeri</router-link></li>
 
-          <li> <div class="search-wrapper">
+          <li> <div v-show="token" class="search-wrapper">
             <form><input type="text" name="focus" required class="search-box" placeholder="Enter search term" />
               <button class="close-icon" type="reset"></button>
             </form></div></li><li>
-            <div class="ui icon buttons" @click="toggle">
-               <div id="menuNupp" class="ui top right pointing dropdown button">
+            <div class="ui icon buttons" v-show="token" @click="toggle">
+               <div id="menuNupp" class="ui top left pointing dropdown button">
                 <i class="fa fa-bars" aria-hidden="true"></i>
                 <div :class="menuClasses">
                   <div class="item"><i class="user icon"></i> Minu seaded</div>
