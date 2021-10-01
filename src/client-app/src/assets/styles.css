@@ -80,6 +80,12 @@ header {
     height: 130px;
     width: auto;
 }
+h6 {
+    font-size: 40px;
+    margin-top: 15px;
+    font-family: Arial Black;
+    color: black;
+}
 section {
     background: whitesmoke;
     color: #625551;
@@ -145,6 +151,7 @@ button {
     cursor: pointer;
     margin-left: 10px;
     width: 200px;
+
 
 
 
