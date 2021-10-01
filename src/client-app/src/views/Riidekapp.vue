@@ -2,7 +2,7 @@
 
   <div class="riidekapp">
     <div class="kategooriaKuva">
-      <img src="tshirts.jpg"/>
+      <img src="plus.svg"/>
       <br>
     <GoTo title="+ Sisesta kappi uus ese" link="/uusese"></GoTo>
 </div>
@@ -11,34 +11,34 @@
 
     <br>
     <div class="kategooriaKuva">
-      <img src="tshirts.jpg"/>
+      <img src="wardrobe(1).svg"/>
       <br>
     <GoTo title="Näita kõike" link="/kogukapp"></GoTo>
       </div>
     <br>
     <br>
     <div class="kategooriaKuva">
-      <img src="tshirts.jpg"/>
+      <img src="jacket.svg"/>
       <br>
     <GoTo title="Õueriided"  link="/oueriided"></GoTo>
       </div>
     <div class="kategooriaKuva">
-      <img src="tshirts.jpg"/>
+      <img src="pusa.svg"/>
       <br>
     <GoTo title="Riided" link="/riided"></GoTo>
       </div>
     <div class="kategooriaKuva">
-      <img src="tshirts.jpg"/>
+      <img src="aksessuaarid.svg"/>
       <br>
     <GoTo title="Aksessuaarid" link="/aksessuaarid"></GoTo>
       </div>
     <div class="kategooriaKuva">
-      <img src="tshirts.jpg"/>
+      <img src="jalanõud.svg"/>
       <br>
     <GoTo title="Jalanõud" link="/kapisisulist" page-id="24"></GoTo>
       </div>
     <div class="kategooriaKuva">
-      <img src="tshirts.jpg"/>
+      <img src="sport.svg"/>
       <br>
     <GoTo title="Spordiriided" link="/spordiriided"></GoTo>
       </div>
