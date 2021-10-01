@@ -30,7 +30,8 @@
           </li>
         </ul>
       </nav>
-      <h1>Lapse riidekapp</h1>
+
+      <h6>Lapse riidekapp</h6>
     </header>
     <router-view/>
   </div>
