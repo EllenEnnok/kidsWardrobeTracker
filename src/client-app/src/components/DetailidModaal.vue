@@ -13,8 +13,8 @@
           <h3>Materjal: {{ detailid.materjal }}</h3>
           <h3>Lisainfo: {{ detailid.lisainfo }}</h3>
           <h3>Tootja: {{ detailid.tootja }}</h3>
-          <h3>Jalatsi suurus: {{ detailid.suurusJalatsid }}</h3>
-          <h3>Riide suurus: {{ detailid.suurusRiided }}</h3>
+          <h3>Suurus: {{ detailid.suurus }}</h3>
+
         </div>
       </div>
       <div class="actions">
