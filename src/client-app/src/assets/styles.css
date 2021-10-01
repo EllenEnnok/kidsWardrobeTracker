@@ -70,7 +70,7 @@ header {
     text-decoration: none;
     text-transform: uppercase;
     font-size: xxx-large;
-    text-align: left;
+    text-align: right;
     margin-top: 0;
     margin-bottom: 40px;
     background-image: url("~../../public/Piglet.png");
@@ -81,10 +81,11 @@ header {
     width: auto;
 }
 h6 {
-    font-size: 40px;
     margin-top: 15px;
-    font-family: Arial Black;
-    color: black;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #605a5a;
+    text-align: left;
+    font-size: 29px;
 }
 section {
     background: whitesmoke;
