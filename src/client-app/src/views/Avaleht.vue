@@ -1,10 +1,14 @@
 <template>
   <div class="avaleht">
+    <div class="logi">
     <label>E-post</label>
     <input type="text" v-model="kasutajanimi"/>
+    </div>
     <br>
+  <div class="logi">
     <label>Salasõna</label>
     <input type="password" v-model="parool"/>
+  </div>
     <br>
     <button v-on:click="login"><img src="">Logi sisse</button>
 
