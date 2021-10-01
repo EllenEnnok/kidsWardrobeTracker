@@ -7,11 +7,11 @@
           <li><router-link to="/">
             <img src="home.svg"> Avaleht
           </router-link></li>
-          <li><router-link to="/riidekapp">
+          <li><router-link v-show="token" to="/riidekapp">
             <img src="hanger.svg">
              Riidekapp
           </router-link></li>
-          <li><router-link to="/filtreeri"><img src="sort.svg"> Filtreeri</router-link></li>
+          <li><router-link v-show="token" to="/filtreeri"><img src="sort.svg"> Filtreeri</router-link></li>
 
           <li> <div class="search-wrapper">
             <form><input type="text" name="focus" required class="search-box" placeholder="Enter search term" />
@@ -23,7 +23,7 @@
                 <div :class="menuClasses">
                   <div class="item"><i class="user icon"></i> Minu seaded</div>
                   <div class="item"><i class="question circle icon"></i> KKK</div>
-                  <div class="item"><i class="x icon"></i> Logi välja</div>
+                  <div class="item" v-on:click="logout"><i class="x icon"></i> Logi välja</div>
                 </div>
               </div>
             </div>
@@ -45,7 +45,8 @@ export default {
 
   data () {
     return {
-      active: false
+      active: false,
+      token: ''
     }
   },
   computed: {
@@ -60,7 +61,15 @@ export default {
   methods: {
     toggle () {
       this.active = !this.active
+    },
+    logout: function () {
+      this.$http.post("/avaleht/logikonto")
+      localStorage.removeItem('user-token') // remove on logout
+      location.reload();
     }
+  },
+  mounted() {
+    this.token= localStorage.getItem('user-token')
   }
 }
 </script>

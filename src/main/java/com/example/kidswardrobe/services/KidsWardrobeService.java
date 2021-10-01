@@ -34,7 +34,7 @@ public class KidsWardrobeService {
         String encodedPassword = kidsWardrobeRepository.validate(userName);
         boolean isValid = passwordEncoder.matches(parool, encodedPassword);
         if (!isValid) {
-            return null;
+            throw new SecurityException("Wrong username or password");
         }
 
         Date now = new Date();    // tokeni genereerimine
