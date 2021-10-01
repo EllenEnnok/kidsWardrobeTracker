@@ -52,11 +52,10 @@ export default {
             .then(response => {
               this.kategooria = response.data;
             }).catch(function (error) {
-          console.log(error);
+                console.log(error);
         })
       })
     },
-
     uuendaKapp() {
       this.$http.get("/riidekapp/kuvaKoguKapp")
           .then(response => {
@@ -64,22 +63,16 @@ export default {
           }).catch(function (error) {
         console.log(error);
       });
-
-    sulgeDetailid() {
-      this.detailid = null;
     },
     getImageSource(ese) {
       return `data:image/png;base64, ${ese.pilt}`;
     },
-    
-    
     ehitaEsemeDetailidUrl(id) {
       let baseUrl = '/riidekapp/kuvaEsemeDetailid?';
       if (id) {
         baseUrl += `&esemeId=${id}`;
       }
       return baseUrl;
-
     },
     ehitaKustutaEseUrl(id) {
       let baseUrl = '/riidekapp/kustutaEse?';
@@ -87,21 +80,6 @@ export default {
         baseUrl += `&esemeId=${id}`;
       }
       return baseUrl;
-    },
-
-    ehitaEsemeDetailidUrl(id) {
-      let baseUrl = '/riidekapp/kuvaEsemeDetailid?';
-      if (id) {
-        baseUrl += `&esemeId=${id}`;
-      }
-      return baseUrl;
-    },
-
-    kuvaDetailid(ese) {
-      this.$http.get(this.ehitaEsemeDetailidUrl(ese.id)).then(response => {
-        console.log(response.data)
-        this.detailid = response.data;
-      })
     },
     sulgeDetailid() {
       this.detailid = null;
