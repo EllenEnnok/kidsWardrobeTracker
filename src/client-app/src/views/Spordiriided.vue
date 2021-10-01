@@ -4,13 +4,13 @@
     <label> Sisesta kappi uus ese</label>
     <br>
     <br>
-    <goTo title="Lühikese varrukaga särgid" link="/kapisisulist"></goTo>
-    <goTo title="Pika varrukaga särgid" link="/kapisisulist"></goTo>
-    <goTo title="Lühikesed püksid" link="/kapisisulist"></goTo>
+    <goTo title="Lühikese varrukaga särgid" link="/kapisisulist" page-id="1"></goTo>
+    <goTo title="Pika varrukaga särgid" link="/kapisisulist" page-id="2"></goTo>
+    <goTo title="Lühikesed püksid" link="/kapisisulist" page-id="3"></goTo>
     <br>
     <br>
-    <goTo title="Pikad püksid" link="/kapisisulist"></goTo>
-    <goTo title="Ujumisriided" link="/kapisisulist"></goTo>
+    <goTo title="Pikad püksid" link="/kapisisulist" page-id="4"></goTo>
+    <goTo title="Ujumisriided" link="/kapisisulist" page-id="20"></goTo>
   </div>
 </template>
 
