@@ -65,6 +65,7 @@ export default {
     logout: function () {
       this.$http.post("/avaleht/logikonto")
       localStorage.removeItem('user-token') // remove on logout
+      this.$router.push("/avaleht");
       location.reload();
     }
   },
