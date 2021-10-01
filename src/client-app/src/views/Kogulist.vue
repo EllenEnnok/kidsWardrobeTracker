@@ -9,7 +9,7 @@
       <img v-else src="noimage.jpg"/>
       <h1>Kategooria: {{ ese.kategooria }}</h1>
       <h1>Suurus: {{ ese.suurus }}</h1>
-      <button v-on:click="kuvaDetailid(ese)">Kuva detailid</button>
+      <button id="kuvaDetailidnupp" v-on:click="kuvaDetailid(ese)">Kuva detailid</button>
       <button v-on:click="kustutaEse(ese.id)">Kustuta</button>
 
     </div>
