@@ -1,8 +1,6 @@
 <template>
   <div class="kogukapp">
-    <div class="lisaEseKappi">
       <GoTo title="+ Sisesta kappi uus ese " link="/uusese"></GoTo>
-    </div>
     <br>
     <br>
     <h1>Vali kategooria</h1>
