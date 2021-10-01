@@ -1,7 +1,7 @@
 <template>
   <div class="riided">
-    <GoTo title="+" link="/uusese"></GoTo>
-    <label> Sisesta kappi uus ese</label>
+    <GoTo title="+ Sisesta kappi uus ese" link="/uusese"></GoTo>
+
     <br>
     <br>
     <GoTo title="Lühikese varrukaga särgid" link="/kapisisulist" page-id="1"></GoTo>

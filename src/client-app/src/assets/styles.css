@@ -143,6 +143,11 @@ button {
     padding: 7px 10px;
     font-size: 13px;
     cursor: pointer;
+    margin-left: 10px;
+    width: 200px;
+
+
+
 }
 
 input {
@@ -219,5 +224,28 @@ footer {
     margin-left: -220px;
 }
 .avaleht{
+    text-align: center;
+}
+h5 {
+    margin-top: 35px;
+    font-size: 16px;
+}
+.riidekapp {
+    text-align: center;
+
+}
+.spordiriided {
+    text-align: center;
+}
+.aksessuaarid {
+    text-align: center;
+}
+.oueriided {
+    text-align: center;
+}
+.riided {
+    text-align: center;
+}
+.kogukapp {
     text-align: center;
 }

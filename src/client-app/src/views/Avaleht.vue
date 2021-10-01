@@ -12,7 +12,7 @@
     <br>
     <button v-on:click="login"><img src="">Logi sisse</button>
 
-    <h1>Pole kontot?</h1>
+    <h5>Pole kontot?</h5>
     <GoTo title="Loo uus konto" link="/uuskonto"></GoTo>
 
 

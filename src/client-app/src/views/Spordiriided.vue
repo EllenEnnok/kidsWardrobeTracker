@@ -1,7 +1,7 @@
 <template>
   <div class="spordiriided">
-    <GoTo title="+" link="/uusese"></GoTo>
-    <label> Sisesta kappi uus ese</label>
+    <GoTo title="+ Sisesta kappi uus ese " link="/uusese"></GoTo>
+
     <br>
     <br>
     <goTo title="Lühikese varrukaga särgid" link="/kapisisulist" page-id="1"></goTo>

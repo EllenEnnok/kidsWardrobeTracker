@@ -1,13 +1,11 @@
 <template>
   <div class="oueriided">
-    <GoTo title="+" link="/uusese"></GoTo>
-    <label> Sisesta kappi uus ese</label>
+    <GoTo title="+ Sisesta kappi uus ese" link="/uusese"></GoTo>
+
     <br>
     <br>
-    <div class="icons">
-      <span class=".flaticon-jacket-1"></span>
+
       <GoTo title="Joped" link="/kapisisulist" page-id="11"></GoTo>
-    </div>
     <GoTo title="Kombekad" link="/kapisisulist" page-id="12"></GoTo>
     <GoTo title="Õuepüksid" link="/kapisisulist" page-id="13"></GoTo>
 

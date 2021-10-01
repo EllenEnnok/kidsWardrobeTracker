@@ -1,7 +1,7 @@
 <template>
   <div class="riidekapp">
-    <GoTo title="+" link="/uusese"></GoTo>
-    <label> Sisesta kappi uus ese</label>
+    <GoTo title="+ Sisesta kappi uus ese" link="/uusese"></GoTo>
+
     <br>
     <br>
     <h1>Vali kategooria</h1>
@@ -9,7 +9,7 @@
     <GoTo title="Näita kõike" link="/kogukapp"></GoTo>
     <br>
     <br>
-    <GoTo title="Õueriided" img src="jacket.svg" link="/oueriided"></GoTo>
+    <GoTo title="Õueriided"  link="/oueriided"></GoTo>
     <GoTo title="Riided" link="/riided"></GoTo>
     <GoTo title="Aksessuaarid" link="/aksessuaarid"></GoTo>
     <GoTo title="Jalanõud" link="/kapisisulist" page-id="24"></GoTo>
