@@ -1,6 +1,6 @@
 <template>
   <div class="aksessuaarid">
-    <GoTo title="+ Sisesta kappi uus ese " link="/uusese"></GoTo>
+    <GoTo title="+ Sisesta kappi uus ese" link="/uusese"></GoTo>
 
     <br>
     <br>

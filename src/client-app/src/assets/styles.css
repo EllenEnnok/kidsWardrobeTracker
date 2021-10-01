@@ -214,6 +214,13 @@ img {
     height: auto;
     border-radius: 0;
 }
+.kategooriaKuva img{
+    width: 80px;
+    height: 80px;
+
+}
+
+
 footer {
     background: white;
     color: #c38888;
@@ -233,11 +240,10 @@ h5 {
 }
 .riidekapp {
     text-align: center;
+    display: flex;
+    flex-direction: row;
+}
 
-}
-.spordiriided {
-    text-align: center;
-}
 .aksessuaarid {
     text-align: center;
 }
@@ -249,6 +255,8 @@ h5 {
 }
 .kogukapp {
     text-align: center;
+    display: flex;
+    flex-direction: row;
 }
 #asukohaNupp {
     width: 80px;
@@ -259,3 +267,6 @@ h5 {
 #kuvaDetailidnupp {
     width: 100px;
 }
+
+
+
