@@ -12,6 +12,8 @@
     <GoTo title="Õueriided"  link="/oueriided"></GoTo>
     <GoTo title="Riided" link="/riided"></GoTo>
     <GoTo title="Aksessuaarid" link="/aksessuaarid"></GoTo>
+    <br>
+    <br>
     <GoTo title="Jalanõud" link="/kapisisulist" page-id="24"></GoTo>
     <GoTo title="Spordiriided" link="/spordiriided"></GoTo>
   </div>

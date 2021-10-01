@@ -10,7 +10,7 @@
     <input type="password" v-model="parool"/>
   </div>
     <br>
-    <button v-on:click="login"><img src="">Logi sisse</button>
+    <button v-on:click="login">Logi sisse</button>
 
     <h5>Pole kontot?</h5>
     <GoTo title="Loo uus konto" link="/uuskonto"></GoTo>
